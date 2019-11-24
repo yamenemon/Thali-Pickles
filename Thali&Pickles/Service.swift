@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 class Service: NSObject {
     
     static let _singletonInstance = Service()
@@ -44,9 +45,11 @@ class Service: NSObject {
                let httpResponse = response as? HTTPURLResponse
                do{
                 let json = try JSONSerialization.jsonObject(with: data!, options: []) as? [String : Any]
+//                let jsonDecoder = JSONDecoder()
+//                let responseModel = try jsonDecoder.decode(CategoryModel.self, from: data!)
+                
                    if(httpResponse?.statusCode == 200){
                     success(json!)
-                    print(httpResponse!)
                    }else{
                     failure(error.debugDescription)
                    }

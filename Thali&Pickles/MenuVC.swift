@@ -7,8 +7,7 @@
 //
 
 import UIKit
-import JTMaterialSpinner
-
+import SVProgressHUD
 class MenuVC: UIViewController,UICollectionViewDataSource, UICollectionViewDelegate,UICollectionViewDelegateFlowLayout {
 
     let service = Service.sharedInstance()
@@ -26,14 +25,20 @@ class MenuVC: UIViewController,UICollectionViewDataSource, UICollectionViewDeleg
         configureNavigationBar(largeTitleColor: .white, backgoundColor: UIColor(rgb: 0xFF9300), tintColor: UIColor(rgb: appDefaultColor), title: "Menu", preferredLargeTitle: true)
     }
     override func viewWillAppear(_ animated: Bool) {
+        items.removeAll()
+        DispatchQueue.global(qos: .default).async(execute: {
+            // time-consuming task
+            self.service.getAllFoodCategory(requestURL: "\(baseURL)category", onSuccess: { (result) in
+                print(result)
+                for dict in 0..<(result as! [String : Any]).count {
+                    print(dict)
+                }
+            }) { (error) in
+                print(error!)
+            }
+        })
         
 
-        
-        service.getAllFoodCategory(requestURL: "\(baseURL)category", onSuccess: { (result) in
-            print(result)
-        }) { (error) in
-            print(error!)
-        }
         
         let layout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 10*factx, left: 10*factx, bottom: 10*factx, right: 10*factx)
