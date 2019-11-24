@@ -1,20 +1,26 @@
 PODS:
   - Alamofire (5.0.0-rc.3)
   - JTMaterialSpinner (3.0.5)
+  - SDWebImage (4.4.7):
+    - SDWebImage/Core (= 4.4.7)
+  - SDWebImage/Core (4.4.7)
 
 DEPENDENCIES:
   - Alamofire (~> 5.0.0-rc.3)
   - JTMaterialSpinner (~> 3.0)
+  - SDWebImage (~> 4.0)
 
 SPEC REPOS:
   trunk:
     - Alamofire
     - JTMaterialSpinner
+    - SDWebImage
 
 SPEC CHECKSUMS:
   Alamofire: ca8c0de6906873be89d6deec5c8de279e00bf872
   JTMaterialSpinner: 28a0444186b6b2df4206a77d12f7c9dcbe604958
+  SDWebImage: c10d14a8883ebd89664f02a422006f66a85c0c5d
 
-PODFILE CHECKSUM: 9e5d155f30929edc9a97cf5708c33385677f02f5
+PODFILE CHECKSUM: 2b763738d2061e1efb20f784b0b7480f0a9201ed
 
 COCOAPODS: 1.8.4

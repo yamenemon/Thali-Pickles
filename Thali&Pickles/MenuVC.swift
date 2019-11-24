@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import JTMaterialSpinner
 
 class MenuVC: UIViewController,UICollectionViewDataSource, UICollectionViewDelegate,UICollectionViewDelegateFlowLayout {
 
+    let service = Service.sharedInstance()
     var menuCollectionView: UICollectionView!
 
     let reuseIdentifier = "cell" // also enter this string as the cell identifier in the storyboard
@@ -17,10 +19,21 @@ class MenuVC: UIViewController,UICollectionViewDataSource, UICollectionViewDeleg
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        
         view.backgroundColor = .white
         configureNavigationBar(largeTitleColor: .white, backgoundColor: UIColor(rgb: 0xFF9300), tintColor: UIColor(rgb: appDefaultColor), title: "Menu", preferredLargeTitle: true)
     }
     override func viewWillAppear(_ animated: Bool) {
+        
+
+        
+        service.getAllFoodCategory(requestURL: "\(baseURL)category", onSuccess: { (result) in
+            print(result)
+        }) { (error) in
+            print(error!)
+        }
         
         let layout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 10*factx, left: 10*factx, bottom: 10*factx, right: 10*factx)

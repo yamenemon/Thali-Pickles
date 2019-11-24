@@ -7,9 +7,9 @@ target 'Thali&Pickles' do
 
   # Pods for Thali&Pickles
 	
-	pod 'Alamofire', '~> 5.0.0-rc.3'
-	pod 'JTMaterialSpinner', '~> 3.0'
   pod 'SDWebImage', '~> 4.0'
+  pod 'SVProgressHUD'
+
 
 
 

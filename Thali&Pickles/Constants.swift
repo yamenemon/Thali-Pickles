@@ -14,3 +14,7 @@ let appDefaultColor = 0xFF9300
 let robotoBold = "Roboto-Bold"
 let robotoMedium = "Roboto-Medium"
 let robotoRegular = "Roboto-Medium"
+
+
+
+let baseURL = "https://www.indianroti.co.uk/new-beta/ooapi/"
