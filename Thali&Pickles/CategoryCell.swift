@@ -8,16 +8,20 @@
 
 import UIKit
 
+@objc public protocol addToCartDelegate: NSObjectProtocol {
+
+    func addToCartBtnActionDelegate(sender:UIButton)
+}
+
 class CategoryCell: UITableViewCell {
+
+    @objc var delegate: addToCartDelegate?
 
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var categoryName: UILabel!
     @IBOutlet weak var categoryPrice: UILabel!
     @IBOutlet weak var categoryDescription: UILabel!
     @IBOutlet weak var cartBtn: UIButton!
-    
-    
-    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -30,4 +34,7 @@ class CategoryCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    @IBAction func addToCartBtnAction(_ sender: Any) {
+        self.delegate?.addToCartBtnActionDelegate(sender: sender as! UIButton)
+    }
 }

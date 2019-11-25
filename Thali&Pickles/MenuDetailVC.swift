@@ -9,8 +9,8 @@
 import UIKit
 import SwiftSpinner
 
-class MenuDetailVC: UIViewController {
-    
+class MenuDetailVC: UIViewController,addToCartDelegate {
+
     let tableView = UITableView()
     let service = Service.sharedInstance()
     var itemDict = [String:Any]()
@@ -34,9 +34,8 @@ class MenuDetailVC: UIViewController {
         tableView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.tableFooterView = UIView()
         tableView.register(UINib(nibName: "CategoryCell", bundle: nil), forCellReuseIdentifier: "Cell")
-
-
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -78,6 +77,10 @@ class MenuDetailVC: UIViewController {
         })
     }
     
+    func addToCartBtnActionDelegate(sender: UIButton) {
+        print(sender.tag)
+    }
+    
 }
 extension MenuDetailVC: UITableViewDataSource,UITableViewDelegate {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -85,6 +88,7 @@ extension MenuDetailVC: UITableViewDataSource,UITableViewDelegate {
   }
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CategoryCell
+    cell.delegate = self
 
     /*
      sub_category_title  => product_name
@@ -95,7 +99,8 @@ extension MenuDetailVC: UITableViewDataSource,UITableViewDelegate {
     
     let contentData = self.items[indexPath.row]
     let productInfo = contentData["sub_category_products"] as! [String:Any]
-//    let productId = productInfo["product_id"]
+//    let productId = productInfo["product_id"] as! Int
+    
     let productName = contentData["sub_category_title"]
     let productDescription = contentData["sub_category_description"]
     let productPrice = productInfo["product_price"]
@@ -104,6 +109,15 @@ extension MenuDetailVC: UITableViewDataSource,UITableViewDelegate {
     cell.categoryName.text = productName as? String
     cell.categoryPrice.text = "$ \(productPrice as? String ?? "")"
     cell.categoryDescription.text = productDescription as? String
+    if let productId = ( productInfo["product_id"] as? NSString)?.doubleValue {
+      // here, totalfup is a Double
+        cell.cartBtn.tag = Int(productId)
+
+    }
+    else {
+      // dict["totalfup"] isn't a String
+
+    }
     
     return cell
   }
