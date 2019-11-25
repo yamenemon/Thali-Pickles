@@ -17,38 +17,24 @@ class MenuDetailVC: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        view.backgroundColor = .white
+        configureNavigationBar(largeTitleColor: .white, backgoundColor: UIColor(rgb: 0xFF9300), tintColor: UIColor(rgb: appDefaultColor), title: "Menu Detail", preferredLargeTitle: true)
+        self.navigationItem.leftBarButtonItem = self.navigationItem.backBarButtonItem;
+        self.navigationController?.navigationBar.tintColor = .white
         
+    }
+    override func viewWillAppear(_ animated: Bool) {
         DispatchQueue.global(qos: .default).async(execute: {
             // time-consuming task
-            self.service.getAllFoodCategory(requestURL: "\(baseURL)category/\(self.itemDict["id"] ?? 100)", onSuccess: { (result) in
+            let contentUrl = "\(baseURL)category/\(self.itemDict["id"] ?? 100)"
+            self.service.getAllFoodCategory(requestURL: contentUrl, onSuccess: { (result) in
                 print(result)
-//                if  let object = result as? [String:Any] {
-//                    if let dataIteme = object["data"] as? [[String : Any]] {
-//                        for anItem in dataIteme {
-//                            self.items.append(anItem)
-//                        }
-//                    }
-//
-//                    print(self.items)
-//                } else {
-//                print("JSON is invalid")
-//                }
+
 
             }) { (error) in
                 print(error!)
             }
         })
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

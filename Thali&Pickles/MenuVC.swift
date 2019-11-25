@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class MenuVC: UIViewController,UICollectionViewDataSource, UICollectionViewDelegate,UICollectionViewDelegateFlowLayout {
 
@@ -33,7 +34,10 @@ class MenuVC: UIViewController,UICollectionViewDataSource, UICollectionViewDeleg
         menuCollectionView.delegate = self
         menuCollectionView.dataSource = self
         menuCollectionView.backgroundColor = .white
-        
+    
+        SVProgressHUD.setForegroundColor(UIColor(rgb: appDefaultColor))
+        SVProgressHUD.setDefaultMaskType(SVProgressHUDMaskType.black)
+        SVProgressHUD.show()
         items.removeAll()
         DispatchQueue.global(qos: .default).async(execute: {
             // time-consuming task
@@ -46,6 +50,7 @@ class MenuVC: UIViewController,UICollectionViewDataSource, UICollectionViewDeleg
                     }
                     DispatchQueue.main.async {
                         self.menuCollectionView.reloadData()
+                        SVProgressHUD.dismiss()
                     }
                     print(self.items)
                 } else {
@@ -80,18 +85,20 @@ class MenuVC: UIViewController,UICollectionViewDataSource, UICollectionViewDeleg
         print(url)
         let cellImageView = PortImgView(frame: CGRect(x: 0, y: 0, width: cell.contentView.frame.size.width, height: cell.contentView.frame.size.height))
         cellImageView.setImgWith(URL(string: url ), placeholderImage: nil)
+        cellImageView.backgroundColor = .red
         cell.contentView.addSubview(cellImageView)
         
         let cellTitle = contentData["title"] as! String
 
         let cellName = UILabel(frame: CGRect(x: 5*factx, y: 0, width: cellImageView.frame.size.width - 10*factx, height: cellImageView.frame.size.height))
         cellImageView.addSubview(cellName)
-        cellName.backgroundColor = UIColor(rgb: appDefaultColor)
+        cellName.backgroundColor = .clear//UIColor(rgb: appDefaultColor)
         cellName.textAlignment = .center
         cellName.textColor = .white
         cellName.font = UIFont(name: robotoBold, size: 13*factx)
         cellName.text = cellTitle
         cellName.numberOfLines = 3
+        
 
         return cell
     }
@@ -104,7 +111,12 @@ class MenuVC: UIViewController,UICollectionViewDataSource, UICollectionViewDeleg
         let contentData = self.items[indexPath.row]
         let detailVC = MenuDetailVC()
         detailVC.itemDict = contentData
-        self.navigationController?.pushViewController(detailVC, animated: true)
+        
+//        self.tabBarController.viewControllers = [NSArray arrayWithObjects:navigationcontroller,secondViewController and so on, nil];
+        
+        let navViewController = self.tabBarController?.selectedViewController as? UINavigationController
+        navViewController?.pushViewController(detailVC, animated: true)
+//    self.tabBarController?.navigationController?.pushViewController(detailVC, animated: true)
         
     }
 
