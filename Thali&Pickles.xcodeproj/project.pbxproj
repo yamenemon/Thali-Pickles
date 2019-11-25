@@ -33,6 +33,8 @@
 		9A9C3C38238B106700982421 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9C3C37238B106700982421 /* Constants.swift */; };
 		9A9C3C47238B2B8800982421 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9C3C46238B2B8800982421 /* Service.swift */; };
 		9A9C3C49238B39FC00982421 /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9C3C48238B39FC00982421 /* CategoryModel.swift */; };
+		9ABA44C8238C5FE700BCD42C /* CartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABA44C7238C5FE700BCD42C /* CartVC.swift */; };
+		9AD3351D238C585F009F83E0 /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD3351C238C585F009F83E0 /* AppManager.swift */; };
 		B0577244F01B7A0890C7F815 /* Pods_Thali_Pickles.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75498A908E6C295768C537A1 /* Pods_Thali_Pickles.framework */; };
 /* End PBXBuildFile section */
 
@@ -83,6 +85,8 @@
 		9A9C3C3C238B1BD800982421 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
 		9A9C3C46238B2B8800982421 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		9A9C3C48238B39FC00982421 /* CategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
+		9ABA44C7238C5FE700BCD42C /* CartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartVC.swift; sourceTree = "<group>"; };
+		9AD3351C238C585F009F83E0 /* AppManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppManager.swift; sourceTree = "<group>"; };
 		E82F0B4397D190EE799C5872 /* Pods-Thali&Pickles.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Thali&Pickles.debug.xcconfig"; path = "Target Support Files/Pods-Thali&Pickles/Pods-Thali&Pickles.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -153,10 +157,12 @@
 				9A9C3C30238AEBBC00982421 /* Images */,
 				9A9B779A238AE5B000440DF7 /* AppDelegate.swift */,
 				9A9B779C238AE5B000440DF7 /* SceneDelegate.swift */,
+				9AD3351C238C585F009F83E0 /* AppManager.swift */,
 				9A9C3C33238AF79B00982421 /* MenuVC.swift */,
 				69AB9351238BA8AB00ED63AE /* MenuDetailVC.swift */,
 				69AB9367238C079F00ED63AE /* CategoryCell.swift */,
 				69AB9368238C079F00ED63AE /* CategoryCell.xib */,
+				9ABA44C7238C5FE700BCD42C /* CartVC.swift */,
 				9A9C3C37238B106700982421 /* Constants.swift */,
 				9A9C3C46238B2B8800982421 /* Service.swift */,
 				69AB934B238BA2B300ED63AE /* PortImgView.h */,
@@ -387,11 +393,13 @@
 			files = (
 				69AB934D238BA2B300ED63AE /* PortImgView.m in Sources */,
 				9A9B77A7238AE5B000440DF7 /* Thali_Pickles.xcdatamodeld in Sources */,
+				9ABA44C8238C5FE700BCD42C /* CartVC.swift in Sources */,
 				9A9C3C34238AF79B00982421 /* MenuVC.swift in Sources */,
 				69AB9352238BA8AC00ED63AE /* MenuDetailVC.swift in Sources */,
 				9A9B779B238AE5B000440DF7 /* AppDelegate.swift in Sources */,
 				9A9B779D238AE5B000440DF7 /* SceneDelegate.swift in Sources */,
 				9A9C3C49238B39FC00982421 /* CategoryModel.swift in Sources */,
+				9AD3351D238C585F009F83E0 /* AppManager.swift in Sources */,
 				9A9C3C38238B106700982421 /* Constants.swift in Sources */,
 				9A9C3C47238B2B8800982421 /* Service.swift in Sources */,
 				69AB9369238C079F00ED63AE /* CategoryCell.swift in Sources */,

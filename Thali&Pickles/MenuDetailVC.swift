@@ -16,7 +16,6 @@ class MenuDetailVC: UIViewController,addToCartDelegate {
     var itemDict = [String:Any]()
     var items = [[String:Any]]()
     var safeArea: UILayoutGuide!
-    var numberOfCartValue = 0
 
     override func loadView() {
         super.loadView()
@@ -71,8 +70,6 @@ class MenuDetailVC: UIViewController,addToCartDelegate {
                 } else {
                 print("JSON is invalid")
                 }
-
-
             }) { (error) in
                 print(error!)
             }
@@ -80,12 +77,25 @@ class MenuDetailVC: UIViewController,addToCartDelegate {
     }
     
     func addToCartBtnActionDelegate(sender: UIButton) {
-        print(sender.tag)
-        numberOfCartValue = numberOfCartValue + 1
+//        print(sender.tag)
+        let numberOfCartValue = AppManager.sharedInstance().cartDataArr.count + 1
         tabBarController?.tabBar.items?[1].badgeColor = .black
         tabBarController?.tabBar.items?[1].badgeValue = "\(numberOfCartValue)"
+        
+        let contentData = self.items[sender.tag]
+        AppManager.sharedInstance().cartDataArr.append(contentData)
+//        print(AppManager.sharedInstance().cartDataArr)
+        
+        
+
+        
+//        let dictionary = Dictionary(grouping: AppManager.sharedInstance().cartDataArr, by: { $0 })
+//        let newDictionary = dictionary.mapValues { (value: [Int]) in
+//            return value.count
+//        }
+//        print(newDictionary) // prints: [97: 3, 23: 2, 4: 1]
+
     }
-    
 }
 extension MenuDetailVC: UITableViewDataSource,UITableViewDelegate {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -94,35 +104,35 @@ extension MenuDetailVC: UITableViewDataSource,UITableViewDelegate {
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CategoryCell
     cell.delegate = self
-
     /*
      sub_category_title  => product_name
      sub_category_description => product_description
      sub_category_products[product_id] => product_id
      sub_category_products[product_price] => product_price
      */
-    
     let contentData = self.items[indexPath.row]
-    let productInfo = contentData["sub_category_products"] as! [String:Any]
-//    let productId = productInfo["product_id"] as! Int
     
     let productName = contentData["sub_category_title"]
     let productDescription = contentData["sub_category_description"]
+    
+    let productInfo = contentData["sub_category_products"] as! [String:Any]
     let productPrice = productInfo["product_price"]
 
-    
     cell.categoryName.text = productName as? String
     cell.categoryPrice.text = "£ \(productPrice as? String ?? "")"
     cell.categoryDescription.text = productDescription as? String
-    if let productId = ( productInfo["product_id"] as? NSString)?.doubleValue {
-      // here, totalfup is a Double
-        cell.cartBtn.tag = Int(productId)
+    
+    cell.cartBtn.tag = indexPath.row
 
-    }
-    else {
-      // dict["totalfup"] isn't a String
-
-    }
+    
+//    if let productId = ( productInfo["product_id"] as? NSString)?.doubleValue {
+//      // here, totalfup is a Double
+//        print(Int(productId))
+//        cell.cartBtn.tag = indexPath.row//Int(productId)
+//    }
+//    else {
+//      // dict["totalfup"] isn't a String
+//    }
     
     return cell
   }
