@@ -13,6 +13,10 @@
 		69AB934F238BA7E800ED63AE /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9A9C3C3C238B1BD800982421 /* Roboto-Medium.ttf */; };
 		69AB9350238BA7EA00ED63AE /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9A9C3C3A238B1BD800982421 /* Roboto-Regular.ttf */; };
 		69AB9352238BA8AC00ED63AE /* MenuDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69AB9351238BA8AB00ED63AE /* MenuDetailVC.swift */; };
+		69AB9369238C079F00ED63AE /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69AB9367238C079F00ED63AE /* CategoryCell.swift */; };
+		69AB936A238C079F00ED63AE /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69AB9368238C079F00ED63AE /* CategoryCell.xib */; };
+		69AB9375238C0FF100ED63AE /* cart@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 69AB9373238C0FF000ED63AE /* cart@2x.png */; };
+		69AB9376238C0FF100ED63AE /* cart@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 69AB9374238C0FF000ED63AE /* cart@3x.png */; };
 		9A9B779B238AE5B000440DF7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9B779A238AE5B000440DF7 /* AppDelegate.swift */; };
 		9A9B779D238AE5B000440DF7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9B779C238AE5B000440DF7 /* SceneDelegate.swift */; };
 		9A9B77A4238AE5B000440DF7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A9B77A2238AE5B000440DF7 /* Main.storyboard */; };
@@ -45,6 +49,10 @@
 		69AB934B238BA2B300ED63AE /* PortImgView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PortImgView.h; sourceTree = "<group>"; };
 		69AB934C238BA2B300ED63AE /* PortImgView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PortImgView.m; sourceTree = "<group>"; };
 		69AB9351238BA8AB00ED63AE /* MenuDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuDetailVC.swift; sourceTree = "<group>"; };
+		69AB9367238C079F00ED63AE /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
+		69AB9368238C079F00ED63AE /* CategoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCell.xib; sourceTree = "<group>"; };
+		69AB9373238C0FF000ED63AE /* cart@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cart@2x.png"; sourceTree = "<group>"; };
+		69AB9374238C0FF000ED63AE /* cart@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cart@3x.png"; sourceTree = "<group>"; };
 		75498A908E6C295768C537A1 /* Pods_Thali_Pickles.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Thali_Pickles.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		82CB011F4A13FA307B4F88B3 /* Pods-Thali&Pickles.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Thali&Pickles.release.xcconfig"; path = "Target Support Files/Pods-Thali&Pickles/Pods-Thali&Pickles.release.xcconfig"; sourceTree = "<group>"; };
 		8479168192323A9D1E6633B9 /* Pods_Thali_PicklesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Thali_PicklesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -139,6 +147,8 @@
 				9A9B779C238AE5B000440DF7 /* SceneDelegate.swift */,
 				9A9C3C33238AF79B00982421 /* MenuVC.swift */,
 				69AB9351238BA8AB00ED63AE /* MenuDetailVC.swift */,
+				69AB9367238C079F00ED63AE /* CategoryCell.swift */,
+				69AB9368238C079F00ED63AE /* CategoryCell.xib */,
 				9A9C3C37238B106700982421 /* Constants.swift */,
 				9A9C3C46238B2B8800982421 /* Service.swift */,
 				69AB934B238BA2B300ED63AE /* PortImgView.h */,
@@ -167,6 +177,8 @@
 			isa = PBXGroup;
 			children = (
 				9A9C3C31238AEBD900982421 /* logo@3x.png */,
+				69AB9373238C0FF000ED63AE /* cart@2x.png */,
+				69AB9374238C0FF000ED63AE /* cart@3x.png */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -267,12 +279,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A9B77AC238AE5B300440DF7 /* LaunchScreen.storyboard in Resources */,
+				69AB9376238C0FF100ED63AE /* cart@3x.png in Resources */,
 				69AB9350238BA7EA00ED63AE /* Roboto-Regular.ttf in Resources */,
 				9A9B77A9238AE5B300440DF7 /* Assets.xcassets in Resources */,
+				69AB9375238C0FF100ED63AE /* cart@2x.png in Resources */,
 				69AB934F238BA7E800ED63AE /* Roboto-Medium.ttf in Resources */,
 				69AB934E238BA7E500ED63AE /* Roboto-Bold.ttf in Resources */,
 				9A9C3C32238AEBD900982421 /* logo@3x.png in Resources */,
 				9A9B77A4238AE5B000440DF7 /* Main.storyboard in Resources */,
+				69AB936A238C079F00ED63AE /* CategoryCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,6 +378,7 @@
 				9A9C3C49238B39FC00982421 /* CategoryModel.swift in Sources */,
 				9A9C3C38238B106700982421 /* Constants.swift in Sources */,
 				9A9C3C47238B2B8800982421 /* Service.swift in Sources */,
+				69AB9369238C079F00ED63AE /* CategoryCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
