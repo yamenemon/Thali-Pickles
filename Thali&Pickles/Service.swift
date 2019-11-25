@@ -39,7 +39,7 @@ class Service: NSObject {
        let task = session.dataTask(with: request, completionHandler: {(data, response, error) -> Void in
            if(error != nil) {
                message = "Error Occured"
-               failure(message)
+            failure(error.debugDescription)
                return
            } else {
                let httpResponse = response as? HTTPURLResponse

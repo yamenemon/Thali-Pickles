@@ -7,38 +7,21 @@
 //
 
 import UIKit
-import SVProgressHUD
+
 class MenuVC: UIViewController,UICollectionViewDataSource, UICollectionViewDelegate,UICollectionViewDelegateFlowLayout {
 
     let service = Service.sharedInstance()
     var menuCollectionView: UICollectionView!
 
     let reuseIdentifier = "cell" // also enter this string as the cell identifier in the storyboard
-    var items = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
+    var items = [[String:Any]]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        
         view.backgroundColor = .white
         configureNavigationBar(largeTitleColor: .white, backgoundColor: UIColor(rgb: 0xFF9300), tintColor: UIColor(rgb: appDefaultColor), title: "Menu", preferredLargeTitle: true)
     }
     override func viewWillAppear(_ animated: Bool) {
-        items.removeAll()
-        DispatchQueue.global(qos: .default).async(execute: {
-            // time-consuming task
-            self.service.getAllFoodCategory(requestURL: "\(baseURL)category", onSuccess: { (result) in
-                print(result)
-                for dict in 0..<(result as! [String : Any]).count {
-                    print(dict)
-                }
-            }) { (error) in
-                print(error!)
-            }
-        })
-        
-
         
         let layout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 10*factx, left: 10*factx, bottom: 10*factx, right: 10*factx)
@@ -50,7 +33,29 @@ class MenuVC: UIViewController,UICollectionViewDataSource, UICollectionViewDeleg
         menuCollectionView.delegate = self
         menuCollectionView.dataSource = self
         menuCollectionView.backgroundColor = .white
-        menuCollectionView.reloadData()
+        
+        items.removeAll()
+        DispatchQueue.global(qos: .default).async(execute: {
+            // time-consuming task
+            self.service.getAllFoodCategory(requestURL: "\(baseURL)category", onSuccess: { (result) in
+                if  let object = result as? [String:Any] {
+                    if let dataIteme = object["data"] as? [[String : Any]] {
+                        for anItem in dataIteme {
+                            self.items.append(anItem)
+                        }
+                    }
+                    DispatchQueue.main.async {
+                        self.menuCollectionView.reloadData()
+                    }
+                    print(self.items)
+                } else {
+                print("JSON is invalid")
+                }
+
+            }) { (error) in
+                print(error!)
+            }
+        })
     }
 
     // MARK: - UICollectionViewDataSource protocol
@@ -70,14 +75,23 @@ class MenuVC: UIViewController,UICollectionViewDataSource, UICollectionViewDeleg
             content.removeFromSuperview()
         }
         cell.backgroundColor = UIColor.clear // make cell more visible in our example project
+        let contentData = self.items[indexPath.row]
+        let url = contentData["image"] as! String
+        print(url)
+        let cellImageView = PortImgView(frame: CGRect(x: 0, y: 0, width: cell.contentView.frame.size.width, height: cell.contentView.frame.size.height))
+        cellImageView.setImgWith(URL(string: url ), placeholderImage: nil)
+        cell.contentView.addSubview(cellImageView)
         
-        let cellName = UILabel(frame: CGRect(x: 0, y: 0, width: cell.contentView.frame.size.width, height: cell.contentView.frame.size.height))
-        cell.contentView.addSubview(cellName)
+        let cellTitle = contentData["title"] as! String
+
+        let cellName = UILabel(frame: CGRect(x: 5*factx, y: 0, width: cellImageView.frame.size.width - 10*factx, height: cellImageView.frame.size.height))
+        cellImageView.addSubview(cellName)
         cellName.backgroundColor = UIColor(rgb: appDefaultColor)
         cellName.textAlignment = .center
         cellName.textColor = .white
-        cellName.font = UIFont.systemFont(ofSize: 17.0*factx)
-        cellName.text = items[indexPath.row]
+        cellName.font = UIFont(name: robotoBold, size: 13*factx)
+        cellName.text = cellTitle
+        cellName.numberOfLines = 3
 
         return cell
     }
@@ -87,6 +101,11 @@ class MenuVC: UIViewController,UICollectionViewDataSource, UICollectionViewDeleg
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         // handle tap events
         print("You selected cell #\(indexPath.item)!")
+        let contentData = self.items[indexPath.row]
+        let detailVC = MenuDetailVC()
+        detailVC.itemDict = contentData
+        self.navigationController?.pushViewController(detailVC, animated: true)
+        
     }
 
 }
