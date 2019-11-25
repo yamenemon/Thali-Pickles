@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import SVProgressHUD
+import SwiftSpinner
 
 class MenuVC: UIViewController,UICollectionViewDataSource, UICollectionViewDelegate,UICollectionViewDelegateFlowLayout {
 
@@ -34,10 +34,12 @@ class MenuVC: UIViewController,UICollectionViewDataSource, UICollectionViewDeleg
         menuCollectionView.delegate = self
         menuCollectionView.dataSource = self
         menuCollectionView.backgroundColor = .white
-    
-        SVProgressHUD.setForegroundColor(UIColor(rgb: appDefaultColor))
-        SVProgressHUD.setDefaultMaskType(SVProgressHUDMaskType.black)
-        SVProgressHUD.show()
+        
+        SwiftSpinner.shared.outerColor = UIColor(rgb: appDefaultColor)
+        SwiftSpinner.shared.innerColor = UIColor(rgb: appDefaultColor)
+        SwiftSpinner.show("Loading...")
+        
+        
         items.removeAll()
         DispatchQueue.global(qos: .default).async(execute: {
             // time-consuming task
@@ -50,7 +52,7 @@ class MenuVC: UIViewController,UICollectionViewDataSource, UICollectionViewDeleg
                     }
                     DispatchQueue.main.async {
                         self.menuCollectionView.reloadData()
-                        SVProgressHUD.dismiss()
+                        SwiftSpinner.hide()
                     }
                     print(self.items)
                 } else {

@@ -8,10 +8,7 @@ target 'Thali&Pickles' do
   # Pods for Thali&Pickles
 	
   pod 'SDWebImage', '~> 4.0'
-  pod 'SVProgressHUD'
-
-
-
+  pod "SwiftSpinner"
 
   target 'Thali&PicklesTests' do
     inherit! :search_paths

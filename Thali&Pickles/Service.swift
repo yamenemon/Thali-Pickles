@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SVProgressHUD
 class Service: NSObject {
     
     static let _singletonInstance = Service()
