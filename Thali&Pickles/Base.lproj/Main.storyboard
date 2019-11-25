@@ -53,7 +53,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Cart" image="cart.badge.plus" catalog="system" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="Cart" image="addCart.png" id="cPa-gy-q4n"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
@@ -118,7 +118,7 @@
         <scene sceneID="KIJ-PJ-rSA">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ks0-Zi-FX2" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Menu" image="list.bullet.indent" catalog="system" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="Menu" image="menu.png" id="acW-dT-cKf"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="P1S-Sv-uMM">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -140,9 +140,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="cart.badge.plus" catalog="system" width="64" height="48"/>
+        <image name="addCart.png" width="25" height="25"/>
         <image name="folder.fill" catalog="system" width="64" height="46"/>
-        <image name="list.bullet.indent" catalog="system" width="64" height="36"/>
+        <image name="menu.png" width="25" height="25"/>
         <image name="tray.full.fill" catalog="system" width="64" height="44"/>
     </resources>
     <color key="tintColor" red="1" green="0.57647058823529407" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftSpinner
 
 class MenuDetailVC: UIViewController {
     
@@ -45,7 +46,9 @@ class MenuDetailVC: UIViewController {
         configureNavigationBar(largeTitleColor: .white, backgoundColor: UIColor(rgb: 0xFF9300), tintColor: UIColor(rgb: appDefaultColor), title: "Menu Detail", preferredLargeTitle: true)
         self.navigationItem.leftBarButtonItem = self.navigationItem.backBarButtonItem;
         self.navigationController?.navigationBar.tintColor = .white
-        
+        SwiftSpinner.shared.outerColor = UIColor(rgb: appDefaultColor)
+        SwiftSpinner.shared.innerColor = UIColor(rgb: appDefaultColor)
+        SwiftSpinner.show("Loading...")
     }
     override func viewWillAppear(_ animated: Bool) {
         DispatchQueue.global(qos: .default).async(execute: {
@@ -60,6 +63,7 @@ class MenuDetailVC: UIViewController {
                         }
                     }
                     DispatchQueue.main.async {
+                        SwiftSpinner.hide()
                         self.tableView.reloadData()
                     }
                     print(self.items)
@@ -98,7 +102,7 @@ extension MenuDetailVC: UITableViewDataSource,UITableViewDelegate {
 
     
     cell.categoryName.text = productName as? String
-    cell.categoryPrice.text = "$ \(productPrice as? String ?? "")" 
+    cell.categoryPrice.text = "$ \(productPrice as? String ?? "")"
     cell.categoryDescription.text = productDescription as? String
     
     return cell

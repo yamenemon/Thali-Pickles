@@ -29,7 +29,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="83"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dof-4V-wDv" userLabel="name">
-                                <rect key="frame" x="8" y="4" width="206" height="28"/>
+                                <rect key="frame" x="8" y="6" width="206" height="28"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="28" id="BqT-XA-ruh"/>
@@ -39,25 +39,25 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="js2-HI-t6N" userLabel="price">
-                                <rect key="frame" x="219" y="4" width="93" height="21"/>
+                                <rect key="frame" x="219" y="6" width="93" height="21"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="RvN-gp-2jw"/>
                                     <constraint firstAttribute="width" constant="93" id="uLt-Wn-ndO"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="19"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eeg-mx-Thf" userLabel="description">
-                                <rect key="frame" x="8" y="33" width="256" height="46"/>
+                                <rect key="frame" x="8" y="35" width="256" height="44"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="13"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eYT-QT-kcF" userLabel="cart">
-                                <rect key="frame" x="272" y="34" width="40" height="40"/>
+                                <rect key="frame" x="272" y="36" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="OcC-oO-kqV"/>
                                     <constraint firstAttribute="width" constant="40" id="YYw-Ph-Efq"/>
@@ -70,8 +70,8 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="eYT-QT-kcF" firstAttribute="leading" secondItem="eeg-mx-Thf" secondAttribute="trailing" constant="8" id="5f4-Aw-HSC"/>
-                            <constraint firstItem="Dof-4V-wDv" firstAttribute="top" secondItem="BoI-Ge-OLw" secondAttribute="top" constant="4" id="7bf-gS-nEG"/>
-                            <constraint firstItem="js2-HI-t6N" firstAttribute="top" secondItem="BoI-Ge-OLw" secondAttribute="top" constant="4" id="Acq-Bh-8re"/>
+                            <constraint firstItem="Dof-4V-wDv" firstAttribute="top" secondItem="BoI-Ge-OLw" secondAttribute="top" constant="6" id="7bf-gS-nEG"/>
+                            <constraint firstItem="js2-HI-t6N" firstAttribute="top" secondItem="BoI-Ge-OLw" secondAttribute="top" constant="6" id="Acq-Bh-8re"/>
                             <constraint firstAttribute="bottom" secondItem="eeg-mx-Thf" secondAttribute="bottom" constant="4" id="Cik-Pu-KFs"/>
                             <constraint firstItem="js2-HI-t6N" firstAttribute="leading" secondItem="Dof-4V-wDv" secondAttribute="trailing" constant="5" id="CwC-3v-Bbb"/>
                             <constraint firstItem="Dof-4V-wDv" firstAttribute="leading" secondItem="BoI-Ge-OLw" secondAttribute="leading" constant="8" id="Sqw-kF-msh"/>
