@@ -16,8 +16,7 @@ class MenuDetailVC: UIViewController,addToCartDelegate {
     var itemDict = [String:Any]()
     var items = [[String:Any]]()
     var safeArea: UILayoutGuide!
-    var characters = ["Link", "Zelda", "Ganondorf", "Midna"]
-
+    var numberOfCartValue = 0
 
     override func loadView() {
         super.loadView()
@@ -42,7 +41,10 @@ class MenuDetailVC: UIViewController,addToCartDelegate {
 
         // Do any additional setup after loading the view.
         view.backgroundColor = .white
-        configureNavigationBar(largeTitleColor: .white, backgoundColor: UIColor(rgb: 0xFF9300), tintColor: UIColor(rgb: appDefaultColor), title: "Menu Detail", preferredLargeTitle: true)
+        
+        let navTitle = itemDict["title"] as? String ?? "Menu Details"
+        
+        configureNavigationBar(largeTitleColor: .white, backgoundColor: UIColor(rgb: 0xFF9300), tintColor: UIColor(rgb: appDefaultColor), title: navTitle, preferredLargeTitle: true)
         self.navigationItem.leftBarButtonItem = self.navigationItem.backBarButtonItem;
         self.navigationController?.navigationBar.tintColor = .white
         SwiftSpinner.shared.outerColor = UIColor(rgb: appDefaultColor)
@@ -79,6 +81,9 @@ class MenuDetailVC: UIViewController,addToCartDelegate {
     
     func addToCartBtnActionDelegate(sender: UIButton) {
         print(sender.tag)
+        numberOfCartValue = numberOfCartValue + 1
+        tabBarController?.tabBar.items?[1].badgeColor = .black
+        tabBarController?.tabBar.items?[1].badgeValue = "\(numberOfCartValue)"
     }
     
 }
@@ -107,7 +112,7 @@ extension MenuDetailVC: UITableViewDataSource,UITableViewDelegate {
 
     
     cell.categoryName.text = productName as? String
-    cell.categoryPrice.text = "$ \(productPrice as? String ?? "")"
+    cell.categoryPrice.text = "£ \(productPrice as? String ?? "")"
     cell.categoryDescription.text = productDescription as? String
     if let productId = ( productInfo["product_id"] as? NSString)?.doubleValue {
       // here, totalfup is a Double
@@ -123,6 +128,6 @@ extension MenuDetailVC: UITableViewDataSource,UITableViewDelegate {
   }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 90*factx
+        return 65*factx
     }
 }
