@@ -35,13 +35,32 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="szC-6A-AuQ">
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <subviews>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Hne-97-T2v">
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Hne-97-T2v">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="473"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="473" id="SIH-d2-ZHh"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="dataSource" destination="8rJ-Kc-sve" id="7Xw-4H-ccR"/>
+                                            <outlet property="delegate" destination="8rJ-Kc-sve" id="AYQ-Ml-jOj"/>
+                                        </connections>
                                     </tableView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ASI-P7-Nwj" userLabel="calculationView">
+                                        <rect key="frame" x="0.0" y="473" width="414" height="252"/>
+                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="ASI-P7-Nwj" firstAttribute="trailing" secondItem="Hne-97-T2v" secondAttribute="trailing" id="J34-fO-lTY"/>
+                                    <constraint firstAttribute="trailing" secondItem="Hne-97-T2v" secondAttribute="trailing" id="L2J-CZ-iVD"/>
+                                    <constraint firstItem="Hne-97-T2v" firstAttribute="leading" secondItem="szC-6A-AuQ" secondAttribute="leading" id="NWN-M7-7Rk"/>
+                                    <constraint firstAttribute="bottom" secondItem="ASI-P7-Nwj" secondAttribute="bottom" id="NeS-fW-vcV"/>
+                                    <constraint firstItem="ASI-P7-Nwj" firstAttribute="top" secondItem="Hne-97-T2v" secondAttribute="bottom" id="k39-tC-hbC"/>
+                                    <constraint firstItem="ASI-P7-Nwj" firstAttribute="leading" secondItem="Hne-97-T2v" secondAttribute="leading" id="lBo-99-rjm"/>
+                                    <constraint firstItem="Hne-97-T2v" firstAttribute="top" secondItem="szC-6A-AuQ" secondAttribute="top" id="rwO-fN-vxR"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -54,6 +73,10 @@
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
                     <navigationItem key="navigationItem" id="mVd-I0-e4v"/>
+                    <connections>
+                        <outlet property="calculationView" destination="ASI-P7-Nwj" id="Toj-31-qxw"/>
+                        <outlet property="cartTableView" destination="Hne-97-T2v" id="6mV-37-wIP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>

@@ -21,6 +21,8 @@
 		69AB937A238C141600ED63AE /* menu@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 69AB9378238C141600ED63AE /* menu@3x.png */; };
 		69AB9389238C17E400ED63AE /* addCart@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 69AB9387238C17E300ED63AE /* addCart@3x.png */; };
 		69AB938A238C17E400ED63AE /* addCart@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 69AB9388238C17E300ED63AE /* addCart@2x.png */; };
+		69AB938D238D081400ED63AE /* CartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69AB938B238D081400ED63AE /* CartTableViewCell.swift */; };
+		69AB938E238D081400ED63AE /* CartTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69AB938C238D081400ED63AE /* CartTableViewCell.xib */; };
 		9A9B779B238AE5B000440DF7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9B779A238AE5B000440DF7 /* AppDelegate.swift */; };
 		9A9B779D238AE5B000440DF7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9B779C238AE5B000440DF7 /* SceneDelegate.swift */; };
 		9A9B77A4238AE5B000440DF7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A9B77A2238AE5B000440DF7 /* Main.storyboard */; };
@@ -63,6 +65,8 @@
 		69AB9378238C141600ED63AE /* menu@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu@3x.png"; sourceTree = "<group>"; };
 		69AB9387238C17E300ED63AE /* addCart@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "addCart@3x.png"; sourceTree = "<group>"; };
 		69AB9388238C17E300ED63AE /* addCart@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "addCart@2x.png"; sourceTree = "<group>"; };
+		69AB938B238D081400ED63AE /* CartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTableViewCell.swift; sourceTree = "<group>"; };
+		69AB938C238D081400ED63AE /* CartTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CartTableViewCell.xib; sourceTree = "<group>"; };
 		75498A908E6C295768C537A1 /* Pods_Thali_Pickles.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Thali_Pickles.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		82CB011F4A13FA307B4F88B3 /* Pods-Thali&Pickles.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Thali&Pickles.release.xcconfig"; path = "Target Support Files/Pods-Thali&Pickles/Pods-Thali&Pickles.release.xcconfig"; sourceTree = "<group>"; };
 		8479168192323A9D1E6633B9 /* Pods_Thali_PicklesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Thali_PicklesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -163,6 +167,8 @@
 				69AB9367238C079F00ED63AE /* CategoryCell.swift */,
 				69AB9368238C079F00ED63AE /* CategoryCell.xib */,
 				9ABA44C7238C5FE700BCD42C /* CartVC.swift */,
+				69AB938B238D081400ED63AE /* CartTableViewCell.swift */,
+				69AB938C238D081400ED63AE /* CartTableViewCell.xib */,
 				9A9C3C37238B106700982421 /* Constants.swift */,
 				9A9C3C46238B2B8800982421 /* Service.swift */,
 				69AB934B238BA2B300ED63AE /* PortImgView.h */,
@@ -296,6 +302,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69AB938E238D081400ED63AE /* CartTableViewCell.xib in Resources */,
 				69AB9379238C141600ED63AE /* menu@2x.png in Resources */,
 				9A9B77AC238AE5B300440DF7 /* LaunchScreen.storyboard in Resources */,
 				69AB938A238C17E400ED63AE /* addCart@2x.png in Resources */,
@@ -400,6 +407,7 @@
 				9A9B779D238AE5B000440DF7 /* SceneDelegate.swift in Sources */,
 				9A9C3C49238B39FC00982421 /* CategoryModel.swift in Sources */,
 				9AD3351D238C585F009F83E0 /* AppManager.swift in Sources */,
+				69AB938D238D081400ED63AE /* CartTableViewCell.swift in Sources */,
 				9A9C3C38238B106700982421 /* Constants.swift in Sources */,
 				9A9C3C47238B2B8800982421 /* Service.swift in Sources */,
 				69AB9369238C079F00ED63AE /* CategoryCell.swift in Sources */,

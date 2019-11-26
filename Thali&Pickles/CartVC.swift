@@ -8,8 +8,34 @@
 
 import UIKit
 
-class CartVC: UIViewController {
+class CartVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return AppManager.sharedInstance().cartProductDataArr.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CartTableViewCell
+        
+        let contentData = AppManager.sharedInstance().cartProductDataArr[indexPath.row]
+        let contentAmount = AppManager.sharedInstance().cartProductCountArr[indexPath.row]
 
+        let productName = contentData["sub_category_title"]
+        cell.productNameLabel.text = "\(productName ?? "")"
+        cell.productAmount.text = "\(contentAmount)"
+        let productInfo = contentData["sub_category_products"] as! [String:Any]
+        let productPrice = productInfo["product_price"]
+        cell.priceLabel.text = "\(productPrice ?? "")"
+        
+        return cell
+    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 90*factx
+    }
+    
+    @IBOutlet weak var calculationView: UIView!
+    @IBOutlet weak var cartTableView: UITableView!
+    
+     
     override func viewDidLoad() {
         super.viewDidLoad()
         let countedSet = NSCountedSet(array: AppManager.sharedInstance().cartDataArr)
@@ -20,18 +46,11 @@ class CartVC: UIViewController {
         }
         print(AppManager.sharedInstance().cartProductDataArr)
         print(AppManager.sharedInstance().cartProductCountArr)
+        
+        
         // Do any additional setup after loading the view.
+        cartTableView.tableFooterView = UIView()
+        cartTableView.register(UINib(nibName: "CartTableViewCell", bundle: nil), forCellReuseIdentifier: "Cell")
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
