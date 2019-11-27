@@ -38,27 +38,25 @@
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Hne-97-T2v">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="473"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="473" id="SIH-d2-ZHh"/>
-                                        </constraints>
                                         <connections>
                                             <outlet property="dataSource" destination="8rJ-Kc-sve" id="7Xw-4H-ccR"/>
                                             <outlet property="delegate" destination="8rJ-Kc-sve" id="AYQ-Ml-jOj"/>
                                         </connections>
                                     </tableView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ASI-P7-Nwj" userLabel="calculationView">
-                                        <rect key="frame" x="0.0" y="473" width="414" height="252"/>
+                                        <rect key="frame" x="5" y="480" width="405" height="238"/>
                                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="ASI-P7-Nwj" firstAttribute="trailing" secondItem="Hne-97-T2v" secondAttribute="trailing" id="J34-fO-lTY"/>
+                                    <constraint firstItem="Hne-97-T2v" firstAttribute="height" secondItem="szC-6A-AuQ" secondAttribute="height" multiplier="0.652414" id="AWa-e5-JvN"/>
                                     <constraint firstAttribute="trailing" secondItem="Hne-97-T2v" secondAttribute="trailing" id="L2J-CZ-iVD"/>
                                     <constraint firstItem="Hne-97-T2v" firstAttribute="leading" secondItem="szC-6A-AuQ" secondAttribute="leading" id="NWN-M7-7Rk"/>
-                                    <constraint firstAttribute="bottom" secondItem="ASI-P7-Nwj" secondAttribute="bottom" id="NeS-fW-vcV"/>
-                                    <constraint firstItem="ASI-P7-Nwj" firstAttribute="top" secondItem="Hne-97-T2v" secondAttribute="bottom" id="k39-tC-hbC"/>
-                                    <constraint firstItem="ASI-P7-Nwj" firstAttribute="leading" secondItem="Hne-97-T2v" secondAttribute="leading" id="lBo-99-rjm"/>
+                                    <constraint firstAttribute="bottom" secondItem="ASI-P7-Nwj" secondAttribute="bottom" constant="7" id="Nak-gf-qbR"/>
+                                    <constraint firstItem="ASI-P7-Nwj" firstAttribute="leading" secondItem="szC-6A-AuQ" secondAttribute="leading" constant="5" id="RC0-zC-eov"/>
+                                    <constraint firstItem="ASI-P7-Nwj" firstAttribute="top" secondItem="Hne-97-T2v" secondAttribute="bottom" constant="7" id="jOO-Fm-gm5"/>
+                                    <constraint firstAttribute="trailing" secondItem="ASI-P7-Nwj" secondAttribute="trailing" constant="4" id="nd7-2e-Wgx"/>
                                     <constraint firstItem="Hne-97-T2v" firstAttribute="top" secondItem="szC-6A-AuQ" secondAttribute="top" id="rwO-fN-vxR"/>
                                 </constraints>
                             </view>
