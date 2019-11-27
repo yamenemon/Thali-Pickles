@@ -32,7 +32,6 @@
 		9A9C3C34238AF79B00982421 /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9C3C33238AF79B00982421 /* MenuVC.swift */; };
 		9A9C3C38238B106700982421 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9C3C37238B106700982421 /* Constants.swift */; };
 		9A9C3C47238B2B8800982421 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9C3C46238B2B8800982421 /* Service.swift */; };
-		9A9C3C49238B39FC00982421 /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9C3C48238B39FC00982421 /* CategoryModel.swift */; };
 		9ABA44C8238C5FE700BCD42C /* CartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABA44C7238C5FE700BCD42C /* CartVC.swift */; };
 		9AD3351D238C585F009F83E0 /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD3351C238C585F009F83E0 /* AppManager.swift */; };
 		B0577244F01B7A0890C7F815 /* Pods_Thali_Pickles.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75498A908E6C295768C537A1 /* Pods_Thali_Pickles.framework */; };
@@ -84,7 +83,6 @@
 		9A9C3C3B238B1BD800982421 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
 		9A9C3C3C238B1BD800982421 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
 		9A9C3C46238B2B8800982421 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
-		9A9C3C48238B39FC00982421 /* CategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
 		9ABA44C7238C5FE700BCD42C /* CartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartVC.swift; sourceTree = "<group>"; };
 		9AD3351C238C585F009F83E0 /* AppManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppManager.swift; sourceTree = "<group>"; };
 		E82F0B4397D190EE799C5872 /* Pods-Thali&Pickles.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Thali&Pickles.debug.xcconfig"; path = "Target Support Files/Pods-Thali&Pickles/Pods-Thali&Pickles.debug.xcconfig"; sourceTree = "<group>"; };
@@ -172,7 +170,6 @@
 				9A9B77AA238AE5B300440DF7 /* LaunchScreen.storyboard */,
 				9A9B77AD238AE5B300440DF7 /* Info.plist */,
 				9A9B77A5238AE5B000440DF7 /* Thali_Pickles.xcdatamodeld */,
-				9A9C3C48238B39FC00982421 /* CategoryModel.swift */,
 				69AB9347238BA1D600ED63AE /* Thali&Pickles-Bridging-Header.h */,
 			);
 			path = "Thali&Pickles";
@@ -398,7 +395,6 @@
 				69AB9352238BA8AC00ED63AE /* MenuDetailVC.swift in Sources */,
 				9A9B779B238AE5B000440DF7 /* AppDelegate.swift in Sources */,
 				9A9B779D238AE5B000440DF7 /* SceneDelegate.swift in Sources */,
-				9A9C3C49238B39FC00982421 /* CategoryModel.swift in Sources */,
 				9AD3351D238C585F009F83E0 /* AppManager.swift in Sources */,
 				9A9C3C38238B106700982421 /* Constants.swift in Sources */,
 				9A9C3C47238B2B8800982421 /* Service.swift in Sources */,
