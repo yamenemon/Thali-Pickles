@@ -162,6 +162,9 @@ class CartVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         print("Deleted")
         AppManager.sharedInstance().cartProductDataArr.remove(at: indexPath.row)
         AppManager.sharedInstance().cartProductCountArr.remove(at: indexPath.row)
+        if AppManager.sharedInstance().cartProductCountArr.count == 0 {
+            AppManager.sharedInstance().cartProductCountArr = [Double]()
+        }
         cartTableView.deleteRows(at: [indexPath], with: .automatic)
         reloadView()
       }
