@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Toast_Swift
 
 class CartVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -20,15 +21,18 @@ class CartVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         let containerView = UIView(frame: CGRect(x: 10*factx, y: 10*factx, width: cell.contentView.frame.size.width - 20*factx, height: cell.contentView.frame.size.height - 20*factx))
         cell.contentView.addSubview(containerView)
         containerView.layer.cornerRadius = 5.0
-        containerView.backgroundColor = UIColor(rgb: appDefaultColor)
+        containerView.backgroundColor = UIColor(rgb: 0xEBA54B)
         
         let contentData = AppManager.sharedInstance().cartProductDataArr[indexPath.row]
         let contentAmount = AppManager.sharedInstance().cartProductCountArr[indexPath.row]
         
         let productName = contentData["sub_category_title"]
         let productInfo = contentData["sub_category_products"] as! [String:Any]
-        let productPrice = productInfo["product_price"]
-        
+        var perProductPrice = 0.0
+        if let productPrice = (productInfo["product_price"] as? NSString)?.doubleValue {
+            perProductPrice = productPrice * contentAmount
+        }
+
         let verticalSpaceY = 5*factx
         let horizontalSpaceX = 5*factx
         let imageViewHeight = containerView.frame.size.height - verticalSpaceY*2;
@@ -53,7 +57,7 @@ class CartVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
 
         let priceLabel = UILabel(frame: CGRect(x: productTitle.frame.origin.x, y:productTitle.frame.size.height+verticalSpaceY , width: productTitle.frame.size.width/2, height: priceHeight))
         priceLabel.backgroundColor = .clear
-        priceLabel.text = "£ \(productPrice ?? 0)"
+        priceLabel.text = String(format: "£ %.2f", perProductPrice)
         priceLabel.font = UIFont(name: robotoBold, size: 15*factx)
         priceLabel.textColor = .lightText
         priceLabel.textAlignment = .center
@@ -65,36 +69,117 @@ class CartVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         buttonContainerView.backgroundColor = .clear
         containerView.addSubview(buttonContainerView)
         
-        let minusBtn = UIButton(frame: CGRect(x: 5*factx, y: 0, width: buttonContainerView.frame.size.height, height: buttonContainerView.frame.size.height))
+        let minusBtn = CustomButton()
+        minusBtn.frame = CGRect(x: 5*factx, y: 0, width: buttonContainerView.frame.size.height, height: buttonContainerView.frame.size.height)
         minusBtn.layer.cornerRadius = buttonContainerView.frame.size.height/2
         minusBtn.layer.borderColor = UIColor.white.cgColor
         minusBtn.layer.borderWidth = 2.0
         minusBtn.titleLabel?.font = UIFont(name: robotoBold, size: 18*factx)
         buttonContainerView.addSubview(minusBtn)
+        minusBtn.indexPath = indexPath.row
+        minusBtn.tag = 1
+        minusBtn.addTarget(self, action: #selector(plusMinusBtnAction), for: .touchUpInside)
         minusBtn.setTitle("-", for: .normal)
         
         let numberOfProductLabel = UILabel(frame: CGRect(x: minusBtn.frame.origin.x + minusBtn.frame.size.width, y: 0, width: buttonContainerView.frame.size.width/3, height: buttonContainerView.frame.size.height))
         buttonContainerView.addSubview(numberOfProductLabel)
-        numberOfProductLabel.text = "100"
+        numberOfProductLabel.text = "\(contentAmount)"
         numberOfProductLabel.textAlignment = .center
         
         
-        let plusBtn = UIButton(frame: CGRect(x: numberOfProductLabel.frame.origin.x + numberOfProductLabel.frame.size.width, y: 0, width: buttonContainerView.frame.size.height, height: buttonContainerView.frame.size.height))
+        let plusBtn = CustomButton()
+        plusBtn.frame = CGRect(x: numberOfProductLabel.frame.origin.x + numberOfProductLabel.frame.size.width, y: 0, width: buttonContainerView.frame.size.height, height: buttonContainerView.frame.size.height)
         plusBtn.layer.cornerRadius = buttonContainerView.frame.size.height/2
         plusBtn.layer.borderColor = UIColor.white.cgColor
         plusBtn.layer.borderWidth = 2.0
         plusBtn.titleLabel?.font = UIFont(name: robotoBold, size: 18*factx)
         buttonContainerView.addSubview(plusBtn)
+        plusBtn.indexPath = indexPath.row
+        plusBtn.tag = 2
+        plusBtn.addTarget(self, action: #selector(plusMinusBtnAction), for: .touchUpInside)
         plusBtn.setTitle("+", for: .normal)
-        
+
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100*factx
     }
-    
+    func reloadView() {
+        calculateValues()
+    }
+    @objc func plusMinusBtnAction(sender:CustomButton) {
+        if sender.tag == 1 {
+
+            var productArr = AppManager.sharedInstance().cartProductDataArr
+            var productCountArr = AppManager.sharedInstance().cartProductCountArr
+            let currentArrIndex = sender.indexPath!
+            print("Minus Button pressed tag: \(sender.tag) indexPath: \(currentArrIndex)")
+
+            
+            let contentData = productArr[currentArrIndex]
+            var contentAmount = productCountArr[currentArrIndex]
+            
+            if contentAmount == 1 {
+                self.view.makeToast("Left Swipe for delete the item/s")
+                return
+            }
+            contentAmount = contentAmount - 1
+            productCountArr[currentArrIndex] = contentAmount
+            AppManager.sharedInstance().cartProductCountArr = productCountArr
+            cartTableView.reloadRows(at: [IndexPath(row: currentArrIndex, section: 0)], with: .automatic)
+        }
+        else if sender.tag == 2 {
+            var productArr = AppManager.sharedInstance().cartProductDataArr
+            var productCountArr = AppManager.sharedInstance().cartProductCountArr
+            let currentArrIndex = sender.indexPath!
+            print("Minus Button pressed tag: \(sender.tag) indexPath: \(currentArrIndex)")
+
+            
+            let contentData = productArr[currentArrIndex]
+            var contentAmount = productCountArr[currentArrIndex]
+
+        }
+        reloadView()
+    }
+    func calculateValues() {
+        let productArr = AppManager.sharedInstance().cartProductDataArr
+        let productCountArr = AppManager.sharedInstance().cartProductCountArr
+        var priceArr = [Double]()
+        for i in 0..<productArr.count {
+            let dict = productArr[i]
+            let productInfo = dict["sub_category_products"] as! [String:Any]
+            if let productPrice = (productInfo["product_price"] as? NSString)?.doubleValue {
+                let price = productPrice * productCountArr[i]
+                priceArr.append(price)
+            }
+        }
+        totalPrice = priceArr.reduce(0, +)
+        subTotalPrice.text =  String(format: "£ %.2f", totalPrice)
+    }
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+      if editingStyle == .delete {
+        print("Deleted")
+
+        AppManager.sharedInstance().cartProductDataArr.remove(at: indexPath.row)
+        AppManager.sharedInstance().cartProductCountArr.remove(at: indexPath.row)
+        cartTableView.deleteRows(at: [indexPath], with: .automatic)
+        reloadView()
+      }
+    }
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let deleteButton = UITableViewRowAction(style: .default, title: "Delete") { (action, indexPath) in
+            self.cartTableView.dataSource?.tableView!(self.cartTableView, commit: .delete, forRowAt: indexPath)
+            return
+        }
+        deleteButton.backgroundColor = UIColor.black
+        return [deleteButton]
+    }
     @IBOutlet weak var calculationView: UIView!
     @IBOutlet weak var cartTableView: UITableView!
+    private var totalPrice = 0.0
+    @IBOutlet weak var subTotalPrice: UILabel!
+    @IBOutlet weak var totalPriceLabel: UILabel!
+    @IBOutlet weak var discountPrice: UILabel!
     
      
     override func viewDidLoad() {
@@ -114,26 +199,20 @@ class CartVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         // Do any additional setup after loading the view.
         cartTableView.tableFooterView = UIView()
         cartTableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        
     }
     override func viewWillAppear(_ animated: Bool) {
-        makeUI()
-    }
-    func makeUI() {
-        
         self.tabBarController?.viewControllers?[1].tabBarItem.badgeValue = nil
-        
-        let countedSet = NSCountedSet(array: AppManager.sharedInstance().cartDataArr)
-            for value in countedSet {
-                AppManager.sharedInstance().cartProductDataArr.append(value as! [String : Any])
-                AppManager.sharedInstance().cartProductCountArr.append(countedSet.count(for: value))
-            }
-        print(AppManager.sharedInstance().cartProductDataArr)
-        print(AppManager.sharedInstance().cartProductCountArr)
+        reloadView()
         cartTableView.reloadData()
     }
+
     @objc func checkOutTapped(sender:UIButton) {
         print("asdfa")
 
     }
 
+}
+class CustomButton: UIButton {
+    var indexPath: Int?
 }

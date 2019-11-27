@@ -12,7 +12,7 @@ class AppManager: NSObject {
     static let _singletonInstance = AppManager()
     var cartDataArr = [[String:Any]]()
     var cartProductDataArr = [[String:Any]]()
-    var cartProductCountArr = [Int]()
+    var cartProductCountArr = [Double]()
 
     private override init() {
         //This prevents others from using the default '()' initializer for this class.

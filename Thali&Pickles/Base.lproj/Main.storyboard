@@ -7,6 +7,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Bold.ttf">
+            <string>Roboto-Bold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--MenuVC-->
         <scene sceneID="hNz-n2-bh7">
@@ -36,7 +41,7 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Hne-97-T2v">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="473"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="580"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <connections>
                                             <outlet property="dataSource" destination="8rJ-Kc-sve" id="7Xw-4H-ccR"/>
@@ -44,13 +49,86 @@
                                         </connections>
                                     </tableView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ASI-P7-Nwj" userLabel="calculationView">
-                                        <rect key="frame" x="5" y="480" width="405" height="238"/>
-                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <rect key="frame" x="5" y="587" width="405" height="131"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sub Total Price :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="haX-yB-DhO">
+                                                <rect key="frame" x="8" y="12" width="146" height="30"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="2ur-vb-IMb"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="20"/>
+                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Price :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J39-7N-T6V">
+                                                <rect key="frame" x="8" y="82" width="146" height="30"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="20"/>
+                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Discount :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kXF-3I-NKH">
+                                                <rect key="frame" x="8" y="47" width="146" height="30"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="Eem-M7-lCI"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="20"/>
+                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ANB-6m-Syx">
+                                                <rect key="frame" x="249" y="14.5" width="148" height="27"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="148" id="SDK-dy-h5d"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3VE-rX-p8v">
+                                                <rect key="frame" x="249" y="49.5" width="148" height="27"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zNu-Hi-BpK">
+                                                <rect key="frame" x="249" y="84.5" width="148" height="17.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.55634254220000001" green="0.81937653645890407" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="haX-yB-DhO" firstAttribute="leading" secondItem="kXF-3I-NKH" secondAttribute="leading" id="1XA-9E-iH7"/>
+                                            <constraint firstItem="kXF-3I-NKH" firstAttribute="trailing" secondItem="J39-7N-T6V" secondAttribute="trailing" id="3fc-BP-pss"/>
+                                            <constraint firstItem="kXF-3I-NKH" firstAttribute="leading" secondItem="J39-7N-T6V" secondAttribute="leading" id="5LG-7q-BfK"/>
+                                            <constraint firstItem="haX-yB-DhO" firstAttribute="top" secondItem="ASI-P7-Nwj" secondAttribute="top" constant="12" id="6da-yc-1ad"/>
+                                            <constraint firstItem="J39-7N-T6V" firstAttribute="firstBaseline" secondItem="zNu-Hi-BpK" secondAttribute="firstBaseline" id="7gX-xe-AsV"/>
+                                            <constraint firstItem="ANB-6m-Syx" firstAttribute="trailing" secondItem="3VE-rX-p8v" secondAttribute="trailing" id="9wc-4n-Ica"/>
+                                            <constraint firstItem="ANB-6m-Syx" firstAttribute="leading" secondItem="haX-yB-DhO" secondAttribute="trailing" priority="250" constant="60" id="D9t-dR-FAW"/>
+                                            <constraint firstItem="haX-yB-DhO" firstAttribute="firstBaseline" secondItem="ANB-6m-Syx" secondAttribute="firstBaseline" id="H75-0B-af5"/>
+                                            <constraint firstItem="haX-yB-DhO" firstAttribute="baseline" secondItem="ANB-6m-Syx" secondAttribute="baseline" id="KEZ-GU-tQ0"/>
+                                            <constraint firstItem="3VE-rX-p8v" firstAttribute="trailing" secondItem="zNu-Hi-BpK" secondAttribute="trailing" id="Kam-17-1my"/>
+                                            <constraint firstItem="haX-yB-DhO" firstAttribute="leading" secondItem="ASI-P7-Nwj" secondAttribute="leadingMargin" id="OmA-Nt-jUI"/>
+                                            <constraint firstItem="kXF-3I-NKH" firstAttribute="top" secondItem="haX-yB-DhO" secondAttribute="bottom" constant="5" id="ROW-zS-C1W"/>
+                                            <constraint firstItem="ANB-6m-Syx" firstAttribute="trailing" secondItem="ASI-P7-Nwj" secondAttribute="trailingMargin" id="Whk-g8-rcO"/>
+                                            <constraint firstItem="J39-7N-T6V" firstAttribute="top" secondItem="kXF-3I-NKH" secondAttribute="bottom" constant="5" id="YkB-sB-zlf"/>
+                                            <constraint firstItem="3VE-rX-p8v" firstAttribute="leading" secondItem="zNu-Hi-BpK" secondAttribute="leading" id="eJc-jl-D4b"/>
+                                            <constraint firstItem="haX-yB-DhO" firstAttribute="trailing" secondItem="kXF-3I-NKH" secondAttribute="trailing" id="evP-pH-Yh4"/>
+                                            <constraint firstItem="J39-7N-T6V" firstAttribute="height" secondItem="kXF-3I-NKH" secondAttribute="height" multiplier="0.683333" constant="9.5" id="rF9-fA-UGA"/>
+                                            <constraint firstItem="kXF-3I-NKH" firstAttribute="firstBaseline" secondItem="3VE-rX-p8v" secondAttribute="firstBaseline" id="s1C-Sr-dWj"/>
+                                            <constraint firstItem="ANB-6m-Syx" firstAttribute="leading" secondItem="3VE-rX-p8v" secondAttribute="leading" id="uhs-Pr-Ead"/>
+                                            <constraint firstItem="kXF-3I-NKH" firstAttribute="baseline" secondItem="3VE-rX-p8v" secondAttribute="baseline" id="w98-am-Spz"/>
+                                            <constraint firstItem="J39-7N-T6V" firstAttribute="baseline" secondItem="zNu-Hi-BpK" secondAttribute="baseline" constant="9.5" id="yox-QD-aA4"/>
+                                        </constraints>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="Hne-97-T2v" firstAttribute="height" secondItem="szC-6A-AuQ" secondAttribute="height" multiplier="0.652414" id="AWa-e5-JvN"/>
+                                    <constraint firstItem="Hne-97-T2v" firstAttribute="height" secondItem="szC-6A-AuQ" secondAttribute="height" multiplier="0.8" id="AWa-e5-JvN"/>
                                     <constraint firstAttribute="trailing" secondItem="Hne-97-T2v" secondAttribute="trailing" id="L2J-CZ-iVD"/>
                                     <constraint firstItem="Hne-97-T2v" firstAttribute="leading" secondItem="szC-6A-AuQ" secondAttribute="leading" id="NWN-M7-7Rk"/>
                                     <constraint firstAttribute="bottom" secondItem="ASI-P7-Nwj" secondAttribute="bottom" constant="7" id="Nak-gf-qbR"/>
@@ -74,6 +152,9 @@
                     <connections>
                         <outlet property="calculationView" destination="ASI-P7-Nwj" id="Toj-31-qxw"/>
                         <outlet property="cartTableView" destination="Hne-97-T2v" id="6mV-37-wIP"/>
+                        <outlet property="discountPrice" destination="3VE-rX-p8v" id="pTx-gH-F4S"/>
+                        <outlet property="subTotalPrice" destination="ANB-6m-Syx" id="g6r-Aq-Wck"/>
+                        <outlet property="totalPriceLabel" destination="zNu-Hi-BpK" id="Ace-sn-0Qb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>

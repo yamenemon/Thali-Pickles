@@ -49,8 +49,10 @@ class MenuDetailVC: UIViewController,addToCartDelegate {
         SwiftSpinner.shared.outerColor = UIColor(rgb: appDefaultColor)
         SwiftSpinner.shared.innerColor = UIColor(rgb: appDefaultColor)
         SwiftSpinner.show("Loading...")
+        
+        getData()
     }
-    override func viewWillAppear(_ animated: Bool) {
+    func getData() {
         DispatchQueue.global(qos: .default).async(execute: {
             // time-consuming task
             ///products_by_category/{category_id}
@@ -75,9 +77,11 @@ class MenuDetailVC: UIViewController,addToCartDelegate {
             }
         })
     }
+    override func viewWillAppear(_ animated: Bool) {
+
+    }
     
     func addToCartBtnActionDelegate(sender: UIButton) {
-//        print(sender.tag)
         let numberOfCartValue = AppManager.sharedInstance().cartDataArr.count + 1
         tabBarController?.tabBar.items?[1].badgeColor = .black
         tabBarController?.tabBar.items?[1].badgeValue = "\(numberOfCartValue)"
@@ -86,15 +90,14 @@ class MenuDetailVC: UIViewController,addToCartDelegate {
         AppManager.sharedInstance().cartDataArr.append(contentData)
 //        print(AppManager.sharedInstance().cartDataArr)
         
+        AppManager.sharedInstance().cartProductDataArr.removeAll()
+        AppManager.sharedInstance().cartProductCountArr.removeAll()
         
-
-        
-//        let dictionary = Dictionary(grouping: AppManager.sharedInstance().cartDataArr, by: { $0 })
-//        let newDictionary = dictionary.mapValues { (value: [Int]) in
-//            return value.count
-//        }
-//        print(newDictionary) // prints: [97: 3, 23: 2, 4: 1]
-
+        let countedSet = NSCountedSet(array: AppManager.sharedInstance().cartDataArr)
+        for value in countedSet {
+            AppManager.sharedInstance().cartProductDataArr.append(value as! [String : Any])
+            AppManager.sharedInstance().cartProductCountArr.append(Double(countedSet.count(for: value)))
+        }
     }
 }
 extension MenuDetailVC: UITableViewDataSource,UITableViewDelegate {
@@ -104,12 +107,7 @@ extension MenuDetailVC: UITableViewDataSource,UITableViewDelegate {
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CategoryCell
     cell.delegate = self
-    /*
-     sub_category_title  => product_name
-     sub_category_description => product_description
-     sub_category_products[product_id] => product_id
-     sub_category_products[product_price] => product_price
-     */
+
     let contentData = self.items[indexPath.row]
     
     let productName = contentData["sub_category_title"]
@@ -124,16 +122,6 @@ extension MenuDetailVC: UITableViewDataSource,UITableViewDelegate {
     
     cell.cartBtn.tag = indexPath.row
 
-    
-//    if let productId = ( productInfo["product_id"] as? NSString)?.doubleValue {
-//      // here, totalfup is a Double
-//        print(Int(productId))
-//        cell.cartBtn.tag = indexPath.row//Int(productId)
-//    }
-//    else {
-//      // dict["totalfup"] isn't a String
-//    }
-    
     return cell
   }
     
