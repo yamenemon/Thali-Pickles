@@ -49,7 +49,7 @@ class CartVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         let productTitle = UILabel(frame: CGRect(x: horizontalSpaceX + productImageView.frame.size.width + horizontalSpaceX, y: verticalSpaceY, width: titleWidth, height: titleHeight))
         productTitle.text = "\(productName ?? "")"
         containerView.addSubview(productTitle)
-        productTitle.font = UIFont(name: robotoBold, size: 15*factx)
+        productTitle.font = UIFont(name: robotoBold, size: 13*factx)
         productTitle.backgroundColor = .clear
         productTitle.numberOfLines = 2
         
@@ -58,7 +58,7 @@ class CartVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         let priceLabel = UILabel(frame: CGRect(x: productTitle.frame.origin.x, y:productTitle.frame.size.height+verticalSpaceY , width: productTitle.frame.size.width/2, height: priceHeight))
         priceLabel.backgroundColor = .clear
         priceLabel.text = String(format: "£ %.2f", perProductPrice)
-        priceLabel.font = UIFont(name: robotoBold, size: 15*factx)
+        priceLabel.font = UIFont(name: robotoBold, size: 13*factx)
         priceLabel.textColor = .lightText
         priceLabel.textAlignment = .center
         containerView.addSubview(priceLabel)
@@ -102,21 +102,16 @@ class CartVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100*factx
+        return 80*factx
     }
     func reloadView() {
         calculateValues()
     }
     @objc func plusMinusBtnAction(sender:CustomButton) {
+        var productCountArr = AppManager.sharedInstance().cartProductCountArr
+        let currentArrIndex = sender.indexPath!
         if sender.tag == 1 {
-
-            var productArr = AppManager.sharedInstance().cartProductDataArr
-            var productCountArr = AppManager.sharedInstance().cartProductCountArr
-            let currentArrIndex = sender.indexPath!
             print("Minus Button pressed tag: \(sender.tag) indexPath: \(currentArrIndex)")
-
-            
-            let contentData = productArr[currentArrIndex]
             var contentAmount = productCountArr[currentArrIndex]
             
             if contentAmount == 1 {
@@ -129,15 +124,12 @@ class CartVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
             cartTableView.reloadRows(at: [IndexPath(row: currentArrIndex, section: 0)], with: .automatic)
         }
         else if sender.tag == 2 {
-            var productArr = AppManager.sharedInstance().cartProductDataArr
-            var productCountArr = AppManager.sharedInstance().cartProductCountArr
-            let currentArrIndex = sender.indexPath!
             print("Minus Button pressed tag: \(sender.tag) indexPath: \(currentArrIndex)")
-
-            
-            let contentData = productArr[currentArrIndex]
             var contentAmount = productCountArr[currentArrIndex]
-
+            contentAmount = contentAmount + 1
+            productCountArr[currentArrIndex] = contentAmount
+            AppManager.sharedInstance().cartProductCountArr = productCountArr
+            cartTableView.reloadRows(at: [IndexPath(row: currentArrIndex, section: 0)], with: .automatic)
         }
         reloadView()
     }
@@ -153,13 +145,21 @@ class CartVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
                 priceArr.append(price)
             }
         }
-        totalPrice = priceArr.reduce(0, +)
+        let totalPrice = priceArr.reduce(0, +)
         subTotalPrice.text =  String(format: "£ %.2f", totalPrice)
+        
+        discountPrice.text = "8.00 %"
+        
+        var val = (totalPrice * 8)/100
+        
+        discountPrice.text = String(format: "£ %.2f", val)
+        val = totalPrice - val
+        
+        totalPriceLabel.text = String(format: "£ %.2f", val)
     }
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
       if editingStyle == .delete {
         print("Deleted")
-
         AppManager.sharedInstance().cartProductDataArr.remove(at: indexPath.row)
         AppManager.sharedInstance().cartProductCountArr.remove(at: indexPath.row)
         cartTableView.deleteRows(at: [indexPath], with: .automatic)
@@ -171,17 +171,21 @@ class CartVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
             self.cartTableView.dataSource?.tableView!(self.cartTableView, commit: .delete, forRowAt: indexPath)
             return
         }
-        deleteButton.backgroundColor = UIColor.black
+        deleteButton.backgroundColor = UIColor.green
         return [deleteButton]
     }
     @IBOutlet weak var calculationView: UIView!
     @IBOutlet weak var cartTableView: UITableView!
-    private var totalPrice = 0.0
     @IBOutlet weak var subTotalPrice: UILabel!
     @IBOutlet weak var totalPriceLabel: UILabel!
     @IBOutlet weak var discountPrice: UILabel!
     
-     
+    @IBOutlet weak var orderTypeSegment: UISegmentedControl!
+
+    @IBAction func orderTypeSegmentAction(_ sender: Any) {
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
