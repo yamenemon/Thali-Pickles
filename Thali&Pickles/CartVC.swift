@@ -8,6 +8,7 @@
 
 import UIKit
 import Toast_Swift
+import TTSegmentedControl
 
 class CartVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -21,7 +22,7 @@ class CartVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         let containerView = UIView(frame: CGRect(x: 10*factx, y: 10*factx, width: cell.contentView.frame.size.width - 20*factx, height: cell.contentView.frame.size.height - 20*factx))
         cell.contentView.addSubview(containerView)
         containerView.layer.cornerRadius = 5.0
-        containerView.backgroundColor = UIColor(rgb: 0xEBA54B)
+        containerView.backgroundColor = UIColor(rgb: appDefaultColor)
         
         let contentData = AppManager.sharedInstance().cartProductDataArr[indexPath.row]
         let contentAmount = AppManager.sharedInstance().cartProductCountArr[indexPath.row]
@@ -148,9 +149,10 @@ class CartVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         let totalPrice = priceArr.reduce(0, +)
         subTotalPrice.text =  String(format: "£ %.2f", totalPrice)
         
-        discountPrice.text = "8.00 %"
+        let discount = 9.0
         
-        var val = (totalPrice * 8)/100
+        discountTextLabel.text =  String(format: "Discount(%.1f%%)", discount)
+        var val = (totalPrice * discount)/100
         
         discountPrice.text = String(format: "£ %.2f", val)
         val = totalPrice - val
@@ -167,6 +169,7 @@ class CartVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         }
         cartTableView.deleteRows(at: [indexPath], with: .automatic)
         reloadView()
+        cartTableView.reloadData()
       }
     }
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
@@ -177,23 +180,31 @@ class CartVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         deleteButton.backgroundColor = UIColor.green
         return [deleteButton]
     }
+    @IBOutlet weak var discountTextLabel: UILabel!
     @IBOutlet weak var calculationView: UIView!
     @IBOutlet weak var cartTableView: UITableView!
     @IBOutlet weak var subTotalPrice: UILabel!
     @IBOutlet weak var totalPriceLabel: UILabel!
     @IBOutlet weak var discountPrice: UILabel!
+    var currentSelectedOrderType = 0
     
-    @IBOutlet weak var orderTypeSegment: UISegmentedControl!
-
-    @IBAction func orderTypeSegmentAction(_ sender: Any) {
-        
-    }
+    @IBOutlet weak var orderType: TTSegmentedControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    
         configureNavigationBar(largeTitleColor: .white, backgoundColor: UIColor(rgb: 0xFF9300), tintColor: UIColor(rgb: appDefaultColor), title: "Cart", preferredLargeTitle: true)
-
+        
+        
+        orderType.itemTitles = ["Delivery","Collection"]
+        orderType.thumbGradientColors = [UIColor(rgb: appDefaultColor)]
+        orderType.didSelectItemWith = { (index, title) -> () in
+            print("Selected item \(index)")
+            self.currentSelectedOrderType = index
+        }
+        orderType.defaultTextFont = UIFont(name: robotoMedium, size: 11*factx)!
+        orderType.selectedTextFont = UIFont(name: robotoMedium, size: 13*factx)!
+        
         let checkoutBtn = UIButton(type: .system)
         checkoutBtn.setTitle("Checkout", for: .normal)
         checkoutBtn.titleLabel?.font = UIFont(name: robotoBold, size: 15*factx)
@@ -212,10 +223,57 @@ class CartVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         self.tabBarController?.viewControllers?[1].tabBarItem.badgeValue = nil
         reloadView()
         cartTableView.reloadData()
-    }
 
+    }
+    override func viewWillLayoutSubviews() {
+    }
     @objc func checkOutTapped(sender:UIButton) {
-        print("asdfa")
+        print("Checking Out")
+        
+        /*
+         [
+           [
+             "name": "checkout",
+             "value": "1"
+           ],
+           [
+             "name": "item_id",
+             "value": ""
+           ],
+           [
+             "name": "order_type",
+             "value": ""
+           ],
+           [
+             "name": "item_count",
+             "value": "[1,2,3,4,1]"
+           ],
+           [
+             "name": "order_discount",
+             "value": "12.0"
+           ]
+         ]
+         */
+        var productIdArr = [Double]()
+        for contentData in AppManager.sharedInstance().cartProductDataArr {
+            let productInfo = contentData["sub_category_products"] as! [String:Any]
+            let productId = productInfo["product_id"] as? String
+            productIdArr.append(Double(productId!)!)
+        }
+
+        let discount = 9.0
+        if currentSelectedOrderType == 0 {
+            currentSelectedOrderType = 1
+        }
+        else {
+            currentSelectedOrderType = 2
+        }
+        let param = ["checkout":1,"item_id":productIdArr,"order_type":currentSelectedOrderType,"item_count":AppManager.sharedInstance().cartProductCountArr,"order_discount":discount] as [String : Any]
+        Service.sharedInstance().getAllPostRequest(requestForParam: param, onSuccess: { (result) in
+            print(result)
+        }) { (error) in
+            print(error as Any)
+        }
 
     }
 

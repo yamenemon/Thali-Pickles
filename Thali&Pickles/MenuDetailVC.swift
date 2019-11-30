@@ -57,7 +57,7 @@ class MenuDetailVC: UIViewController,addToCartDelegate {
             // time-consuming task
             ///products_by_category/{category_id}
             let contentUrl = "\(baseURL)products_by_category/\(self.itemDict["id"] ?? 100)"
-            self.service.getAllFoodCategory(requestURL: contentUrl, onSuccess: { (result) in
+            self.service.getAllGetRequest(requestURL: contentUrl, onSuccess: { (result) in
                 if  let object = result as? [String:Any] {
                     if let dataIteme = object["data"] as? [[String : Any]] {
                         for anItem in dataIteme {

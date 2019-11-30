@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 let factx = UIScreen.main.bounds.width/320
-let appDefaultColor = 0xFF9300
+let appDefaultColor = 0xE68C23//0xFF9300
 let robotoBold = "Roboto-Bold"
 let robotoMedium = "Roboto-Medium"
 let robotoRegular = "Roboto-Regular"

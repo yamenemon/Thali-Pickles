@@ -34,6 +34,7 @@
 		9A9C3C47238B2B8800982421 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9C3C46238B2B8800982421 /* Service.swift */; };
 		9ABA44C8238C5FE700BCD42C /* CartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABA44C7238C5FE700BCD42C /* CartVC.swift */; };
 		9AD3351D238C585F009F83E0 /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD3351C238C585F009F83E0 /* AppManager.swift */; };
+		9ADF469D2392F0C300FB28CF /* SKRadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADF469C2392F0C300FB28CF /* SKRadioButton.swift */; };
 		B0577244F01B7A0890C7F815 /* Pods_Thali_Pickles.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75498A908E6C295768C537A1 /* Pods_Thali_Pickles.framework */; };
 /* End PBXBuildFile section */
 
@@ -85,6 +86,7 @@
 		9A9C3C46238B2B8800982421 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		9ABA44C7238C5FE700BCD42C /* CartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartVC.swift; sourceTree = "<group>"; };
 		9AD3351C238C585F009F83E0 /* AppManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppManager.swift; sourceTree = "<group>"; };
+		9ADF469C2392F0C300FB28CF /* SKRadioButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKRadioButton.swift; sourceTree = "<group>"; };
 		E82F0B4397D190EE799C5872 /* Pods-Thali&Pickles.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Thali&Pickles.debug.xcconfig"; path = "Target Support Files/Pods-Thali&Pickles/Pods-Thali&Pickles.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -165,6 +167,7 @@
 				9A9C3C46238B2B8800982421 /* Service.swift */,
 				69AB934B238BA2B300ED63AE /* PortImgView.h */,
 				69AB934C238BA2B300ED63AE /* PortImgView.m */,
+				9ADF469C2392F0C300FB28CF /* SKRadioButton.swift */,
 				9A9B77A2238AE5B000440DF7 /* Main.storyboard */,
 				9A9B77A8238AE5B300440DF7 /* Assets.xcassets */,
 				9A9B77AA238AE5B300440DF7 /* LaunchScreen.storyboard */,
@@ -399,6 +402,7 @@
 				9A9C3C38238B106700982421 /* Constants.swift in Sources */,
 				9A9C3C47238B2B8800982421 /* Service.swift in Sources */,
 				69AB9369238C079F00ED63AE /* CategoryCell.swift in Sources */,
+				9ADF469D2392F0C300FB28CF /* SKRadioButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

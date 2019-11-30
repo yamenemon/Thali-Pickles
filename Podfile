@@ -10,6 +10,7 @@ target 'Thali&Pickles' do
   pod 'SDWebImage', '~> 4.0'
   pod "SwiftSpinner"
   pod 'Toast-Swift', '~> 5.0.0'
+  pod 'TTSegmentedControl', '~>0.4.8'
 
 
   target 'Thali&PicklesTests' do

@@ -4,23 +4,27 @@ PODS:
   - SDWebImage/Core (4.4.7)
   - SwiftSpinner (2.1.0)
   - Toast-Swift (5.0.0)
+  - TTSegmentedControl (0.4.10)
 
 DEPENDENCIES:
   - SDWebImage (~> 4.0)
   - SwiftSpinner
   - Toast-Swift (~> 5.0.0)
+  - TTSegmentedControl (~> 0.4.8)
 
 SPEC REPOS:
   trunk:
     - SDWebImage
     - SwiftSpinner
     - Toast-Swift
+    - TTSegmentedControl
 
 SPEC CHECKSUMS:
   SDWebImage: c10d14a8883ebd89664f02a422006f66a85c0c5d
   SwiftSpinner: 0f15c006307f8d8bbac075638927ec1361b565d7
   Toast-Swift: 36f4720243c8582c2be243a60a51e193c761f541
+  TTSegmentedControl: d8005c0cdca2549ade0aee8e09240723e2478a6a
 
-PODFILE CHECKSUM: eb8a8ef3908e16f04f1c83638847aca4bbb5a9ef
+PODFILE CHECKSUM: b22ccb0b4d8925282afcd499122ba058f60b2114
 
 COCOAPODS: 1.8.4
