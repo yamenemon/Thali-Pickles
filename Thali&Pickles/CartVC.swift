@@ -271,6 +271,13 @@ class CartVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         let param = ["checkout":1,"item_id":productIdArr,"order_type":currentSelectedOrderType,"item_count":AppManager.sharedInstance().cartProductCountArr,"order_discount":discount] as [String : Any]
         Service.sharedInstance().getAllPostRequest(requestForParam: param, onSuccess: { (result) in
             print(result)
+             DispatchQueue.main.async { [weak self] in
+               let vc = CheckOutVC()
+               if let url = result["data"] {
+                   vc.checkOutUrl = url as! String
+               }
+                self?.navigationController?.pushViewController(vc, animated: true)
+             }
         }) { (error) in
             print(error as Any)
         }

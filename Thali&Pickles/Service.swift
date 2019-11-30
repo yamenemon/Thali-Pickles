@@ -81,7 +81,7 @@ class Service: NSObject {
        ]
      ]
      */
-    func getAllPostRequest(requestForParam param: [String:Any], onSuccess success: @escaping (_ JSONArray: Any) -> Void, onFailure failure: @escaping (_ error: String?) -> Void) {
+    func getAllPostRequest(requestForParam param: [String:Any], onSuccess success: @escaping (_ JSONArray: [String:Any]) -> Void, onFailure failure: @escaping (_ error: String?) -> Void) {
         let url = URL(string: "https://www.indianroti.co.uk/new-beta/app-order")!
         var request = URLRequest(url: url)
         request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
