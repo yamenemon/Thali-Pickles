@@ -226,7 +226,7 @@ class CartVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     override func viewWillAppear(_ animated: Bool) {
         self.tabBarController?.viewControllers?[1].tabBarItem.badgeValue = nil
         
-        if AppManager.sharedInstance().cartDataArr.count>0 {
+        if AppManager.sharedInstance().cartProductCountArr.count>0 {
             reloadView()
             cartTableView.reloadData()
         }
