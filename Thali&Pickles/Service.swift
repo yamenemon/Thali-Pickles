@@ -81,13 +81,32 @@ class Service: NSObject {
        ]
      ]
      */
+    struct checkOut: Codable {
+        var checkout: Int
+        var item_id: [Double]
+        var order_type: Int
+        var item_count: [Double]
+        var order_discount: Double
+
+    }
     func getAllPostRequest(requestForParam param: [String:Any], onSuccess success: @escaping (_ JSONArray: [String:Any]) -> Void, onFailure failure: @escaping (_ error: String?) -> Void) {
         let url = URL(string: "https://www.indianroti.co.uk/new-beta/app-order")!
         var request = URLRequest(url: url)
         request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+        request.setValue("application/json", forHTTPHeaderField: "Accept")
         request.httpMethod = "POST"
-        let parameters: [String: Any] = param
-        request.httpBody = parameters.percentEscaped().data(using: .utf8)
+        let _: [String: Any] = param
+        
+        let checkOutData = checkOut(checkout: param["checkout"] as! Int, item_id: param["item_id"] as! [Double], order_type: param["order_type"] as! Int, item_count: param["item_count"] as! [Double], order_discount: param["order_discount"] as! Double)
+        print(checkOutData)
+        var jsonData: Data
+
+        do {
+            jsonData = try JSONEncoder().encode(checkOutData)
+        } catch _ {
+            jsonData = param.percentEscaped().data(using: .utf8)!
+        }
+        request.httpBody = jsonData
 
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             guard let data = data,
@@ -101,17 +120,22 @@ class Service: NSObject {
             guard (200 ... 299) ~= response.statusCode else {// check for http errors
                 print("statusCode should be 2xx, but is \(response.statusCode)")
                 print("response = \(response)")
+                failure("Server Error")
                 return
             }
 
             
             let httpResponse = response as HTTPURLResponse
             do{
+                print(httpResponse)
+                let str = String(decoding: data, as: UTF8.self)
+                print(str)
+
                 let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String : Any]
                 if(httpResponse.statusCode == 200){
-                 success(json!)
+                    success(json!)
                 }else{
-                 failure(error.debugDescription)
+                    failure(error.debugDescription)
                 }
             } catch {
                 failure("Server Error")

@@ -11,6 +11,7 @@ import Toast_Swift
 import TTSegmentedControl
 
 class CartVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return AppManager.sharedInstance().cartProductDataArr.count
     }
@@ -275,6 +276,7 @@ class CartVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
                let vc = CheckOutVC()
                if let url = result["data"] {
                    vc.checkOutUrl = url as! String
+                print("url : \(url)")
                }
                 self?.navigationController?.pushViewController(vc, animated: true)
              }
