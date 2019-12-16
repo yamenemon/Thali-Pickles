@@ -21,6 +21,8 @@
 		69AB937A238C141600ED63AE /* menu@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 69AB9378238C141600ED63AE /* menu@3x.png */; };
 		69AB9389238C17E400ED63AE /* addCart@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 69AB9387238C17E300ED63AE /* addCart@3x.png */; };
 		69AB938A238C17E400ED63AE /* addCart@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 69AB9388238C17E300ED63AE /* addCart@2x.png */; };
+		9A8C4C5723A79BD000C9818D /* placeholder@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A8C4C5523A79BCF00C9818D /* placeholder@3x.png */; };
+		9A8C4C5823A79BD000C9818D /* placeholder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A8C4C5623A79BD000C9818D /* placeholder@2x.png */; };
 		9A9B779B238AE5B000440DF7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9B779A238AE5B000440DF7 /* AppDelegate.swift */; };
 		9A9B779D238AE5B000440DF7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9B779C238AE5B000440DF7 /* SceneDelegate.swift */; };
 		9A9B77A4238AE5B000440DF7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A9B77A2238AE5B000440DF7 /* Main.storyboard */; };
@@ -67,6 +69,8 @@
 		75498A908E6C295768C537A1 /* Pods_Thali_Pickles.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Thali_Pickles.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		82CB011F4A13FA307B4F88B3 /* Pods-Thali&Pickles.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Thali&Pickles.release.xcconfig"; path = "Target Support Files/Pods-Thali&Pickles/Pods-Thali&Pickles.release.xcconfig"; sourceTree = "<group>"; };
 		8479168192323A9D1E6633B9 /* Pods_Thali_PicklesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Thali_PicklesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A8C4C5523A79BCF00C9818D /* placeholder@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "placeholder@3x.png"; sourceTree = "<group>"; };
+		9A8C4C5623A79BD000C9818D /* placeholder@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "placeholder@2x.png"; sourceTree = "<group>"; };
 		9A9B7797238AE5B000440DF7 /* Thali&Pickles.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Thali&Pickles.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A9B779A238AE5B000440DF7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9A9B779C238AE5B000440DF7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -193,6 +197,8 @@
 		9A9C3C30238AEBBC00982421 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				9A8C4C5523A79BCF00C9818D /* placeholder@3x.png */,
+				9A8C4C5623A79BD000C9818D /* placeholder@2x.png */,
 				9A9C3C31238AEBD900982421 /* logo@3x.png */,
 				69AB9373238C0FF000ED63AE /* cart@2x.png */,
 				69AB9374238C0FF000ED63AE /* cart@3x.png */,
@@ -302,8 +308,10 @@
 				69AB9379238C141600ED63AE /* menu@2x.png in Resources */,
 				9A9B77AC238AE5B300440DF7 /* LaunchScreen.storyboard in Resources */,
 				69AB938A238C17E400ED63AE /* addCart@2x.png in Resources */,
+				9A8C4C5823A79BD000C9818D /* placeholder@2x.png in Resources */,
 				69AB9376238C0FF100ED63AE /* cart@3x.png in Resources */,
 				69AB9350238BA7EA00ED63AE /* Roboto-Regular.ttf in Resources */,
+				9A8C4C5723A79BD000C9818D /* placeholder@3x.png in Resources */,
 				69AB9389238C17E400ED63AE /* addCart@3x.png in Resources */,
 				9A9B77A9238AE5B300440DF7 /* Assets.xcassets in Resources */,
 				69AB9375238C0FF100ED63AE /* cart@2x.png in Resources */,

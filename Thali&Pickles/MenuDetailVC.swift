@@ -47,8 +47,8 @@ class MenuDetailVC: UIViewController,addToCartDelegate {
         self.navigationItem.leftBarButtonItem = self.navigationItem.backBarButtonItem;
         self.navigationController?.navigationBar.tintColor = .white
         SwiftSpinner.shared.outerColor = UIColor(rgb: appDefaultColor)
-        SwiftSpinner.shared.innerColor = UIColor(rgb: appDefaultColor)
-        SwiftSpinner.show("Loading...")
+        SwiftSpinner.shared.innerColor = .white//UIColor(rgb: appDefaultColor)
+        SwiftSpinner.show("Just a moment please...")
         
         getData()
     }

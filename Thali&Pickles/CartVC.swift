@@ -11,6 +11,9 @@ import Toast_Swift
 import TTSegmentedControl
 
 class CartVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
+    func didUpdateTask(){
+        self.tabBarController?.selectedIndex = 0
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return AppManager.sharedInstance().cartProductDataArr.count
@@ -222,9 +225,24 @@ class CartVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     }
     override func viewWillAppear(_ animated: Bool) {
         self.tabBarController?.viewControllers?[1].tabBarItem.badgeValue = nil
-        reloadView()
-        cartTableView.reloadData()
+        
+        if AppManager.sharedInstance().cartDataArr.count>0 {
+            reloadView()
+            cartTableView.reloadData()
+        }
+        else {
+            let alert = UIAlertController(title: "Sorry!!", message: "Add items in cart", preferredStyle: UIAlertController.Style.alert)
 
+            // add an action (button)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.cancel, handler: { action in
+                self.tabBarController?.selectedIndex = 0
+            }))
+
+            // show the alert
+            self.present(alert, animated: true, completion: nil)
+        }
+        
+        
     }
     override func viewWillLayoutSubviews() {
     }
@@ -278,6 +296,7 @@ class CartVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
                    vc.checkOutUrl = url as! String
                 print("url : \(url)")
                }
+                vc.hidesBottomBarWhenPushed = true
                 self?.navigationController?.pushViewController(vc, animated: true)
              }
         }) { (error) in

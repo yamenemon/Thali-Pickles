@@ -11,6 +11,7 @@ import WebKit
 import SwiftSpinner
 import Toast_Swift
 
+
 class CheckOutVC: UIViewController,WKNavigationDelegate,UITabBarControllerDelegate {
 
     var checkOutUrl = ""
@@ -58,32 +59,19 @@ class CheckOutVC: UIViewController,WKNavigationDelegate,UITabBarControllerDelega
 
              }
         }
-//        self.tabBarController?.selectedIndex = 0
     }
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
         //https://www.indianroti.co.uk/new-beta/confirm/?confirm_submit
         print(webView.url as Any)
         decisionHandler(.allow)
-        DispatchQueue.main.async {
-            SwiftSpinner.hide()
-            
-            let alert = UIAlertController(title: "Order Status", message: "Successfully Received", preferredStyle: UIAlertController.Style.alert)
-
-            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { _ in
-                 //Cancel Action
-//                self.navigationController?.popToRootViewController(animated: false)
-                self.tabBarController?.selectedIndex = 0
+        
+//        if webView.url?.absoluteString == "https://www.indianroti.co.uk/new-beta/confirm/?confirm_submit" {
+            DispatchQueue.main.async {
+                SwiftSpinner.hide()
                 AppManager.sharedInstance().cartDataArr.removeAll()
                 AppManager.sharedInstance().cartProductDataArr.removeAll()
-             }))
-
-             self.present(alert, animated: true, completion: nil)
-        }
-        
-
-//        if webView.url?.absoluteString == "https://www.indianroti.co.uk/new-beta/confirm/?confirm_submit" {
-
-            
+                self.navigationController?.popToRootViewController(animated: false)
+            }
 //        }
 
     }
