@@ -8,14 +8,18 @@
 
 import UIKit
 import SwiftSpinner
+import Toast_Swift
 
 class MenuDetailVC: UIViewController,addToCartDelegate {
 
-    let tableView = UITableView()
+    var tableView = UITableView()
     let service = Service.sharedInstance()
     var itemDict = [String:Any]()
     var items = [[String:Any]]()
     var safeArea: UILayoutGuide!
+    
+    var blurEffectView = UIVisualEffectView()
+    var popUpView = UIView()
 
     override func loadView() {
         super.loadView()
@@ -24,7 +28,8 @@ class MenuDetailVC: UIViewController,addToCartDelegate {
         setupTableView()
     }
     func setupTableView() {
-      view.addSubview(tableView)
+        tableView = UITableView(frame: self.tableView.frame, style: .grouped)
+        view.addSubview(tableView)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.topAnchor.constraint(equalTo: safeArea.topAnchor).isActive = true
         tableView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
@@ -80,13 +85,18 @@ class MenuDetailVC: UIViewController,addToCartDelegate {
     override func viewWillAppear(_ animated: Bool) {
 
     }
+    //MARK: - PROTOCOL METHODS
     
     func addToCartBtnActionDelegate(sender: UIButton) {
         let numberOfCartValue = AppManager.sharedInstance().cartDataArr.count + 1
         tabBarController?.tabBar.items?[1].badgeColor = .black
         tabBarController?.tabBar.items?[1].badgeValue = "\(numberOfCartValue)"
-        
+
         let contentData = self.items[sender.tag]
+        let productName = contentData["sub_category_title"]
+        self.view.makeToast("\(productName ?? "") added to your cart")
+
+        
         AppManager.sharedInstance().cartDataArr.append(contentData)
 //        print(AppManager.sharedInstance().cartDataArr)
         
@@ -99,6 +109,52 @@ class MenuDetailVC: UIViewController,addToCartDelegate {
             AppManager.sharedInstance().cartProductCountArr.append(Double(countedSet.count(for: value)))
         }
     }
+    
+    func infoBtnActionDelegate(sender: UIButton) {
+        let contentData = self.items[sender.tag]
+        let productDescription = contentData["sub_category_description"]
+        
+        popUpView = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width - 60*factx, height: 300*factx))
+        popUpView.backgroundColor = .white
+
+        let window = UIApplication.shared.windows[0].rootViewController
+        
+        let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.light)
+        blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.frame = (window?.view.bounds)!
+        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        window?.view.addSubview(blurEffectView)
+        
+        blurEffectView.contentView.addSubview(popUpView)
+        
+        let closeBtn = UIButton(frame: CGRect(x: 10*factx, y: popUpView.frame.size.height - 45*factx, width: popUpView.frame.size.width - 20*factx, height: 35*factx))
+        closeBtn.backgroundColor = UIColor(rgb: appDefaultColor)
+        closeBtn.setTitle("Close", for: .normal)
+        closeBtn.addTarget(self, action: #selector(closeBtnAction), for: .touchUpInside)
+        popUpView.addSubview(closeBtn)
+        
+        let textView = UITextView(frame:CGRect(x: 10*factx, y: 10*factx, width: popUpView.frame.size.width - 20*factx, height: popUpView.frame.size.height - 75*factx))
+        textView.textAlignment = NSTextAlignment.center
+        textView.layer.borderWidth = 1.0
+        textView.layer.borderColor = UIColor.black.cgColor
+        textView.textAlignment = .left
+        textView.isEditable = false
+        textView.isScrollEnabled = true
+        textView.showsVerticalScrollIndicator = true
+        textView.isSelectable = false
+        textView.textColor = .black
+        textView.font = UIFont(name: robotoMedium, size: 17*factx)
+        popUpView.addSubview(textView)
+        textView.text = productDescription as? String ?? "No Details available"
+        
+        
+        popUpView.center = blurEffectView.center
+
+    }
+    @objc func closeBtnAction() {
+        popUpView.removeFromSuperview()
+        blurEffectView.removeFromSuperview()
+    }
 }
 extension MenuDetailVC: UITableViewDataSource,UITableViewDelegate {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -107,6 +163,7 @@ extension MenuDetailVC: UITableViewDataSource,UITableViewDelegate {
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CategoryCell
     cell.delegate = self
+    tableView.separatorStyle = .none
 
     let contentData = self.items[indexPath.row]
     
@@ -118,13 +175,16 @@ extension MenuDetailVC: UITableViewDataSource,UITableViewDelegate {
 
     cell.categoryName.text = productName as? String
     cell.categoryPrice.text = "£ \(productPrice as? String ?? "")"
-    cell.categoryDescription.text = productDescription as? String
+//    cell.categoryDescription.text = productDescription as? String
     
     cell.cartBtn.tag = indexPath.row
+    cell.infoBtn.tag = indexPath.row
 
     return cell
   }
-    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80*factx
     }
