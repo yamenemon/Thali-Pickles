@@ -266,7 +266,7 @@ class CartVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
             var title = "Sorry!!"
             var successMsg = "Add items in cart"
             if AppManager.sharedInstance().successfullyDelivered == true {
-                title = "Successfully Deliverd"
+                title = "Order Successfully Placed"
                 successMsg = "Your order under process"
                 AppManager.sharedInstance().successfullyDelivered = false
             }
