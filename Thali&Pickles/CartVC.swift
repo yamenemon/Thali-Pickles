@@ -244,6 +244,10 @@ class CartVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         cartTableView.tableFooterView = UIView()
         cartTableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         
+        calculationView.layer.cornerRadius = 5
+        calculationView.layer.borderWidth = 0.6
+        calculationView.layer.borderColor = UIColor.lightGray.cgColor
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         self.tabBarController?.viewControllers?[1].tabBarItem.badgeValue = nil
