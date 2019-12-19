@@ -144,9 +144,10 @@ class MenuDetailVC: UIViewController,addToCartDelegate {
         blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = (window?.view.bounds)!
         blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        blurEffectView.alpha = 0.5
         window?.view.addSubview(blurEffectView)
         
-        blurEffectView.contentView.addSubview(popUpView)
+        window?.view.addSubview(popUpView)
         
         let closeBtn = UIButton(frame: CGRect(x: 10*factx, y: popUpView.frame.size.height - 45*factx, width: popUpView.frame.size.width - 20*factx, height: 35*factx))
         closeBtn.backgroundColor = UIColor(rgb: appDefaultColor)
@@ -155,7 +156,7 @@ class MenuDetailVC: UIViewController,addToCartDelegate {
         popUpView.addSubview(closeBtn)
         
         let textView = UITextView(frame:CGRect(x: 10*factx, y: 10*factx, width: popUpView.frame.size.width - 20*factx, height: popUpView.frame.size.height - 75*factx))
-        textView.textAlignment = NSTextAlignment.center
+        textView.textAlignment = NSTextAlignment.left
         textView.layer.borderWidth = 1.0
         textView.layer.borderColor = UIColor.black.cgColor
         textView.textAlignment = .left
@@ -164,7 +165,7 @@ class MenuDetailVC: UIViewController,addToCartDelegate {
         textView.showsVerticalScrollIndicator = true
         textView.isSelectable = false
         textView.textColor = .black
-        textView.font = UIFont(name: robotoMedium, size: 17*factx)
+        textView.font = UIFont(name: robotoRegular, size: 15*factx)
         popUpView.addSubview(textView)
         textView.text = productDescription as? String ?? "No Details available"
         
@@ -185,6 +186,7 @@ extension MenuDetailVC: UITableViewDataSource,UITableViewDelegate {
     let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CategoryCell
     cell.delegate = self
     tableView.separatorStyle = .none
+    cell.selectionStyle = .none
 
     let contentData = self.items[indexPath.row]
     

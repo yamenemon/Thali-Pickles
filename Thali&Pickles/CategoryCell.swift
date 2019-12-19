@@ -28,18 +28,6 @@ class CategoryCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-//        containerView.layer.cornerRadius = 2.0
-//        containerView.layer.borderWidth = 1.0
-//        containerView.layer.borderColor = UIColor.clear.cgColor
-//        containerView.layer.masksToBounds = true
-//
-//        containerView.layer.backgroundColor = UIColor.white.cgColor
-//        containerView.layer.shadowColor = UIColor.gray.cgColor
-//        containerView.layer.shadowOffset = CGSize(width: 0, height: 0)//CGSizeMake(0, 2.0);
-//        containerView.layer.shadowRadius = 1.0
-//        containerView.layer.shadowOpacity = 0.4
-//        containerView.layer.masksToBounds = false
-//        containerView.layer.shadowPath = UIBezierPath(roundedRect:containerView.bounds, cornerRadius:containerView.layer.cornerRadius).cgPath
         
         // corner radius
         containerView.layer.cornerRadius = 5
@@ -57,6 +45,8 @@ class CategoryCell: UITableViewCell {
         
         // corner radius
         cartBtn.layer.cornerRadius = 5
+        cartBtn.backgroundColor = UIColor(rgb: appDefaultColor)
+
 
         // border
         cartBtn.layer.borderWidth = 0.3
@@ -67,6 +57,8 @@ class CategoryCell: UITableViewCell {
         cartBtn.layer.shadowOffset = CGSize(width: 0, height: 0)
         cartBtn.layer.shadowOpacity = 0.7
         cartBtn.layer.shadowRadius = 0.7
+        
+        infoBtn.tintColor = UIColor(rgb: appDefaultColor)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
