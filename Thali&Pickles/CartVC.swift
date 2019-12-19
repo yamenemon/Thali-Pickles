@@ -50,6 +50,8 @@ class CartVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
 //        let tempImage = "https://www.indianroti.co.uk/new-beta/category_photo/thum/no-image.png"
 //        productImageView.setImgWith(URL(string: tempImage), placeholderImage:nil)
         productImageView.image = UIImage(named: "placeholder.png")
+        productImageView.backgroundColor = .white
+        productImageView.layer.cornerRadius = 5
         
         let titleWidth = containerView.frame.size.width - horizontalSpaceX*3 - productImageView.frame.size.width
         let titleHeight = (containerView.frame.size.height - verticalSpaceY*2)*0.6
@@ -64,17 +66,18 @@ class CartVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         
         let priceHeight = (containerView.frame.size.height - verticalSpaceY*2 - titleHeight)
 
-        let priceLabel = UILabel(frame: CGRect(x: productTitle.frame.origin.x, y:productTitle.frame.size.height+verticalSpaceY , width: productTitle.frame.size.width/2, height: priceHeight))
+        let priceLabel = UILabel(frame: CGRect(x: productTitle.frame.origin.x, y:productTitle.frame.size.height+verticalSpaceY , width: productTitle.frame.size.width/2.8, height: priceHeight))
         priceLabel.backgroundColor = .clear
         priceLabel.text = String(format: "£ %.2f", perProductPrice)
         priceLabel.font = UIFont(name: robotoBold, size: 13*factx)
         priceLabel.textColor = .white
         priceLabel.textAlignment = .center
         containerView.addSubview(priceLabel)
+        priceLabel.backgroundColor = .clear
         
         productTitle.sizeToFit() // DONT MOVE FROM HERE
         
-        let buttonContainerView = UIView(frame: CGRect(x: priceLabel.frame.origin.x + priceLabel.frame.size.width, y: priceLabel.frame.origin.y, width: priceLabel.frame.size.width, height: priceLabel.frame.size.height))
+        let buttonContainerView = UIView(frame: CGRect(x: priceLabel.frame.origin.x + priceLabel.frame.size.width, y: priceLabel.frame.origin.y, width: containerView.frame.size.width - priceLabel.frame.origin.x - priceLabel.frame.size.width, height: priceLabel.frame.size.height))
         buttonContainerView.backgroundColor = .clear
         containerView.addSubview(buttonContainerView)
         
@@ -89,16 +92,11 @@ class CartVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         minusBtn.tag = 1
         minusBtn.addTarget(self, action: #selector(plusMinusBtnAction), for: .touchUpInside)
         minusBtn.setTitle("-", for: .normal)
-        
-        let numberOfProductLabel = UILabel(frame: CGRect(x: minusBtn.frame.origin.x + minusBtn.frame.size.width, y: 0, width: buttonContainerView.frame.size.width/3, height: buttonContainerView.frame.size.height))
-        buttonContainerView.addSubview(numberOfProductLabel)
-        numberOfProductLabel.text = "\(contentAmount)"
-        numberOfProductLabel.textAlignment = .center
-        numberOfProductLabel.textColor = UIColor(rgb: 0x089c25)
+                
         
         
         let plusBtn = CustomButton()
-        plusBtn.frame = CGRect(x: numberOfProductLabel.frame.origin.x + numberOfProductLabel.frame.size.width, y: 0, width: buttonContainerView.frame.size.height, height: buttonContainerView.frame.size.height)
+        plusBtn.frame = CGRect(x: buttonContainerView.frame.size.width - buttonContainerView.frame.size.height - 5*factx, y: 0, width: buttonContainerView.frame.size.height, height: buttonContainerView.frame.size.height)
         plusBtn.layer.cornerRadius = buttonContainerView.frame.size.height/2
         plusBtn.layer.borderColor = UIColor.white.cgColor
         plusBtn.layer.borderWidth = 2.0
@@ -108,6 +106,25 @@ class CartVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         plusBtn.tag = 2
         plusBtn.addTarget(self, action: #selector(plusMinusBtnAction), for: .touchUpInside)
         plusBtn.setTitle("+", for: .normal)
+        
+        
+        //        let numberOfProductLabel = UILabel(frame: CGRect(x: (buttonContainerView.frame.size.width - (buttonContainerView.frame.size.width/3))*0.5, y: 0, width: buttonContainerView.frame.size.width/3, height: buttonContainerView.frame.size.height))
+        let numberWidth = buttonContainerView.frame.size.width - (plusBtn.frame.size.width + minusBtn.frame.origin.x + minusBtn.frame.size.width + 15*factx)
+        
+        let numberOfProductLabel = UILabel(frame: CGRect(x: minusBtn.frame.origin.x + minusBtn.frame.size.width + 5*factx, y: 0, width: numberWidth, height: buttonContainerView.frame.size.height))
+
+        buttonContainerView.addSubview(numberOfProductLabel)
+        numberOfProductLabel.text = "\(contentAmount)"
+        numberOfProductLabel.textAlignment = .center
+        numberOfProductLabel.textColor = UIColor(rgb: 0x089c25)
+        numberOfProductLabel.backgroundColor = .white
+        numberOfProductLabel.layer.borderColor = UIColor.lightGray.cgColor
+        numberOfProductLabel.layer.borderWidth = 1.0
+        numberOfProductLabel.layer.shadowColor = UIColor.black.cgColor
+        numberOfProductLabel.layer.shadowOffset = CGSize(width: 0, height: 0)
+        numberOfProductLabel.layer.shadowOpacity = 0.4
+        numberOfProductLabel.layer.shadowRadius = 0.4
+        
 
         return cell
     }

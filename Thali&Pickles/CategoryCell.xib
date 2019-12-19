@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -36,7 +36,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$ 100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="js2-HI-t6N" userLabel="price">
-                                <rect key="frame" x="302.5" y="9" width="67" height="45"/>
+                                <rect key="frame" x="274" y="9" width="95" height="45"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="16"/>
                                 <nil key="textColor"/>
@@ -70,12 +70,12 @@
                             <constraint firstItem="Dof-4V-wDv" firstAttribute="top" secondItem="BoI-Ge-OLw" secondAttribute="top" constant="6" id="3vo-wa-a8M"/>
                             <constraint firstItem="H6D-cu-pGJ" firstAttribute="centerY" secondItem="Dof-4V-wDv" secondAttribute="centerY" id="4bO-nD-3kC"/>
                             <constraint firstItem="Dof-4V-wDv" firstAttribute="width" secondItem="BoI-Ge-OLw" secondAttribute="width" multiplier="0.4" id="4gn-xD-YTe"/>
-                            <constraint firstItem="js2-HI-t6N" firstAttribute="leading" secondItem="H6D-cu-pGJ" secondAttribute="trailing" priority="750" constant="35" id="A5c-kW-JO8"/>
+                            <constraint firstItem="js2-HI-t6N" firstAttribute="leading" secondItem="H6D-cu-pGJ" secondAttribute="trailing" priority="750" constant="37.5" id="A5c-kW-JO8"/>
                             <constraint firstAttribute="bottom" secondItem="Dof-4V-wDv" secondAttribute="bottom" constant="9" id="GLN-EE-9Sv"/>
                             <constraint firstAttribute="trailing" secondItem="eYT-QT-kcF" secondAttribute="trailing" constant="13" id="Ge8-qA-uJe"/>
                             <constraint firstItem="eYT-QT-kcF" firstAttribute="centerY" secondItem="BoI-Ge-OLw" secondAttribute="centerY" id="WH8-lI-DP0"/>
                             <constraint firstItem="H6D-cu-pGJ" firstAttribute="leading" secondItem="Dof-4V-wDv" secondAttribute="trailing" constant="8" id="bB5-at-1XS"/>
-                            <constraint firstItem="js2-HI-t6N" firstAttribute="width" secondItem="BoI-Ge-OLw" secondAttribute="width" multiplier="0.14" id="dpH-k9-nex"/>
+                            <constraint firstItem="js2-HI-t6N" firstAttribute="width" secondItem="BoI-Ge-OLw" secondAttribute="width" multiplier="0.14" constant="28.359999999999999" id="dpH-k9-nex"/>
                             <constraint firstItem="eYT-QT-kcF" firstAttribute="width" secondItem="BoI-Ge-OLw" secondAttribute="width" multiplier="0.18" id="jpe-x4-Ti7"/>
                             <constraint firstItem="js2-HI-t6N" firstAttribute="top" secondItem="BoI-Ge-OLw" secondAttribute="top" constant="9" id="oMD-rv-G7V"/>
                             <constraint firstItem="Dof-4V-wDv" firstAttribute="leading" secondItem="BoI-Ge-OLw" secondAttribute="leading" constant="8" id="pH9-Ov-MGy"/>
