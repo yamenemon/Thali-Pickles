@@ -92,6 +92,14 @@ class MenuDetailVC: UIViewController,addToCartDelegate {
                 }
             }) { (error) in
                 print(error!)
+                DispatchQueue.main.async {
+                    SwiftSpinner.hide()
+                    let alert = UIAlertController(title: "Sorry!!", message: "\(error ?? "Server Error")", preferredStyle: UIAlertController.Style.alert)
+                    // add an action (button)
+                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.cancel, handler:nil))
+                    // show the alert
+                    self.present(alert, animated: true, completion: nil)
+                }
             }
         })
     }
