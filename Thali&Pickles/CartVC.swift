@@ -206,7 +206,7 @@ class CartVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
             self.cartTableView.dataSource?.tableView!(self.cartTableView, commit: .delete, forRowAt: indexPath)
             return
         }
-        deleteButton.backgroundColor = UIColor.green
+        deleteButton.backgroundColor = UIColor.red
         return [deleteButton]
     }
     @IBOutlet weak var discountTextLabel: UILabel!
