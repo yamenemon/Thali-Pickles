@@ -59,7 +59,7 @@ class CartVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         let productTitle = UILabel(frame: CGRect(x: horizontalSpaceX + productImageView.frame.size.width + horizontalSpaceX, y: verticalSpaceY, width: titleWidth, height: titleHeight))
         productTitle.text = "\(productName ?? "")"
         containerView.addSubview(productTitle)
-        productTitle.font = UIFont(name: robotoBold, size: 13*factx)
+        productTitle.font = UIFont(name: robotoBold, size: 14*factx)
         productTitle.backgroundColor = .clear
         productTitle.numberOfLines = 2
         productTitle.textColor = .white
@@ -71,7 +71,7 @@ class CartVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         priceLabel.text = String(format: "£ %.2f", perProductPrice)
         priceLabel.font = UIFont(name: robotoBold, size: 13*factx)
         priceLabel.textColor = .white
-        priceLabel.textAlignment = .center
+        priceLabel.textAlignment = .left
         containerView.addSubview(priceLabel)
         priceLabel.backgroundColor = .clear
         
@@ -124,8 +124,10 @@ class CartVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         numberOfProductLabel.layer.shadowOffset = CGSize(width: 0, height: 0)
         numberOfProductLabel.layer.shadowOpacity = 0.4
         numberOfProductLabel.layer.shadowRadius = 0.4
+        numberOfProductLabel.layer.cornerRadius = 3.0
+        numberOfProductLabel.clipsToBounds = true
         
-
+        
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -175,9 +177,9 @@ class CartVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         let totalPrice = priceArr.reduce(0, +)
         subTotalPrice.text =  String(format: "£ %.2f", totalPrice)
         
-        let discount = 9.0
+        let discount = AppManager.sharedInstance().checkOutDiscount
         
-        discountTextLabel.text =  String(format: "Discount(%.1f%%)", discount)
+        discountTextLabel.text =  String(format: "Discount (%.1f%%) :", discount)
         var val = (totalPrice * discount)/100
         
         discountPrice.text = String(format: "£ %.2f", val)
@@ -260,7 +262,15 @@ class CartVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
             reloadView()
             cartTableView.reloadData()
 
-            let alert = UIAlertController(title: "Sorry!!", message: "Add items in cart", preferredStyle: UIAlertController.Style.alert)
+            var title = "Sorry!!"
+            var successMsg = "Add items in cart"
+            if AppManager.sharedInstance().successfullyDelivered == true {
+                title = "Successfully Deliverd"
+                successMsg = "Your order under process"
+                AppManager.sharedInstance().successfullyDelivered = false
+            }
+            
+            let alert = UIAlertController(title: "\(title)", message: "\(successMsg)", preferredStyle: UIAlertController.Style.alert)
 
             // add an action (button)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.cancel, handler: { action in
@@ -273,10 +283,6 @@ class CartVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
                     let navVC  = visibleController as? UINavigationController
                     navVC?.popToRootViewController(animated: true)
                 }
-                
-//                if visibleController?.isKind(of: MenuVC.self) == true {
-//
-//                }
             }))
 
             // show the alert
@@ -287,69 +293,99 @@ class CartVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     }
     override func viewWillLayoutSubviews() {
     }
+    //MARK: - CHECKOUT BUTTON CLICKED
+    
     @objc func checkOutTapped(sender:UIButton) {
         print("Checking Out")
-        
-        /*
-         [
-           [
-             "name": "checkout",
-             "value": "1"
-           ],
-           [
-             "name": "item_id",
-             "value": ""
-           ],
-           [
-             "name": "order_type",
-             "value": ""
-           ],
-           [
-             "name": "item_count",
-             "value": "[1,2,3,4,1]"
-           ],
-           [
-             "name": "order_discount",
-             "value": "12.0"
-           ]
-         ]
-         */
-        
-        SwiftSpinner.shared.outerColor = UIColor(rgb: appDefaultColor)
-        SwiftSpinner.shared.innerColor = UIColor(rgb: appDefaultColor)
-        SwiftSpinner.show("Loading...")
-        
-        var productIdArr = [Double]()
-        for contentData in AppManager.sharedInstance().cartProductDataArr {
-            let productInfo = contentData["sub_category_products"] as! [String:Any]
-            let productId = productInfo["product_id"] as? String
-            productIdArr.append(Double(productId!)!)
-        }
+//        AppManager.sharedInstance().takeOverValue = 0
+        if AppManager.sharedInstance().takeOverValue == 1 {
+            /*
+                 [
+                   [
+                     "name": "checkout",
+                     "value": "1"
+                   ],
+                   [
+                     "name": "item_id",
+                     "value": ""
+                   ],
+                   [
+                     "name": "order_type",
+                     "value": ""
+                   ],
+                   [
+                     "name": "item_count",
+                     "value": "[1,2,3,4,1]"
+                   ],
+                   [
+                     "name": "order_discount",
+                     "value": "12.0"
+                   ]
+                 ]
+                 */
+            if Reachability.isConnectedToNetwork(){
+                print("Internet Connection Available!")
+                SwiftSpinner.shared.outerColor = UIColor(rgb: appDefaultColor)
+                SwiftSpinner.shared.innerColor = UIColor(rgb: appDefaultColor)
+                SwiftSpinner.show("Loading...")
+                
+                var productIdArr = [Double]()
+                for contentData in AppManager.sharedInstance().cartProductDataArr {
+                    let productInfo = contentData["sub_category_products"] as! [String:Any]
+                    let productId = productInfo["product_id"] as? String
+                    productIdArr.append(Double(productId!)!)
+                }
 
-        let discount = 9.0
-        if currentSelectedOrderType == 0 {
-            currentSelectedOrderType = 1
+                let discount = 9.0
+                if currentSelectedOrderType == 0 {
+                    currentSelectedOrderType = 1
+                }
+                else {
+                    currentSelectedOrderType = 2
+                }
+                let param = ["checkout":1,"item_id":productIdArr,"order_type":currentSelectedOrderType,"item_count":AppManager.sharedInstance().cartProductCountArr,"order_discount":discount] as [String : Any]
+                Service.sharedInstance().getAllPostRequest(requestForParam: param, onSuccess: { (result) in
+                    print(result)
+                     DispatchQueue.main.async { [weak self] in
+                       let vc = CheckOutVC()
+                       if let url = result["data"] {
+                           vc.checkOutUrl = url as! String
+                        print("url : \(url)")
+                       }
+                        vc.hidesBottomBarWhenPushed = true
+                        self?.navigationController?.pushViewController(vc, animated: true)
+                     }
+                }) { (error) in
+                    print(error!)
+                    DispatchQueue.main.async {
+                        SwiftSpinner.hide()
+                        let alert = UIAlertController(title: "Sorry!!", message: "\(error ?? "Server Error")", preferredStyle: UIAlertController.Style.alert)
+                        // add an action (button)
+                        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.cancel, handler:nil))
+                        // show the alert
+                        self.present(alert, animated: true, completion: nil)
+                    }
+                }
+            }else{
+                SwiftSpinner.hide()
+                print("Internet Connection not Available!")
+                let alert = UIAlertController(title: "Apologize!!", message: "Internet Connection not Available!", preferredStyle: UIAlertController.Style.alert)
+                // add an action (button)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.cancel, handler:nil))
+                // show the alert
+                self.present(alert, animated: true, completion: nil)
+            }
         }
         else {
-            currentSelectedOrderType = 2
+            let alert = UIAlertController(title: "Apologize!!", message: "We are Out of order.Please try after some times", preferredStyle: UIAlertController.Style.alert)
+            // add an action (button)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.cancel, handler:nil))
+            // show the alert
+            self.present(alert, animated: true, completion: nil)
         }
-        let param = ["checkout":1,"item_id":productIdArr,"order_type":currentSelectedOrderType,"item_count":AppManager.sharedInstance().cartProductCountArr,"order_discount":discount] as [String : Any]
-        Service.sharedInstance().getAllPostRequest(requestForParam: param, onSuccess: { (result) in
-            print(result)
-             DispatchQueue.main.async { [weak self] in
-               let vc = CheckOutVC()
-               if let url = result["data"] {
-                   vc.checkOutUrl = url as! String
-                print("url : \(url)")
-               }
-                vc.hidesBottomBarWhenPushed = true
-                self?.navigationController?.pushViewController(vc, animated: true)
-             }
-        }) { (error) in
-            print(error as Any)
-        }
-
     }
+        
+        
 
 }
 class CustomButton: UIButton {

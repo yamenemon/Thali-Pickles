@@ -60,15 +60,16 @@ class CheckOutVC: UIViewController,WKNavigationDelegate,UITabBarControllerDelega
         print(webView.url as Any)
         decisionHandler(.allow)
         
-//        if webView.url?.absoluteString == "https://www.indianroti.co.uk/new-beta/confirm/?confirm_submit" {
+        if webView.url?.absoluteString == "https://www.indianroti.co.uk/new-beta/confirm/?confirm_submit" {
             DispatchQueue.main.async {
                 SwiftSpinner.hide()
                 AppManager.sharedInstance().cartDataArr.removeAll()
                 AppManager.sharedInstance().cartProductDataArr.removeAll()
                 AppManager.sharedInstance().cartProductCountArr.removeAll()
+                AppManager.sharedInstance().successfullyDelivered = true
                 self.navigationController?.popToRootViewController(animated: false)
             }
-//        }
+        }
 
     }
 

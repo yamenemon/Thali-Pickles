@@ -101,6 +101,7 @@ class Service: NSObject {
         var request = URLRequest(url: url)
         request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
         request.setValue("application/json", forHTTPHeaderField: "Accept")
+        request.timeoutInterval = 10
         request.httpMethod = "POST"
         let _: [String: Any] = param
         
@@ -116,6 +117,18 @@ class Service: NSObject {
         request.httpBody = jsonData
 
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            
+            if(error != nil) {
+             if let e = error as? URLError, e.code == .notConnectedToInternet {
+                 //Not connected to internet
+                 failure("No Internet Available")
+             } else {
+                 //Some other error
+                 failure("Its no you, its us.Try to pull")
+             }
+                return
+            }
+            
             guard let data = data,
                 let response = response as? HTTPURLResponse,
                 error == nil else { // check for fundamental networking error

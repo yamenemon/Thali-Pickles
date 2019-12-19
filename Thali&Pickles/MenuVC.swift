@@ -70,9 +70,21 @@ class MenuVC: UIViewController,UICollectionViewDataSource, UICollectionViewDeleg
         DispatchQueue.global(qos: .default).async(execute: {
             // time-consuming task
             self.service.getAllGetRequest(requestURL: "\(baseURL)category", onSuccess: { (result) in
-                print(result)
+//                print(result)
                 self.items.removeAll()
                 if  let object = result as? [String:Any] {
+                    if (object["discount"] as? String) != nil {
+                        let discount : NSString = object["discount"] as! NSString
+                        AppManager.sharedInstance().checkOutDiscount = discount.doubleValue
+                        print("Discount value : \(AppManager.sharedInstance().checkOutDiscount)")
+
+                    }
+                    //take_order
+                    if (object["take_order"] as? Int64) != nil {
+                        let takeOrder : Int64 = object["take_order"] as! Int64
+                        AppManager.sharedInstance().takeOverValue = Int(takeOrder)
+                        print("Take over value : \(AppManager.sharedInstance().takeOverValue)")
+                    }
                     if let dataIteme = object["data"] as? [[String : Any]] {
                         for anItem in dataIteme {
                             self.items.append(anItem)
@@ -82,7 +94,7 @@ class MenuVC: UIViewController,UICollectionViewDataSource, UICollectionViewDeleg
                         self.menuCollectionView.reloadData()
                         SwiftSpinner.hide()
                     }
-                    print(self.items)
+//                    print(self.items)
                 } else {
                     print("JSON is invalid")
                 }
@@ -121,17 +133,6 @@ class MenuVC: UIViewController,UICollectionViewDataSource, UICollectionViewDeleg
         for content in cell.contentView.subviews {
             content.removeFromSuperview()
         }
-//        cell.backgroundColor = UIColor.clear
-//        cell.contentView.layer.borderColor = UIColor.gray.cgColor
-//        cell.contentView.layer.borderWidth = 1.0
-//        cell.contentView.layer.cornerRadius = 5.0
-        
-//        cell.contentView.layer.shadowOffset = CGSize(width: 1, height: 0);
-//        cell.contentView.layer.shadowColor = UIColor.black.cgColor
-//        cell.contentView.layer.shadowRadius = 5;
-//        cell.contentView.layer.shadowOpacity = 0.25;
-//        cell.contentView.clipsToBounds = false
-//        cell.contentView.layer.masksToBounds = false
         
         cell.contentView.layer.cornerRadius = 2.0
         cell.contentView.layer.borderWidth = 1.0
@@ -149,9 +150,9 @@ class MenuVC: UIViewController,UICollectionViewDataSource, UICollectionViewDeleg
         
         let contentData = self.items[indexPath.row]
         let url = "placeholder.png"//contentData["image"] as! String
-        print(url)
         let cellImageView = PortImgView(frame: CGRect(x: 3*factx, y: 3*factx, width: cell.contentView.frame.size.width - 6*factx, height: cell.contentView.frame.size.height - 44*factx))
-        cellImageView.setImgWith(URL(string: url ), placeholderImage: UIImage(named: "placeholder.png"))
+//        cellImageView.setImgWith(URL(string: url ), placeholderImage: UIImage(named: "placeholder.png"))
+        cellImageView.image = UIImage(named: url)
         cellImageView.tintColor = UIColor(rgb: appDefaultColor)
         cellImageView.contentMode = .scaleAspectFit
         cell.contentView.addSubview(cellImageView)
@@ -166,7 +167,6 @@ class MenuVC: UIViewController,UICollectionViewDataSource, UICollectionViewDeleg
         cellName.font = UIFont(name: robotoBold, size: 12*factx)
         cellName.text = cellTitle
         cellName.numberOfLines = 3
-//        cellName.clipsToBounds = true
         
 
         return cell
@@ -236,4 +236,16 @@ extension UIColor {
            blue: rgb & 0xFF
        )
    }
+}
+
+extension String {
+    var convertTofloatValue: Float {
+        return (self as NSString).floatValue
+    }
+    var convertToIntValue: Int {
+        return Int((self as NSString).intValue)
+    }
+    var convertToDoubleValue: Double {
+        return (self as NSString).doubleValue
+    }
 }

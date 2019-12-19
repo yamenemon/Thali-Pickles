@@ -14,7 +14,10 @@ class AppManager: NSObject {
     var cartDataArr = [[String:Any]]()
     var cartProductDataArr = [[String:Any]]()
     var cartProductCountArr = [Double]()
-
+    var checkOutDiscount : Double = 0.0
+    var takeOverValue : Int = 0
+    var successfullyDelivered : Bool = false
+    
     private override init() {
         //This prevents others from using the default '()' initializer for this class.
     }
