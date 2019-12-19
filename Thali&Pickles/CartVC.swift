@@ -190,6 +190,7 @@ class CartVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
       if editingStyle == .delete {
         print("Deleted")
+        AppManager.sharedInstance().cartDataArr.remove(at: indexPath.row)
         AppManager.sharedInstance().cartProductDataArr.remove(at: indexPath.row)
         AppManager.sharedInstance().cartProductCountArr.remove(at: indexPath.row)
         if AppManager.sharedInstance().cartProductCountArr.count == 0 {
