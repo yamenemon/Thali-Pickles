@@ -9,6 +9,7 @@
 import UIKit
 import Toast_Swift
 import TTSegmentedControl
+import SwiftSpinner
 
 class CartVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     func didUpdateTask(){
@@ -22,11 +23,12 @@ class CartVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         cell.selectionStyle = .none
+        tableView.separatorStyle = .none
         
         let containerView = UIView(frame: CGRect(x: 10*factx, y: 10*factx, width: cell.contentView.frame.size.width - 20*factx, height: cell.contentView.frame.size.height - 20*factx))
         cell.contentView.addSubview(containerView)
         containerView.layer.cornerRadius = 5.0
-        containerView.backgroundColor = UIColor(rgb: appDefaultColor)
+        containerView.backgroundColor = UIColor(rgb: cellNameBackgroundColor)
         
         let contentData = AppManager.sharedInstance().cartProductDataArr[indexPath.row]
         let contentAmount = AppManager.sharedInstance().cartProductCountArr[indexPath.row]
@@ -45,8 +47,9 @@ class CartVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         
         let productImageView = PortImgView(frame: CGRect(x: horizontalSpaceX, y: verticalSpaceY, width: imageViewWidth, height: imageViewHeight))
         containerView.addSubview(productImageView)
-        let tempImage = "https://www.indianroti.co.uk/new-beta/category_photo/thum/no-image.png"
-        productImageView.setImgWith(URL(string: tempImage), placeholderImage:nil)
+//        let tempImage = "https://www.indianroti.co.uk/new-beta/category_photo/thum/no-image.png"
+//        productImageView.setImgWith(URL(string: tempImage), placeholderImage:nil)
+        productImageView.image = UIImage(named: "placeholder.png")
         
         let titleWidth = containerView.frame.size.width - horizontalSpaceX*3 - productImageView.frame.size.width
         let titleHeight = (containerView.frame.size.height - verticalSpaceY*2)*0.6
@@ -57,6 +60,7 @@ class CartVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         productTitle.font = UIFont(name: robotoBold, size: 13*factx)
         productTitle.backgroundColor = .clear
         productTitle.numberOfLines = 2
+        productTitle.textColor = .white
         
         let priceHeight = (containerView.frame.size.height - verticalSpaceY*2 - titleHeight)
 
@@ -64,7 +68,7 @@ class CartVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         priceLabel.backgroundColor = .clear
         priceLabel.text = String(format: "£ %.2f", perProductPrice)
         priceLabel.font = UIFont(name: robotoBold, size: 13*factx)
-        priceLabel.textColor = .lightText
+        priceLabel.textColor = .white
         priceLabel.textAlignment = .center
         containerView.addSubview(priceLabel)
         
@@ -90,6 +94,7 @@ class CartVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         buttonContainerView.addSubview(numberOfProductLabel)
         numberOfProductLabel.text = "\(contentAmount)"
         numberOfProductLabel.textAlignment = .center
+        numberOfProductLabel.textColor = UIColor(rgb: 0x089c25)
         
         
         let plusBtn = CustomButton()
@@ -107,7 +112,7 @@ class CartVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80*factx
+        return 100*factx
     }
     func reloadView() {
         calculateValues()
@@ -231,11 +236,26 @@ class CartVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
             cartTableView.reloadData()
         }
         else {
+            reloadView()
+            cartTableView.reloadData()
+
             let alert = UIAlertController(title: "Sorry!!", message: "Add items in cart", preferredStyle: UIAlertController.Style.alert)
 
             // add an action (button)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.cancel, handler: { action in
+                
                 self.tabBarController?.selectedIndex = 0
+                let visibleController = self.tabBarController?.selectedViewController
+                
+                if visibleController?.isKind(of: UINavigationController.self) == true {
+                    
+                    let navVC  = visibleController as? UINavigationController
+                    navVC?.popToRootViewController(animated: true)
+                }
+                
+//                if visibleController?.isKind(of: MenuVC.self) == true {
+//
+//                }
             }))
 
             // show the alert
@@ -273,6 +293,11 @@ class CartVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
            ]
          ]
          */
+        
+        SwiftSpinner.shared.outerColor = UIColor(rgb: appDefaultColor)
+        SwiftSpinner.shared.innerColor = UIColor(rgb: appDefaultColor)
+        SwiftSpinner.show("Loading...")
+        
         var productIdArr = [Double]()
         for contentData in AppManager.sharedInstance().cartProductDataArr {
             let productInfo = contentData["sub_category_products"] as! [String:Any]

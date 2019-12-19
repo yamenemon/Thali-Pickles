@@ -27,11 +27,6 @@ class CheckOutVC: UIViewController,WKNavigationDelegate,UITabBarControllerDelega
         view.backgroundColor = .white
 
         configureNavigationBar(largeTitleColor: .white, backgoundColor: UIColor(rgb: 0xFF9300), tintColor: UIColor.white, title: "Checkout", preferredLargeTitle: true)
-
-        
-        SwiftSpinner.shared.outerColor = UIColor(rgb: appDefaultColor)
-        SwiftSpinner.shared.innerColor = UIColor(rgb: appDefaultColor)
-        SwiftSpinner.show("Loading...")
         
         // Do any additional setup after loading the view.
         let url = URL(string: checkOutUrl)!
@@ -65,7 +60,7 @@ class CheckOutVC: UIViewController,WKNavigationDelegate,UITabBarControllerDelega
         print(webView.url as Any)
         decisionHandler(.allow)
         
-        if webView.url?.absoluteString == "https://www.indianroti.co.uk/new-beta/confirm/?confirm_submit" {
+//        if webView.url?.absoluteString == "https://www.indianroti.co.uk/new-beta/confirm/?confirm_submit" {
             DispatchQueue.main.async {
                 SwiftSpinner.hide()
                 AppManager.sharedInstance().cartDataArr.removeAll()
@@ -73,7 +68,7 @@ class CheckOutVC: UIViewController,WKNavigationDelegate,UITabBarControllerDelega
                 AppManager.sharedInstance().cartProductCountArr.removeAll()
                 self.navigationController?.popToRootViewController(animated: false)
             }
-        }
+//        }
 
     }
 
