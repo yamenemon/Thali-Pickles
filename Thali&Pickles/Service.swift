@@ -26,6 +26,7 @@ class Service: NSObject {
        var request = URLRequest(url: url)
        request.httpMethod = "GET"
         let config = URLSessionConfiguration.default
+        config.timeoutIntervalForRequest = 10
         config.httpAdditionalHeaders = [
             "Accept" : "application/json",
             "Content-Type" : "application/x-www-form-urlencoded",
@@ -36,7 +37,13 @@ class Service: NSObject {
 
        let task = session.dataTask(with: request, completionHandler: {(data, response, error) -> Void in
            if(error != nil) {
-            failure(error.debugDescription)
+            if let e = error as? URLError, e.code == .notConnectedToInternet {
+                //Not connected to internet
+                failure("No Internet Available")
+            } else {
+                //Some other error
+                failure("Its no you, its us.Try to pull")
+            }
                return
            } else {
                let httpResponse = response as? HTTPURLResponse
@@ -166,3 +173,31 @@ extension CharacterSet {
         return allowed
     }()
 }
+
+/*
+ NSURLErrorCannotFindHost = -1003,
+
+ NSURLErrorCannotConnectToHost = -1004,
+
+ NSURLErrorNetworkConnectionLost = -1005,
+
+ NSURLErrorDNSLookupFailed = -1006,
+
+ NSURLErrorHTTPTooManyRedirects = -1007,
+
+ NSURLErrorResourceUnavailable = -1008,
+
+ NSURLErrorNotConnectedToInternet = -1009,
+
+ NSURLErrorRedirectToNonExistentLocation = -1010,
+
+ NSURLErrorInternationalRoamingOff = -1018,
+
+ NSURLErrorCallIsActive = -1019,
+
+ NSURLErrorDataNotAllowed = -1020,
+
+ NSURLErrorSecureConnectionFailed = -1200,
+
+ NSURLErrorCannotLoadFromNetwork = -2000,
+ */

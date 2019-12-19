@@ -64,6 +64,7 @@ class MenuVC: UIViewController,UICollectionViewDataSource, UICollectionViewDeleg
         loadData()
     }
     @objc func loadData(){
+        
         self.menuCollectionView!.refreshControl?.beginRefreshing()
 
         DispatchQueue.global(qos: .default).async(execute: {
@@ -83,11 +84,19 @@ class MenuVC: UIViewController,UICollectionViewDataSource, UICollectionViewDeleg
                     }
                     print(self.items)
                 } else {
-                print("JSON is invalid")
+                    print("JSON is invalid")
                 }
 
             }) { (error) in
                 print(error!)
+                DispatchQueue.main.async {
+                    SwiftSpinner.hide()
+                    let alert = UIAlertController(title: "Sorry!!", message: "\(error ?? "Server Error")", preferredStyle: UIAlertController.Style.alert)
+                    // add an action (button)
+                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.cancel, handler:nil))
+                    // show the alert
+                    self.present(alert, animated: true, completion: nil)
+                }
             }
         })
         stopRefresher()         //Call this to stop refresher

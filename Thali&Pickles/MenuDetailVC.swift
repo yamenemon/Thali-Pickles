@@ -54,8 +54,21 @@ class MenuDetailVC: UIViewController,addToCartDelegate {
         SwiftSpinner.shared.outerColor = UIColor(rgb: appDefaultColor)
         SwiftSpinner.shared.innerColor = .white//UIColor(rgb: appDefaultColor)
         SwiftSpinner.show("Just a moment please...")
-        
-        getData()
+        if Reachability.isConnectedToNetwork(){
+            print("Internet Connection Available!")
+            getData()
+        }else{
+            DispatchQueue.main.async {
+                SwiftSpinner.hide()
+                self.tableView.reloadData()
+            }
+            print("Internet Connection not Available!")
+            let alert = UIAlertController(title: "Sorry!!", message: "No Internet Connection", preferredStyle: UIAlertController.Style.alert)
+            // add an action (button)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.cancel, handler:nil))
+            // show the alert
+            self.present(alert, animated: true, completion: nil)
+        }
     }
     func getData() {
         DispatchQueue.global(qos: .default).async(execute: {
@@ -168,7 +181,6 @@ extension MenuDetailVC: UITableViewDataSource,UITableViewDelegate {
     let contentData = self.items[indexPath.row]
     
     let productName = contentData["sub_category_title"]
-    let productDescription = contentData["sub_category_description"]
     
     let productInfo = contentData["sub_category_products"] as! [String:Any]
     let productPrice = productInfo["product_price"]
