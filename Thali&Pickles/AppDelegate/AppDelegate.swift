@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import SquareInAppPaymentsSDK
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,6 +18,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // Set your Square Application ID
+        SQIPInAppPaymentsSDK.squareApplicationID = "sandbox-sq0idb-s0awprdRspjutDGS2n7MDg"
         
         return true
     }

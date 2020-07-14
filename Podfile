@@ -11,6 +11,7 @@ target 'Thali&Pickles' do
   pod "SwiftSpinner"
   pod 'Toast-Swift', '~> 5.0.0'
   pod 'TTSegmentedControl', '~>0.4.8'
+  pod "SquareInAppPaymentsSDK"
 
 
   target 'Thali&PicklesTests' do

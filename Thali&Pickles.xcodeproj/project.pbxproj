@@ -36,6 +36,9 @@
 		9A9C3C47238B2B8800982421 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9C3C46238B2B8800982421 /* Service.swift */; };
 		9ABA44C8238C5FE700BCD42C /* CartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABA44C7238C5FE700BCD42C /* CartVC.swift */; };
 		9AC35491239321D00070A2CA /* CheckOutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC35490239321D00070A2CA /* CheckOutVC.swift */; };
+		9AC6F31A24BDEA290098EACF /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC6F31924BDEA280098EACF /* BaseViewController.swift */; };
+		9AC6F31D24BDEA5E0098EACF /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC6F31C24BDEA5E0098EACF /* LoginVC.swift */; };
+		9AC6F31F24BDEA810098EACF /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC6F31E24BDEA810098EACF /* RegisterVC.swift */; };
 		9AD3351D238C585F009F83E0 /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD3351C238C585F009F83E0 /* AppManager.swift */; };
 		9ADF469D2392F0C300FB28CF /* SKRadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADF469C2392F0C300FB28CF /* SKRadioButton.swift */; };
 		B0577244F01B7A0890C7F815 /* Pods_Thali_Pickles.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75498A908E6C295768C537A1 /* Pods_Thali_Pickles.framework */; };
@@ -91,6 +94,9 @@
 		9A9C3C46238B2B8800982421 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		9ABA44C7238C5FE700BCD42C /* CartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartVC.swift; sourceTree = "<group>"; };
 		9AC35490239321D00070A2CA /* CheckOutVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckOutVC.swift; sourceTree = "<group>"; };
+		9AC6F31924BDEA280098EACF /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		9AC6F31C24BDEA5E0098EACF /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		9AC6F31E24BDEA810098EACF /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
 		9AD3351C238C585F009F83E0 /* AppManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppManager.swift; sourceTree = "<group>"; };
 		9ADF469C2392F0C300FB28CF /* SKRadioButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKRadioButton.swift; sourceTree = "<group>"; };
 		E82F0B4397D190EE799C5872 /* Pods-Thali&Pickles.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Thali&Pickles.debug.xcconfig"; path = "Target Support Files/Pods-Thali&Pickles/Pods-Thali&Pickles.debug.xcconfig"; sourceTree = "<group>"; };
@@ -159,22 +165,11 @@
 		9A9B7799238AE5B000440DF7 /* Thali&Pickles */ = {
 			isa = PBXGroup;
 			children = (
+				9AC6F31824BDE9970098EACF /* ViewControllers */,
 				9A9C3C39238B1BCA00982421 /* Fonts */,
 				9A9C3C30238AEBBC00982421 /* Images */,
-				9A9B779A238AE5B000440DF7 /* AppDelegate.swift */,
-				9A9B779C238AE5B000440DF7 /* SceneDelegate.swift */,
-				9AD3351C238C585F009F83E0 /* AppManager.swift */,
-				9A9C3C33238AF79B00982421 /* MenuVC.swift */,
-				69AB9351238BA8AB00ED63AE /* MenuDetailVC.swift */,
-				69AB9367238C079F00ED63AE /* CategoryCell.swift */,
-				69AB9368238C079F00ED63AE /* CategoryCell.xib */,
-				9ABA44C7238C5FE700BCD42C /* CartVC.swift */,
-				9AC35490239321D00070A2CA /* CheckOutVC.swift */,
-				9A9C3C37238B106700982421 /* Constants.swift */,
-				9A9C3C46238B2B8800982421 /* Service.swift */,
-				69AB934B238BA2B300ED63AE /* PortImgView.h */,
-				69AB934C238BA2B300ED63AE /* PortImgView.m */,
-				9ADF469C2392F0C300FB28CF /* SKRadioButton.swift */,
+				9AC6F31624BDE9320098EACF /* AppDelegate */,
+				9AC6F31724BDE9470098EACF /* Manager */,
 				9A9B77A2238AE5B000440DF7 /* Main.storyboard */,
 				9A9B77A8238AE5B300440DF7 /* Assets.xcassets */,
 				9A9B77AA238AE5B300440DF7 /* LaunchScreen.storyboard */,
@@ -218,6 +213,52 @@
 				9A9C3C3A238B1BD800982421 /* Roboto-Regular.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		9AC6F31624BDE9320098EACF /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				9A9B779A238AE5B000440DF7 /* AppDelegate.swift */,
+				9A9B779C238AE5B000440DF7 /* SceneDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		9AC6F31724BDE9470098EACF /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				9AC6F31924BDEA280098EACF /* BaseViewController.swift */,
+				9AD3351C238C585F009F83E0 /* AppManager.swift */,
+				9A9C3C37238B106700982421 /* Constants.swift */,
+				69AB934B238BA2B300ED63AE /* PortImgView.h */,
+				69AB934C238BA2B300ED63AE /* PortImgView.m */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		9AC6F31824BDE9970098EACF /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				9AC6F31B24BDEA3D0098EACF /* LoginModule */,
+				9A9C3C33238AF79B00982421 /* MenuVC.swift */,
+				69AB9351238BA8AB00ED63AE /* MenuDetailVC.swift */,
+				69AB9367238C079F00ED63AE /* CategoryCell.swift */,
+				69AB9368238C079F00ED63AE /* CategoryCell.xib */,
+				9ABA44C7238C5FE700BCD42C /* CartVC.swift */,
+				9AC35490239321D00070A2CA /* CheckOutVC.swift */,
+				9A9C3C46238B2B8800982421 /* Service.swift */,
+				9ADF469C2392F0C300FB28CF /* SKRadioButton.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		9AC6F31B24BDEA3D0098EACF /* LoginModule */ = {
+			isa = PBXGroup;
+			children = (
+				9AC6F31C24BDEA5E0098EACF /* LoginVC.swift */,
+				9AC6F31E24BDEA810098EACF /* RegisterVC.swift */,
+			);
+			path = LoginModule;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -407,14 +448,17 @@
 				9ABA44C8238C5FE700BCD42C /* CartVC.swift in Sources */,
 				9A9C3C34238AF79B00982421 /* MenuVC.swift in Sources */,
 				69AB9352238BA8AC00ED63AE /* MenuDetailVC.swift in Sources */,
+				9AC6F31A24BDEA290098EACF /* BaseViewController.swift in Sources */,
 				9A9B779B238AE5B000440DF7 /* AppDelegate.swift in Sources */,
 				9A9B779D238AE5B000440DF7 /* SceneDelegate.swift in Sources */,
 				9AD3351D238C585F009F83E0 /* AppManager.swift in Sources */,
+				9AC6F31F24BDEA810098EACF /* RegisterVC.swift in Sources */,
 				9A9C3C38238B106700982421 /* Constants.swift in Sources */,
 				9A9C3C47238B2B8800982421 /* Service.swift in Sources */,
 				9AC35491239321D00070A2CA /* CheckOutVC.swift in Sources */,
 				69AB9369238C079F00ED63AE /* CategoryCell.swift in Sources */,
 				9ADF469D2392F0C300FB28CF /* SKRadioButton.swift in Sources */,
+				9AC6F31D24BDEA5E0098EACF /* LoginVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -577,13 +621,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3A67UQ2DKR;
+				DEVELOPMENT_TEAM = 7A9JA8PNZH;
 				INFOPLIST_FILE = "Thali&Pickles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.emon.Thali-Pickles";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tritechfirmThali-Pickles";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Thali&Pickles/Thali&Pickles-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -599,13 +643,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3A67UQ2DKR;
+				DEVELOPMENT_TEAM = 7A9JA8PNZH;
 				INFOPLIST_FILE = "Thali&Pickles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.emon.Thali-Pickles";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tritechfirmThali-Pickles";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Thali&Pickles/Thali&Pickles-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;

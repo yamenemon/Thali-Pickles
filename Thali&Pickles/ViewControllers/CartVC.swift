@@ -10,8 +10,10 @@ import UIKit
 import Toast_Swift
 import TTSegmentedControl
 import SwiftSpinner
+import PassKit
 
-class CartVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
+class CartVC: UIViewController,UITableViewDelegate,UITableViewDataSource,PKPaymentAuthorizationViewControllerDelegate {
+
     func didUpdateTask(){
         self.tabBarController?.selectedIndex = 0
     }
@@ -348,13 +350,16 @@ class CartVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
                 Service.sharedInstance().getAllPostRequest(requestForParam: param, onSuccess: { (result) in
                     print(result)
                      DispatchQueue.main.async { [weak self] in
-                       let vc = CheckOutVC()
-                       if let url = result["data"] {
-                           vc.checkOutUrl = url as! String
-                        print("url : \(url)")
-                       }
-                        vc.hidesBottomBarWhenPushed = true
-                        self?.navigationController?.pushViewController(vc, animated: true)
+//                       let vc = CheckOutVC()
+//                       if let url = result["data"] {
+//                           vc.checkOutUrl = url as! String
+//                        print("url : \(url)")
+//                       }
+//                        vc.hidesBottomBarWhenPushed = true
+//                        self?.navigationController?.pushViewController(vc, animated: true)
+                        
+                        
+                        self!.payThroughCard()
                      }
                 }) { (error) in
                     print(error!)
@@ -385,6 +390,50 @@ class CartVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
             self.present(alert, animated: true, completion: nil)
         }
     }
+    
+    func payThroughCard() {
+        
+        let paymentNetworks = [PKPaymentNetwork.amex, .discover, .masterCard, .visa]
+        let paymentItem = PKPaymentSummaryItem.init(label: "shoe.name", amount: NSDecimalNumber(value: 100))
+        if PKPaymentAuthorizationViewController.canMakePayments(usingNetworks: paymentNetworks) {
+            
+            let request = PKPaymentRequest()
+            request.currencyCode = "USD" // 1
+            request.countryCode = "US" // 2
+            request.merchantIdentifier = "merchant.com.pranavwadhwa.Shoe-Store" // 3
+            request.merchantCapabilities = PKMerchantCapability.capability3DS // 4
+            request.supportedNetworks = paymentNetworks // 5
+            request.paymentSummaryItems = [paymentItem] // 6
+            
+            guard let paymentVC = PKPaymentAuthorizationViewController(paymentRequest: request) else {
+                let alert = UIAlertController(title: "Error!!", message: "Unable to present Apple Pay authorization.", preferredStyle: UIAlertController.Style.alert)
+                // add an action (button)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.cancel, handler:nil))
+                // show the alert
+                self.present(alert, animated: true, completion: nil)
+                return
+            }
+                paymentVC.delegate = self
+                self.present(paymentVC, animated: true, completion: nil)
+            
+            
+        } else {
+            let alert = UIAlertController(title: "Error!!", message: "Unable to make Apple Pay transaction.", preferredStyle: UIAlertController.Style.alert)
+            // add an action (button)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.cancel, handler:nil))
+            // show the alert
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+    
+    func paymentAuthorizationViewControllerDidFinish(_ controller: PKPaymentAuthorizationViewController) {
+        print("paymentAuthorizationViewControllerDidFinish")
+
+    }
+    func paymentAuthorizationViewController(_ controller: PKPaymentAuthorizationViewController, didAuthorizePayment payment: PKPayment, handler completion: @escaping (PKPaymentAuthorizationResult) -> Void) {
+        print("paymentAuthorizationViewController")
+    }
+    
         
         
 

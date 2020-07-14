@@ -1,0 +1,6 @@
+framework module Pods_Thali_Pickles {
+  umbrella header "Pods-Thali&Pickles-umbrella.h"
+
+  export *
+  module * { export * }
+}

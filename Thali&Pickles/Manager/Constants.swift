@@ -18,5 +18,7 @@ let robotoMedium = "Roboto-Medium"
 let robotoRegular = "Roboto-Regular"
 
 
+let SIZE_WIDTH: CGFloat = UIScreen.main.bounds.size.width
+let SIZE_HEIGHT: CGFloat = UIScreen.main.bounds.size.height
 
 let baseURL = "https://www.indianroti.co.uk/new-beta/ooapi/"
