@@ -7,6 +7,11 @@
 //
 
 import UIKit
+
+struct ApiError: Codable {
+    var error: String
+    var message: String = "System Error"
+}
 class Service: NSObject {
     
     static let _singletonInstance = Service()
