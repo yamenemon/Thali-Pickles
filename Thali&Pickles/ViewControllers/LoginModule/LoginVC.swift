@@ -51,8 +51,8 @@ class LoginVC: BaseViewController {
          */
         
         var parameters: [String: Any] = [:]
-        parameters["email"] = emailTF.text
-        parameters["password"] = passwordTF.text
+        parameters["login_email"] = emailTF.text
+        parameters["login_password"] = passwordTF.text
         
         AF.request(urlString,method: .post, parameters: parameters, headers: headers)
             .validate(statusCode:200..<600)
@@ -69,13 +69,14 @@ class LoginVC: BaseViewController {
                                 SwiftSpinner.hide()
                                 return
                             }
-                            _ = try? JSONSerialization.data(withJSONObject: dataDict, options: .prettyPrinted)
+                            let dataDicts = try? JSONSerialization.data(withJSONObject: dataDict, options: .prettyPrinted)
                             do {
+                                print(dataDicts!)
                                 SwiftSpinner.hide()
                                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                                 let tbc = storyboard.instantiateViewController(withIdentifier:"tabbarController") as! UITabBarController
                                 tbc.selectedIndex = 0
-                                self.present(tbc, animated: true, completion:nil)
+                                self.navigationController?.pushViewController(tbc, animated: true)
                             } catch (let error) {
                                 print(error)
                                 SwiftSpinner.hide()

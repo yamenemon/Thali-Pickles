@@ -69,7 +69,7 @@ class MenuVC: UIViewController,UICollectionViewDataSource, UICollectionViewDeleg
 
         DispatchQueue.global(qos: .default).async(execute: {
             // time-consuming task
-            self.service.getAllGetRequest(requestURL: "\(baseURL)category", onSuccess: { (result) in
+            self.service.getAllGetRequest(requestURL: "\(baseURL)/category", onSuccess: { (result) in
 //                print(result)
                 self.items.removeAll()
                 if  let object = result as? [String:Any] {
