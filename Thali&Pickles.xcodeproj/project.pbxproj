@@ -34,6 +34,7 @@
 		9A9C3C34238AF79B00982421 /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9C3C33238AF79B00982421 /* MenuVC.swift */; };
 		9A9C3C38238B106700982421 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9C3C37238B106700982421 /* Constants.swift */; };
 		9A9C3C47238B2B8800982421 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9C3C46238B2B8800982421 /* Service.swift */; };
+		9AA075BE24C1E989009F54F7 /* SettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA075BD24C1E988009F54F7 /* SettingVC.swift */; };
 		9ABA44C8238C5FE700BCD42C /* CartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABA44C7238C5FE700BCD42C /* CartVC.swift */; };
 		9AC35491239321D00070A2CA /* CheckOutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC35490239321D00070A2CA /* CheckOutVC.swift */; };
 		9AC6F31A24BDEA290098EACF /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC6F31924BDEA280098EACF /* BaseViewController.swift */; };
@@ -92,6 +93,7 @@
 		9A9C3C3B238B1BD800982421 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
 		9A9C3C3C238B1BD800982421 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
 		9A9C3C46238B2B8800982421 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		9AA075BD24C1E988009F54F7 /* SettingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingVC.swift; sourceTree = "<group>"; };
 		9ABA44C7238C5FE700BCD42C /* CartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartVC.swift; sourceTree = "<group>"; };
 		9AC35490239321D00070A2CA /* CheckOutVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckOutVC.swift; sourceTree = "<group>"; };
 		9AC6F31924BDEA280098EACF /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -215,6 +217,14 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		9AA075BC24C1E953009F54F7 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				9AA075BD24C1E988009F54F7 /* SettingVC.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 		9AC6F31624BDE9320098EACF /* AppDelegate */ = {
 			isa = PBXGroup;
 			children = (
@@ -239,6 +249,7 @@
 		9AC6F31824BDE9970098EACF /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				9AA075BC24C1E953009F54F7 /* Settings */,
 				9AC6F31B24BDEA3D0098EACF /* LoginModule */,
 				9A9C3C33238AF79B00982421 /* MenuVC.swift */,
 				69AB9351238BA8AB00ED63AE /* MenuDetailVC.swift */,
@@ -453,6 +464,7 @@
 				9A9B779D238AE5B000440DF7 /* SceneDelegate.swift in Sources */,
 				9AD3351D238C585F009F83E0 /* AppManager.swift in Sources */,
 				9AC6F31F24BDEA810098EACF /* RegisterVC.swift in Sources */,
+				9AA075BE24C1E989009F54F7 /* SettingVC.swift in Sources */,
 				9A9C3C38238B106700982421 /* Constants.swift in Sources */,
 				9A9C3C47238B2B8800982421 /* Service.swift in Sources */,
 				9AC35491239321D00070A2CA /* CheckOutVC.swift in Sources */,

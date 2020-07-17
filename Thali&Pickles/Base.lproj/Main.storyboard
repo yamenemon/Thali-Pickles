@@ -165,7 +165,7 @@
             </objects>
             <point key="canvasLocation" x="3797.1014492753625" y="-244.41964285714283"/>
         </scene>
-        <!--Profile-->
+        <!--Settings-->
         <scene sceneID="yjM-FK-pj9">
             <objects>
                 <viewController id="Tfg-bZ-ij4" sceneMemberID="viewController">
@@ -175,7 +175,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="bB7-jk-c6t"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Profile" id="Abb-mA-Dcb"/>
+                    <tabBarItem key="tabBarItem" title="Settings" id="Abb-mA-Dcb"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DUY-Uy-NYj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -195,7 +195,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tTk-Rh-d7o" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2400" y="769.41964285714278"/>
+            <point key="canvasLocation" x="2139" y="878"/>
         </scene>
         <!--LoginVC-->
         <scene sceneID="CUi-vy-ikA">
@@ -314,6 +314,7 @@
                         <segue destination="pSc-6U-1k7" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
                         <segue destination="bH5-T7-DvX" kind="relationship" relationship="viewControllers" id="IWr-gi-SA8"/>
                         <segue destination="Tfg-bZ-ij4" kind="relationship" relationship="viewControllers" id="e7B-8z-ReH"/>
+                        <segue destination="R6Z-62-Dgb" kind="relationship" relationship="viewControllers" id="Qs5-JY-B05"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
@@ -523,6 +524,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ANk-R0-myw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2350.7246376811595" y="699.77678571428567"/>
+        </scene>
+        <!--Chat-->
+        <scene sceneID="H1J-WU-KTW">
+            <objects>
+                <viewController id="R6Z-62-Dgb" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VR7-ou-AxH">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="KIP-2O-pF6"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Chat" id="tF1-Tb-YwI"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a4F-H1-ZcA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-452" y="917"/>
         </scene>
     </scenes>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
