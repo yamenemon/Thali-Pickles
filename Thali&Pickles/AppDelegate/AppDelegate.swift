@@ -8,23 +8,71 @@
 
 import UIKit
 import CoreData
-import SquareInAppPaymentsSDK
+import Firebase
+import FirebaseCore
+import GoogleSignIn
+import FirebaseMessaging
+import UserNotifications
+import FBSDKCoreKit
+import FacebookCore
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
 
 
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        
-        // Set your Square Application ID
-        SQIPInAppPaymentsSDK.squareApplicationID = "sandbox-sq0idb-s0awprdRspjutDGS2n7MDg"
-        
+        ApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
+        Messaging.messaging().isAutoInitEnabled = true
+        Messaging.messaging().delegate = self as? MessagingDelegate
+        FirebaseApp.configure()
+        GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
         return true
     }
+    
 
+    //MARK: - NOTIFICATION METHODS
+    
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data){
+        Messaging.messaging().apnsToken = deviceToken
+        if #available(iOS 10.0, *) {
+            
+            UNUserNotificationCenter.current().delegate = self
+            
+            let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
+            UNUserNotificationCenter.current().requestAuthorization(
+                options: authOptions,
+                completionHandler: {_, _ in })
+        } else {
+            let settings: UIUserNotificationSettings =
+                UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
+            application.registerUserNotificationSettings(settings)
+        }
+        
+        application.registerForRemoteNotifications()
+        
+    }
+    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String) {
+        print("Firebase registration token: \(fcmToken)")
+        
+        let dataDict:[String: String] = ["token": fcmToken]
+        NotificationCenter.default.post(name: Notification.Name("FCMToken"), object: nil, userInfo: dataDict)
+    }
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any]) -> Bool {
+        guard let urlScheme = url.scheme else { return false }
+        if urlScheme.hasPrefix("fb") {
+            return ApplicationDelegate.shared.application(app, open: url, options: options)
+        }
+        else {
+            let handled = GIDSignIn.sharedInstance().handle(url)
+            return handled
+        }
+        return true
+    }
+    
     // MARK: UISceneSession Lifecycle
 
     @available(iOS 13.0, *)

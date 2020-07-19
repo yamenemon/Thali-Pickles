@@ -8,19 +8,56 @@
 
 import UIKit
 import Alamofire
+import FirebaseAuth
+import FirebaseDatabase
+import FirebaseStorage
+import GoogleSignIn
 import SwiftSpinner
+import FacebookCore
+import FacebookLogin
+import FBSDKLoginKit
 
-class LoginVC: BaseViewController {
+class LoginVC: BaseViewController,GIDSignInDelegate {
     
     @IBOutlet weak var emailTF: UITextField!
     @IBOutlet weak var passwordTF: UITextField!
+    
+    var ref: DatabaseReference!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboard()
         
+        GIDSignIn.sharedInstance()?.presentingViewController = self
+        GIDSignIn.sharedInstance().delegate = self
+        
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        if let error = error {
+            print(error.localizedDescription)
+            return
+        }
+        guard let auth = user.authentication else { return }
+        let credentials = GoogleAuthProvider.credential(withIDToken: auth.idToken, accessToken: auth.accessToken)
+        Auth.auth().signIn(with: credentials) { (authResult, error) in
+            if let error = error {
+                print(error.localizedDescription)
+            } else {
+                print("Login Successful.")
+                //This is where you should add the functionality of successful login
+                //i.e. dismissing this view or push the home view controller etc
+                
+                
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let tbc = storyboard.instantiateViewController(withIdentifier:"tabbarController") as! UITabBarController
+                tbc.selectedIndex = 0
+                self.navigationController?.pushViewController(tbc, animated: true)
+            }
+        }
     }
     
     @objc func keyboardWillShow(notification: NSNotification) {
@@ -36,9 +73,14 @@ class LoginVC: BaseViewController {
             self.view.frame.origin.y = 0
         }
     }
+    @IBAction func gmailLogin(_ sender: Any) {
+        GIDSignIn.sharedInstance().signIn()
+
+    }
     
     @IBAction func loginBtnAction(_ sender: Any) {
         
+
         SwiftSpinner.show("Registration On Progress...")
         let urlString = "\(baseURL)/user_login"
         let headers: HTTPHeaders = ["Accept":"application/json"]
@@ -98,5 +140,68 @@ class LoginVC: BaseViewController {
                         self.showAlertWithMessage(headerText: "\(apiError.error)", message: apiError.message)
                 }
         }
+        
     }
+    @IBAction func btnActionLoginWithFb(_ sender: Any) {
+        
+        let fbLoginManager : LoginManager = LoginManager()
+        fbLoginManager.logIn(permissions: ["email"], from: self) { (result, error) in
+            if (error == nil){
+                let fbloginresult : LoginManagerLoginResult = result!
+                if fbloginresult.grantedPermissions != nil {
+                    if(fbloginresult.grantedPermissions.contains("email")) {
+                        if((AccessToken.current) != nil){
+                            GraphRequest(graphPath: "me", parameters: ["fields": "id, name, first_name, last_name, picture.type(large), email"]).start(completionHandler: { (connection, result, error) -> Void in
+                                if (error == nil){
+                                    let dict = result as! NSDictionary
+                                    let firstName = ["Firstname": dict.object(forKey: "first_name") as! String , "Lastname": dict.object(forKey: "last_name")as! String]
+                                    let credential = FacebookAuthProvider.credential(withAccessToken: AccessToken.current?.tokenString ?? "")
+                                    Auth.auth().signIn(with: credential) { (authResult, error) in
+                                        if error != nil {
+                                            var apiError = ApiError(error: "")
+                                            apiError.error = "Sign In Error"
+                                            apiError.message = error!.localizedDescription
+                                            self.showAlertWithMessage(headerText: "\(apiError.error)", message: apiError.message)
+                                            return
+                                        }
+                                        self.ref = Database.database().reference()
+                                        let imgDict = dict .object(forKey: "picture") as! NSDictionary
+                                        let imgData = imgDict .object(forKey: "data") as! NSDictionary
+                                        let img = imgData .object(forKey: "url") as! NSString
+                                        if let url = URL(string: img as String) {
+                                            var data = try? Data(contentsOf: url)
+                                            let image: UIImage = UIImage(data: data!)!
+                                            data = image.jpegData(compressionQuality: 0.8)! as NSData as Data
+                                            let storageRef = Storage.storage().reference()
+                                            let filePath = "\(Auth.auth().currentUser!.uid)/\("imgUserProfile")"
+                                            let metaData = StorageMetadata()
+                                            metaData.contentType = "image/jpg"
+                                            storageRef.child(filePath).putData((data)!, metadata: metaData){(metaData,error) in
+                                                if let error = error {
+                                                    print(error.localizedDescription)
+                                                    return
+                                                }
+                                            }
+                                        }
+                                        self.ref.child("users").child(Auth.auth().currentUser!.uid).setValue(["username": firstName])
+                                        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                                        let tbc = storyboard.instantiateViewController(withIdentifier:"tabbarController") as! UITabBarController
+                                        tbc.selectedIndex = 0
+                                        self.navigationController?.pushViewController(tbc, animated: true)
+                                    }
+//                                    Auth.auth().signInAndRetrieveData(with: credential) { (authResult, error) in
+//
+//                                        self.ref.child("users").child(Auth.auth().currentUser!.uid).setValue(["username": firstName])
+//                                        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+//                                        appDelegate.sideMenu()
+//                                    }
+                                }
+                            })
+                        }
+                    }
+                }
+            }
+        }
+    }
+
 }

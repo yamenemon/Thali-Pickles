@@ -1,54 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Bucket
-   uuid = "3C2CCD78-9D6E-4061-BDCB-FC722E8F70DD"
+   uuid = "B79F9113-3273-47D8-88DA-7FC989EA5CAF"
    type = "0"
    version = "2.0">
    <Breakpoints>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "33C5F882-0C39-474B-B858-87C7D3FA0038"
+            uuid = "6E83D2B2-6702-4EDA-9BFB-3FE16A8B9E0E"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Thali&amp;Pickles/CartVC.swift"
+            filePath = "Thali&amp;Pickles/ViewControllers/LoginModule/LoginVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "434"
-            endingLineNumber = "434"
-            landmarkName = "paymentAuthorizationViewController(_:didAuthorizePayment:handler:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "3CCAEB0E-9BA6-4912-AB20-9F27AD7CD61B"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Thali&amp;Pickles/CartVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "430"
-            endingLineNumber = "430"
-            landmarkName = "paymentAuthorizationViewControllerDidFinish(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "E3252B5F-BB7C-4FBE-905D-88A4DB29302C"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Thali&amp;Pickles/ViewControllers/LoginModule/RegisterVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "104"
-            endingLineNumber = "104"
-            landmarkName = "registerBtnAction(_:)"
+            startingLineNumber = "161"
+            endingLineNumber = "161"
+            landmarkName = "btnActionLoginWithFb(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

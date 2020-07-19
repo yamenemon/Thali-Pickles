@@ -11,9 +11,24 @@ target 'Thali&Pickles' do
   pod "SwiftSpinner"
   pod 'Toast-Swift', '~> 5.0.0'
   pod 'TTSegmentedControl', '~>0.4.8'
-  pod "SquareInAppPaymentsSDK"
   pod 'Alamofire', '~> 5.1'
+  pod 'MessageKit', '~> 3.0.0'
 
+  # add the Firebase pod for Google Analytics
+  pod 'Firebase/Core'
+  pod 'Firebase/Database'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Storage'
+  pod 'Firebase/Messaging'
+#  pod 'MFSideMenu'
+  pod 'FBSDKLoginKit'
+  pod 'FacebookCore'
+  pod 'FacebookLogin'
+  pod 'GoogleSignIn'
+
+
+  # add pods for any other desired Firebase products
+  # https://firebase.google.com/docs/ios/setup#available-pods
 
 
   target 'Thali&PicklesTests' do

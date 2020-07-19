@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>1024802765028-055ehrt20onuqcbnspg23javejhrulpt.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.1024802765028-055ehrt20onuqcbnspg23javejhrulpt</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCPdftsYRv2a99x976H38cSU1hm1akR51s</string>
+	<key>GCM_SENDER_ID</key>
+	<string>1024802765028</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.tritechfirm.kroybikroy</string>
+	<key>PROJECT_ID</key>
+	<string>kroybikroy-45ed5</string>
+	<key>STORAGE_BUCKET</key>
+	<string>kroybikroy-45ed5.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:1024802765028:ios:dad58f03cf190b62d114f1</string>
+	<key>DATABASE_URL</key>
+	<string>https://kroybikroy-45ed5.firebaseio.com</string>
+</dict>
+</plist>
