@@ -30,8 +30,8 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="বাংলাদেশের একমাত্র কেনা বেচার মাধ্যম" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NWz-at-wCh">
-                                        <rect key="frame" x="76" y="449" width="263" height="20"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="দেশের বৃহৎ বেচা-কেনার মাধ্যম" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NWz-at-wCh">
+                                        <rect key="frame" x="8" y="449" width="398" height="20"/>
                                         <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -39,11 +39,11 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.90372341869999995" green="0.55096954109999996" blue="0.13693761830000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="NWz-at-wCh" secondAttribute="trailing" constant="75" id="15l-bD-n1I"/>
-                                    <constraint firstItem="NWz-at-wCh" firstAttribute="top" secondItem="Eu6-OK-XHM" secondAttribute="bottom" constant="8.5" id="1aH-Yl-V4R"/>
+                                    <constraint firstItem="NWz-at-wCh" firstAttribute="leading" secondItem="1Kj-hU-0uG" secondAttribute="leadingMargin" id="Ch0-Zz-FRK"/>
                                     <constraint firstItem="Eu6-OK-XHM" firstAttribute="centerY" secondItem="1Kj-hU-0uG" secondAttribute="centerY" id="K3V-hx-c9h"/>
+                                    <constraint firstItem="NWz-at-wCh" firstAttribute="top" secondItem="Eu6-OK-XHM" secondAttribute="bottom" constant="8.5" id="SAs-8p-j7T"/>
                                     <constraint firstItem="Eu6-OK-XHM" firstAttribute="centerX" secondItem="1Kj-hU-0uG" secondAttribute="centerX" id="fut-HS-BHs"/>
-                                    <constraint firstItem="NWz-at-wCh" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="1Kj-hU-0uG" secondAttribute="leading" constant="20" symbolic="YES" id="jLz-WV-3fN"/>
+                                    <constraint firstItem="NWz-at-wCh" firstAttribute="centerX" secondItem="Eu6-OK-XHM" secondAttribute="centerX" id="xbG-iR-Hkg"/>
                                 </constraints>
                             </view>
                         </subviews>

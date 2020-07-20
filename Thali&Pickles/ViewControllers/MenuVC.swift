@@ -22,7 +22,7 @@ class MenuVC: UIViewController,UICollectionViewDataSource, UICollectionViewDeleg
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        configureNavigationBar(largeTitleColor: .white, backgoundColor: UIColor(rgb: 0xFF9300), tintColor: UIColor(rgb: appDefaultColor), title: "Menu", preferredLargeTitle: true)
+        configureNavigationBar(largeTitleColor: .white, backgoundColor: UIColor(rgb: 0xFF9300), tintColor: UIColor(rgb: appDefaultColor), title: "পণ্য", preferredLargeTitle: true)
         
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -55,12 +55,12 @@ class MenuVC: UIViewController,UICollectionViewDataSource, UICollectionViewDeleg
         
         self.refresher.tintColor = UIColor(red: 155/255, green: 155/255, blue: 154/255, alpha: 1)
         let attributes = [NSAttributedString.Key.foregroundColor: UIColor.white,NSAttributedString.Key.font:UIFont(name: robotoBold, size: 13*factx)]
-        let attributedTitle = NSAttributedString(string: "Pulling More Foods...", attributes: attributes as [NSAttributedString.Key : Any])
+        let attributedTitle = NSAttributedString(string: "পণ্য খোজা হচ্ছে...", attributes: attributes as [NSAttributedString.Key : Any])
         self.refresher.attributedTitle = attributedTitle
                 
         SwiftSpinner.shared.outerColor = UIColor(rgb: appDefaultColor)
         SwiftSpinner.shared.innerColor = .white//UIColor(rgb: appDefaultColor)
-        SwiftSpinner.show("Pulling Your Foods...")
+        SwiftSpinner.show("আরও খোজা হচ্ছে...")
         loadData()
     }
     @objc func loadData(){
@@ -103,7 +103,7 @@ class MenuVC: UIViewController,UICollectionViewDataSource, UICollectionViewDeleg
                 print(error!)
                 DispatchQueue.main.async {
                     SwiftSpinner.hide()
-                    let alert = UIAlertController(title: "Sorry!!", message: "\(error ?? "Server Error")", preferredStyle: UIAlertController.Style.alert)
+                    let alert = UIAlertController(title: "দুঃখিত!!", message: "\(error ?? "Server Error")", preferredStyle: UIAlertController.Style.alert)
                     // add an action (button)
                     alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.cancel, handler:nil))
                     // show the alert
@@ -217,7 +217,6 @@ extension UIViewController {
             navigationItem.title = title
         }
     }
-    
 }
 
 extension UIColor {

@@ -24,7 +24,7 @@ class ChatVC: UIViewController,UITextFieldDelegate {
    
     override func viewDidLoad() {
         super.viewDidLoad()
-        bottomConst.constant = 0
+//        bottomConst.constant = 0
         
 //        NotificationCenter.default.addObserver(self, selector: #selector(ChatVC.keyboardWillShow), name: NSNotification.Name.UIResponder.keyboardWillShowNotification, object: nil)
 //        NotificationCenter.default.addObserver(self, selector: #selector(ChatVC.keyboardWillHide), name: NSNotification.Name.UIResponder.keyboardWillHideNotification, object: nil)

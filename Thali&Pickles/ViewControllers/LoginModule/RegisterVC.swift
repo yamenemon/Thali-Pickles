@@ -9,21 +9,26 @@
 import UIKit
 import Alamofire
 import SwiftSpinner
+import FirebaseAuth
+import FirebaseDatabase
 
-class RegisterVC: BaseViewController {
-
+class RegisterVC: BaseViewController,UITextFieldDelegate {
+    
     @IBOutlet weak var nameTF: UITextField!
     @IBOutlet weak var emailTF: UITextField!
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var phoneTF: UITextField!
     @IBOutlet weak var addressTF: UITextField!
     
+    var ref: DatabaseReference!
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         self.hideKeyboard()
-
+        
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
@@ -64,7 +69,12 @@ class RegisterVC: BaseViewController {
         parameters["password"] = password.text
         parameters["phone"] = phoneTF.text
         parameters["address"] = addressTF.text
-
+        
+        guard let name = nameTF.text, let email = emailTF.text, let pass = password.text, let phone = phoneTF.text, let address = addressTF.text else {
+            self.showAlertWithMessage(headerText: "Validate Error", message: "Please fill up all field")
+            return
+        }
+        
         AF.request(urlString,method: .post, parameters: parameters, headers: headers)
             .validate(statusCode:200..<600)
             .responseJSON{ res in
@@ -80,24 +90,34 @@ class RegisterVC: BaseViewController {
                                 SwiftSpinner.hide()
                                 return
                             }
-                            let jsonData = try? JSONSerialization.data(withJSONObject: dataDict, options: .prettyPrinted)
-                            do {
-                                
-                                SwiftSpinner.hide()
-                                self.view.makeToast("Registration successful")
-                                self.navigationController?.popViewController(animated: true)
-                            } catch (let error) {
-                                print(error)
-                                SwiftSpinner.hide()
+                            print("Successfully User saved to server".capitalized)
+                            Auth.auth().createUser(withEmail: email, password: pass) { (authResult, error) in
+                                if error != nil {
+                                    SwiftSpinner.hide()
+                                    var apiError = ApiError(error: "")
+                                    apiError.error = "Json conversion Error"
+                                    apiError.message = error!.localizedDescription
+                                    self.showAlertWithMessage(headerText: "\(apiError.error)", message: apiError.message)
+                                    return
+                                }
+                                print("Successfully User saved to firebase".capitalized)
+                                guard let uid = authResult?.user.uid else {
+                                    return
+                                }
+                                self.ref = Database.database().reference()
+                                let userReference = self.ref.child("users").child(uid)
+                                let values = ["username":name,"email":email,"password":pass, "phone":phone, "address":address]
+                                userReference.updateChildValues(values) { (err, referrance) in
+                                    SwiftSpinner.hide()
+                                    if err != nil {
+                                        return
+                                    }
+                                    print("Successfully User information saved to firebase database".capitalized)
 
-                                var apiError = ApiError(error: "")
-                                apiError.error = "Json conversion Error"
-                                apiError.message = error.localizedDescription
-                                self.showAlertWithMessage(headerText: "\(apiError.error)", message: apiError.message)
-//                                failure(apiError)
-                                return
+                                    self.navigationController?.popViewController(animated: true)
+                                    self.showToastAtWindow(text: "Registration successful")
+                                }
                             }
-                            
                     }
                     case let .failure(error):
                         print(error)
@@ -109,14 +129,17 @@ class RegisterVC: BaseViewController {
                 }
         }
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+//        textField.setValue(UIColor.clear, forKeyPath: "_placeholderLabel.textColor")
     }
-    */
-
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+//        if #available(iOS 13.0, *) {
+//            textField.setValue(UIColor.placeholderText, forKeyPath: "_placeholderLabel.textColor")
+//        } else {
+//            // Fallback on earlier versions
+//        }
+    }
+    
 }

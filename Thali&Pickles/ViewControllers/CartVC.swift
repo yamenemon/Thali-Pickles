@@ -70,7 +70,7 @@ class CartVC: UIViewController,UITableViewDelegate,UITableViewDataSource,PKPayme
 
         let priceLabel = UILabel(frame: CGRect(x: productTitle.frame.origin.x, y:productTitle.frame.size.height+verticalSpaceY , width: productTitle.frame.size.width/2.8, height: priceHeight))
         priceLabel.backgroundColor = .clear
-        priceLabel.text = String(format: "£ %.2f", perProductPrice)
+        priceLabel.text = String(format: "৳ %.2f", perProductPrice)
         priceLabel.font = UIFont(name: robotoBold, size: 13*factx)
         priceLabel.textColor = .white
         priceLabel.textAlignment = .left
@@ -177,17 +177,17 @@ class CartVC: UIViewController,UITableViewDelegate,UITableViewDataSource,PKPayme
             }
         }
         let totalPrice = priceArr.reduce(0, +)
-        subTotalPrice.text =  String(format: "£ %.2f", totalPrice)
+        subTotalPrice.text =  String(format: "৳ %.2f", totalPrice)
         
         let discount = AppManager.sharedInstance().checkOutDiscount
         
-        discountTextLabel.text =  String(format: "Discount (%.1f%%) :", discount)
+        discountTextLabel.text =  String(format: "ডিসকাউন্ট (%.1f%%) :", discount)
         var val = (totalPrice * discount)/100
         
-        discountPrice.text = String(format: "£ %.2f", val)
+        discountPrice.text = String(format: "৳ %.2f", val)
         val = totalPrice - val
         
-        totalPriceLabel.text = String(format: "£ %.2f", val)
+        totalPriceLabel.text = String(format: "৳ %.2f", val)
     }
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
       if editingStyle == .delete {
@@ -224,7 +224,7 @@ class CartVC: UIViewController,UITableViewDelegate,UITableViewDataSource,PKPayme
     override func viewDidLoad() {
         super.viewDidLoad()
     
-        configureNavigationBar(largeTitleColor: .white, backgoundColor: UIColor(rgb: 0xFF9300), tintColor: UIColor(rgb: appDefaultColor), title: "Cart", preferredLargeTitle: true)
+        configureNavigationBar(largeTitleColor: .white, backgoundColor: UIColor(rgb: 0xFF9300), tintColor: UIColor(rgb: appDefaultColor), title: "কার্ট", preferredLargeTitle: true)
         
         
         orderType.itemTitles = ["Delivery","Collection"]
@@ -237,7 +237,7 @@ class CartVC: UIViewController,UITableViewDelegate,UITableViewDataSource,PKPayme
         orderType.selectedTextFont = UIFont(name: robotoMedium, size: 13*factx)!
         
         let checkoutBtn = UIButton(type: .system)
-        checkoutBtn.setTitle("Checkout", for: .normal)
+        checkoutBtn.setTitle("কিনুন", for: .normal)
         checkoutBtn.titleLabel?.font = UIFont(name: robotoBold, size: 15*factx)
         checkoutBtn.tintColor = .white
         checkoutBtn.backgroundColor = .clear
@@ -265,11 +265,11 @@ class CartVC: UIViewController,UITableViewDelegate,UITableViewDataSource,PKPayme
             reloadView()
             cartTableView.reloadData()
 
-            var title = "Sorry!!"
-            var successMsg = "Add items in cart"
+            var title = "দুঃখিত!!"
+            var successMsg = "কার্টে সংযুক্ত করা হয়েছে"
             if AppManager.sharedInstance().successfullyDelivered == true {
-                title = "Order Successfully Placed"
-                successMsg = "Your order under process"
+                title = "অর্ডার"
+                successMsg = "আপনার অর্ডার প্রসেস করা হচ্ছে"
                 AppManager.sharedInstance().successfullyDelivered = false
             }
             
@@ -375,7 +375,7 @@ class CartVC: UIViewController,UITableViewDelegate,UITableViewDataSource,PKPayme
             }else{
                 SwiftSpinner.hide()
                 print("Internet Connection not Available!")
-                let alert = UIAlertController(title: "Apologize!!", message: "Internet Connection not Available!", preferredStyle: UIAlertController.Style.alert)
+                let alert = UIAlertController(title: "দুঃখিত!!", message: "ইন্টারনেট সংযোগ নেই", preferredStyle: UIAlertController.Style.alert)
                 // add an action (button)
                 alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.cancel, handler:nil))
                 // show the alert
@@ -383,7 +383,7 @@ class CartVC: UIViewController,UITableViewDelegate,UITableViewDataSource,PKPayme
             }
         }
         else {
-            let alert = UIAlertController(title: "Apologize!!", message: "We are Out of order.Please try after some times", preferredStyle: UIAlertController.Style.alert)
+            let alert = UIAlertController(title: "দুঃখিত!!", message: /*"We are Out of order.Please try after some times"*/"আমরা অর্ডার নেয়া শেষ। দয়া করে কিছু সময় পরে চেষ্টা করুন", preferredStyle: UIAlertController.Style.alert)
             // add an action (button)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.cancel, handler:nil))
             // show the alert

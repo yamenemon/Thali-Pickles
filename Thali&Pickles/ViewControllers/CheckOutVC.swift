@@ -26,7 +26,7 @@ class CheckOutVC: UIViewController,WKNavigationDelegate,UITabBarControllerDelega
         super.viewDidLoad()
         view.backgroundColor = .white
 
-        configureNavigationBar(largeTitleColor: .white, backgoundColor: UIColor(rgb: 0xFF9300), tintColor: UIColor.white, title: "Checkout", preferredLargeTitle: true)
+        configureNavigationBar(largeTitleColor: .white, backgoundColor: UIColor(rgb: 0xFF9300), tintColor: UIColor.white, title: "কিনুন", preferredLargeTitle: true)
         
         // Do any additional setup after loading the view.
         let url = URL(string: checkOutUrl)!

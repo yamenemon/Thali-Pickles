@@ -110,6 +110,11 @@ class BaseViewController: UIViewController {
         alertController.addAction(action2)
         self.present(alertController, animated: true, completion: nil)
     }
+    func showToastAtWindow(text : String){
+        if let app = UIApplication.shared.delegate as? AppDelegate, let window = app.window {
+            window.makeToast(text, duration: 30, position: .bottom, title: "", image: nil, style: .init(), completion: nil)
+        }
+    }
     /*
     @objc func cardBtnAction(sender: UIButton) {
         UIView.animate(withDuration: TimeInterval(0.1), delay: 0.0, options: [], animations: {

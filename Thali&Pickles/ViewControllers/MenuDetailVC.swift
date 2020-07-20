@@ -46,14 +46,14 @@ class MenuDetailVC: UIViewController,addToCartDelegate {
         // Do any additional setup after loading the view.
         view.backgroundColor = .white
         
-        let navTitle = itemDict["title"] as? String ?? "Menu Details"
+        let navTitle = itemDict["title"] as? String ?? "বিস্তারিত পণ্য"
         
         configureNavigationBar(largeTitleColor: .white, backgoundColor: UIColor(rgb: 0xFF9300), tintColor: UIColor(rgb: appDefaultColor), title: navTitle, preferredLargeTitle: true)
         self.navigationItem.leftBarButtonItem = self.navigationItem.backBarButtonItem;
         self.navigationController?.navigationBar.tintColor = .white
         SwiftSpinner.shared.outerColor = UIColor(rgb: appDefaultColor)
         SwiftSpinner.shared.innerColor = .white//UIColor(rgb: appDefaultColor)
-        SwiftSpinner.show("Just a moment please...")
+        SwiftSpinner.show("একটু অপেক্ষা করুন...")
         if Reachability.isConnectedToNetwork(){
             print("Internet Connection Available!")
             getData()
@@ -63,7 +63,7 @@ class MenuDetailVC: UIViewController,addToCartDelegate {
                 self.tableView.reloadData()
             }
             print("Internet Connection not Available!")
-            let alert = UIAlertController(title: "Sorry!!", message: "No Internet Connection", preferredStyle: UIAlertController.Style.alert)
+            let alert = UIAlertController(title: "দুঃখিত!!", message: "ইন্টারনেট কানেকশন নেই", preferredStyle: UIAlertController.Style.alert)
             // add an action (button)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.cancel, handler:nil))
             // show the alert
@@ -94,7 +94,7 @@ class MenuDetailVC: UIViewController,addToCartDelegate {
                 print(error!)
                 DispatchQueue.main.async {
                     SwiftSpinner.hide()
-                    let alert = UIAlertController(title: "Sorry!!", message: "\(error ?? "Server Error")", preferredStyle: UIAlertController.Style.alert)
+                    let alert = UIAlertController(title: "দুঃখিত!!", message: "\(error ?? "Server Error")", preferredStyle: UIAlertController.Style.alert)
                     // add an action (button)
                     alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.cancel, handler:nil))
                     // show the alert
@@ -115,7 +115,7 @@ class MenuDetailVC: UIViewController,addToCartDelegate {
 
         let contentData = self.items[sender.tag]
         let productName = contentData["sub_category_title"]
-        self.view.makeToast("\(productName ?? "") added to your cart")
+        self.view.makeToast("\(productName ?? "") কার্টে সংযুক্ত করা হয়েছে")
 
         
         AppManager.sharedInstance().cartDataArr.append(contentData)
@@ -151,7 +151,7 @@ class MenuDetailVC: UIViewController,addToCartDelegate {
         
         let closeBtn = UIButton(frame: CGRect(x: 10*factx, y: popUpView.frame.size.height - 45*factx, width: popUpView.frame.size.width - 20*factx, height: 35*factx))
         closeBtn.backgroundColor = UIColor(rgb: appDefaultColor)
-        closeBtn.setTitle("Close", for: .normal)
+        closeBtn.setTitle("বন্ধ করুন", for: .normal)
         closeBtn.addTarget(self, action: #selector(closeBtnAction), for: .touchUpInside)
         popUpView.addSubview(closeBtn)
         
@@ -167,7 +167,7 @@ class MenuDetailVC: UIViewController,addToCartDelegate {
         textView.textColor = .black
         textView.font = UIFont(name: robotoRegular, size: 15*factx)
         popUpView.addSubview(textView)
-        textView.text = productDescription as? String ?? "No Details available"
+        textView.text = productDescription as? String ?? "কোন তথ্য নেই"
         
         
         popUpView.center = blurEffectView.center
@@ -196,7 +196,7 @@ extension MenuDetailVC: UITableViewDataSource,UITableViewDelegate {
     let productPrice = productInfo["product_price"]
 
     cell.categoryName.text = productName as? String
-    cell.categoryPrice.text = "£ \(productPrice as? String ?? "")"
+    cell.categoryPrice.text = "৳ \(productPrice as? String ?? "")"
 //    cell.categoryDescription.text = productDescription as? String
     
     cell.cartBtn.tag = indexPath.row
