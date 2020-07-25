@@ -219,14 +219,14 @@ class CartVC: UIViewController,UITableViewDelegate,UITableViewDataSource,PKPayme
     @IBOutlet weak var discountPrice: UILabel!
     var currentSelectedOrderType = 0
     
-    @IBOutlet weak var orderType: TTSegmentedControl!
+//    @IBOutlet weak var orderType: TTSegmentedControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
     
         configureNavigationBar(largeTitleColor: .white, backgoundColor: UIColor(rgb: 0xFF9300), tintColor: UIColor(rgb: appDefaultColor), title: "কার্ট", preferredLargeTitle: true)
         
-        
+        /*
         orderType.itemTitles = ["Delivery","Collection"]
         orderType.thumbGradientColors = [UIColor(rgb: appDefaultColor)]
         orderType.didSelectItemWith = { (index, title) -> () in
@@ -235,6 +235,9 @@ class CartVC: UIViewController,UITableViewDelegate,UITableViewDataSource,PKPayme
         }
         orderType.defaultTextFont = UIFont(name: robotoMedium, size: 11*factx)!
         orderType.selectedTextFont = UIFont(name: robotoMedium, size: 13*factx)!
+        */
+        self.currentSelectedOrderType = 1
+
         
         let checkoutBtn = UIButton(type: .system)
         checkoutBtn.setTitle("কিনুন", for: .normal)
@@ -383,7 +386,7 @@ class CartVC: UIViewController,UITableViewDelegate,UITableViewDataSource,PKPayme
             }
         }
         else {
-            let alert = UIAlertController(title: "দুঃখিত!!", message: /*"We are Out of order.Please try after some times"*/"আমরা অর্ডার নেয়া শেষ। দয়া করে কিছু সময় পরে চেষ্টা করুন", preferredStyle: UIAlertController.Style.alert)
+            let alert = UIAlertController(title: "দুঃখিত!!", message: /*"We are Out of order.Please try after some times"*/"আমাদের কিছুক্ষণের জন্য অর্ডার নেয়া শেষ। দয়া করে কিছু সময় পরে চেষ্টা করুন", preferredStyle: UIAlertController.Style.alert)
             // add an action (button)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.cancel, handler:nil))
             // show the alert

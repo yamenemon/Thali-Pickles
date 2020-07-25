@@ -22,7 +22,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Kj-hU-0uG">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ক্রয়-বিক্রয়" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eu6-OK-XHM">
                                         <rect key="frame" x="92" y="377.5" width="230" height="63"/>
@@ -40,7 +40,7 @@
                                 <color key="backgroundColor" red="0.90372341869999995" green="0.55096954109999996" blue="0.13693761830000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="NWz-at-wCh" firstAttribute="leading" secondItem="1Kj-hU-0uG" secondAttribute="leadingMargin" id="Ch0-Zz-FRK"/>
-                                    <constraint firstItem="Eu6-OK-XHM" firstAttribute="centerY" secondItem="1Kj-hU-0uG" secondAttribute="centerY" id="K3V-hx-c9h"/>
+                                    <constraint firstItem="Eu6-OK-XHM" firstAttribute="centerY" secondItem="1Kj-hU-0uG" secondAttribute="centerY" constant="-39" id="K3V-hx-c9h"/>
                                     <constraint firstItem="NWz-at-wCh" firstAttribute="top" secondItem="Eu6-OK-XHM" secondAttribute="bottom" constant="8.5" id="SAs-8p-j7T"/>
                                     <constraint firstItem="Eu6-OK-XHM" firstAttribute="centerX" secondItem="1Kj-hU-0uG" secondAttribute="centerX" id="fut-HS-BHs"/>
                                     <constraint firstItem="NWz-at-wCh" firstAttribute="centerX" secondItem="Eu6-OK-XHM" secondAttribute="centerX" id="xbG-iR-Hkg"/>
@@ -50,8 +50,8 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="1Kj-hU-0uG" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="2QU-Jv-s8b"/>
-                            <constraint firstItem="1Kj-hU-0uG" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="YVZ-lI-FEH"/>
-                            <constraint firstItem="1Kj-hU-0uG" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="mr0-B9-1Ji"/>
+                            <constraint firstItem="1Kj-hU-0uG" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="34" id="YVZ-lI-FEH"/>
+                            <constraint firstItem="1Kj-hU-0uG" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="-44" id="mr0-B9-1Ji"/>
                             <constraint firstItem="1Kj-hU-0uG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="tMP-HN-agL"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>

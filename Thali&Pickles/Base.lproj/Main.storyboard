@@ -11,6 +11,9 @@
         <array key="Roboto-Bold.ttf">
             <string>Roboto-Bold</string>
         </array>
+        <array key="Roboto-Medium.ttf">
+            <string>Roboto-Medium</string>
+        </array>
         <array key="Roboto-Regular.ttf">
             <string>Roboto-Regular</string>
         </array>
@@ -44,7 +47,7 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ASI-P7-Nwj" userLabel="calculationView">
-                                        <rect key="frame" x="8" y="598" width="397" height="121"/>
+                                        <rect key="frame" x="8" y="616" width="397" height="103"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="উপমূল্য" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="haX-yB-DhO">
                                                 <rect key="frame" x="8" y="12" width="52" height="20"/>
@@ -90,7 +93,7 @@
                                         <constraints>
                                             <constraint firstItem="ANB-6m-Syx" firstAttribute="top" secondItem="haX-yB-DhO" secondAttribute="top" id="1Yw-0I-lIZ"/>
                                             <constraint firstItem="3VE-rX-p8v" firstAttribute="top" secondItem="kXF-3I-NKH" secondAttribute="top" id="4NK-MD-Yh1"/>
-                                            <constraint firstItem="ANB-6m-Syx" firstAttribute="leading" secondItem="haX-yB-DhO" secondAttribute="trailing" priority="250" constant="79.5" id="4dr-s3-oFe"/>
+                                            <constraint firstItem="ANB-6m-Syx" firstAttribute="leading" secondItem="haX-yB-DhO" secondAttribute="trailing" priority="250" constant="40" id="4dr-s3-oFe"/>
                                             <constraint firstAttribute="trailing" secondItem="ANB-6m-Syx" secondAttribute="trailing" constant="8" id="6va-N2-P7F"/>
                                             <constraint firstItem="J39-7N-T6V" firstAttribute="leading" secondItem="kXF-3I-NKH" secondAttribute="leading" id="9qG-99-GWY"/>
                                             <constraint firstItem="3VE-rX-p8v" firstAttribute="leading" secondItem="kXF-3I-NKH" secondAttribute="trailing" priority="250" constant="79" id="I8N-2A-3g2"/>
@@ -106,40 +109,23 @@
                                         </constraints>
                                     </view>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Hne-97-T2v">
-                                        <rect key="frame" x="8" y="48" width="397" height="542"/>
+                                        <rect key="frame" x="8" y="5" width="397" height="603"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <connections>
                                             <outlet property="dataSource" destination="8rJ-Kc-sve" id="7Xw-4H-ccR"/>
                                             <outlet property="delegate" destination="8rJ-Kc-sve" id="AYQ-Ml-jOj"/>
                                         </connections>
                                     </tableView>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FuL-3O-4tQ" customClass="TTSegmentedControl" customModule="TTSegmentedControl">
-                                        <rect key="frame" x="8" y="8" width="397" height="36.5"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="useGradient" value="YES"/>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="thumbColor">
-                                                <color key="value" red="0.92435443399999995" green="0.65235489609999997" blue="0.29816371200000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="selectedTextColor">
-                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="Hne-97-T2v" firstAttribute="height" secondItem="szC-6A-AuQ" secondAttribute="height" multiplier="0.73" constant="12.75" id="Fvv-iw-5N2"/>
+                                    <constraint firstItem="Hne-97-T2v" firstAttribute="height" secondItem="szC-6A-AuQ" secondAttribute="height" multiplier="0.73" constant="73.75" id="Fvv-iw-5N2"/>
                                     <constraint firstAttribute="trailing" secondItem="ASI-P7-Nwj" secondAttribute="trailing" constant="9" id="H2p-cH-r3a"/>
-                                    <constraint firstItem="Hne-97-T2v" firstAttribute="top" secondItem="FuL-3O-4tQ" secondAttribute="bottom" constant="3.5" id="IuZ-XV-5a6"/>
-                                    <constraint firstItem="FuL-3O-4tQ" firstAttribute="height" secondItem="szC-6A-AuQ" secondAttribute="height" multiplier="0.05" id="JD3-Dx-XA7"/>
-                                    <constraint firstItem="FuL-3O-4tQ" firstAttribute="leading" secondItem="szC-6A-AuQ" secondAttribute="leading" constant="8" id="LYl-zz-bZK"/>
                                     <constraint firstItem="Hne-97-T2v" firstAttribute="leading" secondItem="szC-6A-AuQ" secondAttribute="leading" constant="8" id="QNx-2h-qFw"/>
                                     <constraint firstItem="ASI-P7-Nwj" firstAttribute="top" secondItem="Hne-97-T2v" secondAttribute="bottom" constant="8" id="R2M-NT-sUe"/>
+                                    <constraint firstItem="Hne-97-T2v" firstAttribute="top" secondItem="szC-6A-AuQ" secondAttribute="top" constant="5" id="SEO-M8-2an"/>
                                     <constraint firstAttribute="trailing" secondItem="Hne-97-T2v" secondAttribute="trailing" constant="9" id="SeV-LW-y6B"/>
                                     <constraint firstItem="ASI-P7-Nwj" firstAttribute="leading" secondItem="szC-6A-AuQ" secondAttribute="leading" constant="8" id="cSG-vC-fKy"/>
-                                    <constraint firstAttribute="trailing" secondItem="FuL-3O-4tQ" secondAttribute="trailing" constant="9" id="ttj-vh-DuV"/>
-                                    <constraint firstItem="FuL-3O-4tQ" firstAttribute="top" secondItem="szC-6A-AuQ" secondAttribute="top" constant="8" id="xfg-n2-4c7"/>
                                     <constraint firstAttribute="bottom" secondItem="ASI-P7-Nwj" secondAttribute="bottom" constant="6" id="yIR-xv-akP"/>
                                 </constraints>
                             </view>
@@ -159,16 +145,15 @@
                         <outlet property="cartTableView" destination="Hne-97-T2v" id="6mV-37-wIP"/>
                         <outlet property="discountPrice" destination="3VE-rX-p8v" id="pTx-gH-F4S"/>
                         <outlet property="discountTextLabel" destination="kXF-3I-NKH" id="UiS-me-lFn"/>
-                        <outlet property="orderType" destination="FuL-3O-4tQ" id="HSU-e2-PtO"/>
                         <outlet property="subTotalPrice" destination="ANB-6m-Syx" id="g6r-Aq-Wck"/>
                         <outlet property="totalPriceLabel" destination="zNu-Hi-BpK" id="Ace-sn-0Qb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3797.1014492753625" y="-244.41964285714283"/>
+            <point key="canvasLocation" x="-861" y="959"/>
         </scene>
-        <!--সেটিং-->
+        <!--SettingVC-->
         <scene sceneID="yjM-FK-pj9">
             <objects>
                 <viewController id="Tfg-bZ-ij4" customClass="SettingVC" customModule="ক্রয়_বিক্রয়" customModuleProvider="target" sceneMemberID="viewController">
@@ -177,7 +162,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ey8-mi-0Bl">
-                                <rect key="frame" x="20" y="406" width="374" height="84"/>
+                                <rect key="frame" x="20" y="176" width="374" height="60"/>
                                 <color key="backgroundColor" red="0.90196078430000004" green="0.54901960780000003" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="26"/>
                                 <state key="normal" title="Chat">
@@ -188,7 +173,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BdO-zf-h47">
-                                <rect key="frame" x="20" y="498" width="374" height="84"/>
+                                <rect key="frame" x="20" y="244" width="374" height="60"/>
                                 <color key="backgroundColor" red="0.90196078430000004" green="0.54901960780000003" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="26"/>
                                 <state key="normal" title="Logout">
@@ -199,11 +184,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZR3-He-Vsd">
-                                <rect key="frame" x="20" y="314" width="374" height="84"/>
+                                <rect key="frame" x="20" y="108" width="374" height="60"/>
                                 <color key="backgroundColor" red="0.90196078430000004" green="0.54901960780000003" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="84" id="0fJ-84-uGh"/>
-                                    <constraint firstAttribute="width" constant="374" id="JnU-Tc-zA1"/>
+                                    <constraint firstAttribute="height" constant="60" id="0fJ-84-uGh"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="26"/>
                                 <state key="normal" title="About Us">
@@ -213,7 +197,6 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="BdO-zf-h47" firstAttribute="trailing" secondItem="ey8-mi-0Bl" secondAttribute="trailing" id="2BF-WT-zlH"/>
                             <constraint firstItem="ZR3-He-Vsd" firstAttribute="leading" secondItem="bB7-jk-c6t" secondAttribute="leading" constant="20" id="Dnj-k3-8tg"/>
                             <constraint firstItem="ey8-mi-0Bl" firstAttribute="height" secondItem="ZR3-He-Vsd" secondAttribute="height" id="HnP-ga-MOB"/>
                             <constraint firstItem="ey8-mi-0Bl" firstAttribute="top" secondItem="ZR3-He-Vsd" secondAttribute="bottom" constant="8" id="R67-cP-AMG"/>
@@ -226,15 +209,15 @@
                             <constraint firstItem="bB7-jk-c6t" firstAttribute="trailing" secondItem="ZR3-He-Vsd" secondAttribute="trailing" constant="20" id="kfF-xS-mCc"/>
                             <constraint firstItem="ey8-mi-0Bl" firstAttribute="trailing" secondItem="ZR3-He-Vsd" secondAttribute="trailing" id="mOg-1V-TzG"/>
                             <constraint firstItem="BdO-zf-h47" firstAttribute="centerX" secondItem="bB7-jk-c6t" secondAttribute="centerX" id="oeD-d5-Z5d"/>
-                            <constraint firstItem="ZR3-He-Vsd" firstAttribute="top" secondItem="bB7-jk-c6t" secondAttribute="top" constant="270" id="osA-uq-5Pa"/>
+                            <constraint firstItem="ZR3-He-Vsd" firstAttribute="top" secondItem="bB7-jk-c6t" secondAttribute="top" constant="20" id="osA-uq-5Pa"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bB7-jk-c6t"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="সেটিং" id="Abb-mA-Dcb"/>
+                    <navigationItem key="navigationItem" id="fTY-Z0-8no"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DUY-Uy-NYj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2126.0869565217395" y="186.83035714285714"/>
+            <point key="canvasLocation" x="1299" y="-149"/>
         </scene>
         <!--Chat View Controller-->
         <scene sceneID="IJ6-SC-5QR">
@@ -249,23 +232,79 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SPs-b1-4Qe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2955" y="400"/>
+            <point key="canvasLocation" x="3863.7681159420295" y="399.77678571428572"/>
         </scene>
-        <!--অর্ডার-->
+        <!--অর্ডার সমূহ-->
         <scene sceneID="Biz-ag-7yP">
             <objects>
                 <viewController id="bH5-T7-DvX" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yn1-Rr-rIP">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="p6f-hh-TrY">
+                                <rect key="frame" x="20" y="126" width="374" height="104"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pdf-icon-16x16-15.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="gsV-MB-g3Z">
+                                        <rect key="frame" x="15" y="8" width="88" height="88"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="প্রসেস চলছে" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gpM-Ln-CUp">
+                                        <rect key="frame" x="189" y="8" width="162" height="88"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="25"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Bc-D2-HIG">
+                                <rect key="frame" x="20" y="238" width="374" height="104"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pdf-icon-16x16-15.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="30c-dc-7Tf">
+                                        <rect key="frame" x="15" y="8" width="88" height="88"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ডেলিভারড" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7LX-om-ZsS">
+                                        <rect key="frame" x="194" y="8" width="162" height="88"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="25"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qG0-ug-dTU">
+                                <rect key="frame" x="20" y="350" width="374" height="104"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pdf-icon-16x16-15.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="UYm-3r-jpS">
+                                        <rect key="frame" x="15" y="8" width="88" height="88"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="অর্ডার হয়ে আছে" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ve0-xM-MOm">
+                                        <rect key="frame" x="146" y="8" width="210" height="88"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="25"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="QuO-jq-OOb"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="অর্ডার" id="WpC-QM-Ksv"/>
+                    <navigationItem key="navigationItem" title="অর্ডার সমূহ" id="qpX-Nj-op1"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tTk-Rh-d7o" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2139" y="878"/>
+            <point key="canvasLocation" x="1299" y="545"/>
         </scene>
         <!--LoginVC-->
         <scene sceneID="CUi-vy-ikA">
@@ -276,7 +315,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="ইমেইল" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IrG-kC-Qu1">
-                                <rect key="frame" x="20" y="363" width="374" height="50"/>
+                                <rect key="frame" x="20" y="360" width="374" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="w9I-BC-Zmp"/>
@@ -288,7 +327,7 @@
                                 </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="পাসওয়ার্ড" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uaT-mr-f0I">
-                                <rect key="frame" x="20" y="422.5" width="374" height="50"/>
+                                <rect key="frame" x="20" y="419.5" width="374" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
@@ -297,7 +336,7 @@
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZAk-jW-Lh6">
-                                <rect key="frame" x="20" y="487" width="374" height="48"/>
+                                <rect key="frame" x="20" y="484" width="374" height="47"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="30"/>
                                 <state key="normal" title="লগইন করুন">
@@ -308,7 +347,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="edP-gy-3XN">
-                                <rect key="frame" x="20" y="223" width="374" height="48"/>
+                                <rect key="frame" x="20" y="222" width="374" height="47"/>
                                 <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="30"/>
                                 <state key="normal" title="গুগল">
@@ -320,7 +359,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C8L-Fr-O46">
-                                <rect key="frame" x="20" y="571" width="299" height="32"/>
+                                <rect key="frame" x="20" y="567" width="299" height="32"/>
                                 <fontDescription key="fontDescription" name="Rockwell-Bold" family="Rockwell" pointSize="20"/>
                                 <state key="normal" title="রেজিস্ট্রেশন করুন"/>
                                 <connections>
@@ -328,12 +367,12 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o9o-Xn-jly">
-                                <rect key="frame" x="304" y="571" width="90" height="32"/>
+                                <rect key="frame" x="304" y="567" width="90" height="32"/>
                                 <fontDescription key="fontDescription" name="Rockwell-Bold" family="Rockwell" pointSize="20"/>
                                 <state key="normal" title="পাসওয়ার্ড?"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3UD-7C-Aa5">
-                                <rect key="frame" x="20" y="279" width="374" height="48"/>
+                                <rect key="frame" x="20" y="277" width="374" height="47"/>
                                 <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="30"/>
                                 <state key="normal" title="ফেইসবুক">
@@ -345,13 +384,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="দেশের বৃহৎ বেচা-কেনার মাধ্যম" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fsh-6J-IsI">
-                                <rect key="frame" x="107" y="173" width="200.5" height="20"/>
+                                <rect key="frame" x="110.5" y="172" width="195" height="20"/>
                                 <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ক্রয়-বিক্রয়" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ByI-oR-KXt">
-                                <rect key="frame" x="92" y="102" width="230" height="63"/>
+                                <rect key="frame" x="98" y="102" width="220" height="62"/>
                                 <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="53"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -367,7 +406,7 @@
                             <constraint firstItem="IrG-kC-Qu1" firstAttribute="leading" secondItem="O3m-E4-jUK" secondAttribute="leading" constant="20" id="CUb-2k-p0m"/>
                             <constraint firstItem="C8L-Fr-O46" firstAttribute="leading" secondItem="ZAk-jW-Lh6" secondAttribute="leading" id="Eah-8I-Tsr"/>
                             <constraint firstItem="ZAk-jW-Lh6" firstAttribute="leading" secondItem="uaT-mr-f0I" secondAttribute="leading" id="I4Q-cC-R5g"/>
-                            <constraint firstItem="fsh-6J-IsI" firstAttribute="centerX" secondItem="O3m-E4-jUK" secondAttribute="centerX" id="N4j-xT-uiK"/>
+                            <constraint firstItem="fsh-6J-IsI" firstAttribute="centerX" secondItem="O3m-E4-jUK" secondAttribute="centerX" constant="1" id="N4j-xT-uiK"/>
                             <constraint firstItem="C8L-Fr-O46" firstAttribute="top" secondItem="ZAk-jW-Lh6" secondAttribute="bottom" constant="36" id="Ozi-bU-rtx"/>
                             <constraint firstItem="uaT-mr-f0I" firstAttribute="trailing" secondItem="IrG-kC-Qu1" secondAttribute="trailing" id="Suw-Sn-ASu"/>
                             <constraint firstItem="uaT-mr-f0I" firstAttribute="leading" secondItem="IrG-kC-Qu1" secondAttribute="leading" id="U0b-Ms-4Ng"/>
@@ -379,7 +418,7 @@
                             <constraint firstItem="edP-gy-3XN" firstAttribute="leading" secondItem="O3m-E4-jUK" secondAttribute="leading" constant="20" id="gB9-fQ-02t"/>
                             <constraint firstItem="3UD-7C-Aa5" firstAttribute="trailing" secondItem="edP-gy-3XN" secondAttribute="trailing" id="gIs-8e-jgT"/>
                             <constraint firstItem="ZAk-jW-Lh6" firstAttribute="trailing" secondItem="uaT-mr-f0I" secondAttribute="trailing" id="hAG-GY-pcJ"/>
-                            <constraint firstItem="ByI-oR-KXt" firstAttribute="centerX" secondItem="O3m-E4-jUK" secondAttribute="centerX" id="i1s-Nx-hpc"/>
+                            <constraint firstItem="ByI-oR-KXt" firstAttribute="centerX" secondItem="O3m-E4-jUK" secondAttribute="centerX" constant="1" id="i1s-Nx-hpc"/>
                             <constraint firstItem="3UD-7C-Aa5" firstAttribute="top" secondItem="edP-gy-3XN" secondAttribute="bottom" constant="8" id="kYG-fC-dfJ"/>
                             <constraint firstItem="o9o-Xn-jly" firstAttribute="trailing" secondItem="ZAk-jW-Lh6" secondAttribute="trailing" id="ksR-JU-dgU"/>
                             <constraint firstItem="fsh-6J-IsI" firstAttribute="top" secondItem="ByI-oR-KXt" secondAttribute="bottom" constant="8" id="nHh-7x-kSa"/>
@@ -397,7 +436,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9g9-nZ-GfG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2972.4637681159425" y="213.61607142857142"/>
+            <point key="canvasLocation" x="-3097" y="214"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -414,8 +453,8 @@
                     <connections>
                         <segue destination="ks0-Zi-FX2" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                         <segue destination="pSc-6U-1k7" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
-                        <segue destination="bH5-T7-DvX" kind="relationship" relationship="viewControllers" id="IWr-gi-SA8"/>
-                        <segue destination="Tfg-bZ-ij4" kind="relationship" relationship="viewControllers" id="e7B-8z-ReH"/>
+                        <segue destination="VI8-qa-xwY" kind="relationship" relationship="viewControllers" id="IWr-gi-SA8"/>
+                        <segue destination="dY7-vc-NQA" kind="relationship" relationship="viewControllers" id="e7B-8z-ReH"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
@@ -465,7 +504,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YUp-3s-uS8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2955.072463768116" y="-244.41964285714283"/>
+            <point key="canvasLocation" x="-1649" y="959"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="xnt-hu-eE9">
@@ -579,7 +618,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="ক্রয়-বিক্রয়" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OL0-KM-X30">
-                                <rect key="frame" x="92" y="124" width="230" height="63"/>
+                                <rect key="frame" x="97" y="124" width="220" height="63"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="63" id="tat-8J-g9C"/>
                                 </constraints>
@@ -638,12 +677,325 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ANk-R0-myw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2350.7246376811595" y="699.77678571428567"/>
+            <point key="canvasLocation" x="-2372" y="702"/>
+        </scene>
+        <!--কিনুন-->
+        <scene sceneID="azl-gW-552">
+            <objects>
+                <viewController id="18Z-oh-YV7" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="i5e-CZ-0bI">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="মোট" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w0N-8h-paW">
+                                <rect key="frame" x="20" y="109" width="230" height="59"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="৩৬০০" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J5U-AV-CMM">
+                                <rect key="frame" x="274" y="109" width="120" height="59"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="২০০" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tud-9O-inl">
+                                <rect key="frame" x="274" y="176" width="120" height="59"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="সর্বমোট" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nQF-zz-2NK">
+                                <rect key="frame" x="20" y="247" width="230" height="59"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="বিকাশ" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bie-4d-4mB">
+                                <rect key="frame" x="20" y="442" width="303" height="59"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ডিসকাউন্ট" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ctB-m8-5OG">
+                                <rect key="frame" x="20" y="176" width="230" height="59"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="৩৪০০" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iYr-1r-7MB">
+                                <rect key="frame" x="274" y="247" width="120" height="59"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CTU-zY-lZW">
+                                <rect key="frame" x="20" y="355" width="374" height="79"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="কেনার পদ্ধতি">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JHT-TR-XL4">
+                                <rect key="frame" x="344" y="453" width="49" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="নগদ প্রদান(ডেলিভারি)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BQh-jR-RJa">
+                                <rect key="frame" x="20" y="509" width="303" height="59"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="I8A-Jn-J0e">
+                                <rect key="frame" x="344" y="520" width="49" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </switch>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lO9-a7-COx">
+                                <rect key="frame" x="109" y="614" width="196" height="58"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.90196078430000004" green="0.54901960780000003" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="30"/>
+                                <state key="normal" title="এগিয়ে যান">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="pDk-kf-MWn"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="কিনুন" id="wvg-Fx-uRu"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fRt-Ii-Gwq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6802.898550724638" y="-244.41964285714283"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Axr-Z3-3is">
+            <objects>
+                <viewController id="EMQ-l8-9tx" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LK1-dk-tbO">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="uKe-Eg-JX3"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="O66-Rv-eNp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5892.753623188406" y="438.61607142857139"/>
+        </scene>
+        <!--বিকাশ পদ্ধতি-->
+        <scene sceneID="mCl-6l-Fq9">
+            <objects>
+                <viewController id="BM2-P7-Rih" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="78R-cQ-EKb">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="অর্ডারটি সম্পন্ন করতে নিচের নাম্বারটিতে ৳ ৩৪০০ বিকাশ করুন।" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="29f-7f-4UM">
+                                <rect key="frame" x="20" y="155" width="374" height="78"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="23"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="০১৭১৭১২৩১৩০" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="VTm-TY-08B">
+                                <rect key="frame" x="20" y="241" width="374" height="63"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="35"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="কপি করুন" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Mpu-Xx-GjB">
+                                <rect key="frame" x="113" y="319" width="181" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.93120640519999998" green="0.68543106320000002" blue="0.33239322900000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="33"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="১২৪৫৯৮৪" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AcJ-01-Had">
+                                <rect key="frame" x="20" y="486" width="374" height="43"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="27"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="বিকাশ থেকে প্রাপ্ত  ট্রানজেকশন নাম্বারটি নিচে লিখুন।" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="m2L-v0-YOA">
+                                <rect key="frame" x="20" y="393" width="374" height="78"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="সম্পন্ন করুন" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="goh-Ul-Tzl">
+                                <rect key="frame" x="113" y="579" width="181" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.93120640519999998" green="0.68543106320000002" blue="0.33239322900000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="33"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="আপনার অর্ডার সম্পন্ন হয়েছে,বিস্তারিত জানতে এখন আপনি অর্ডার লিস্ট চেক করুন" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="dy3-H2-Kb0">
+                                <rect key="frame" x="20" y="669" width="374" height="72"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="9Ay-be-iw1"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="বিকাশ পদ্ধতি" id="SvK-zT-dnp"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wLp-aI-cbz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="8111.594202898551" y="429.24107142857139"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="S5n-AJ-osH">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="CvM-oB-SFo" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="p39-bS-Wif">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" red="0.90196078430000004" green="0.54901960780000003" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.90196078430000004" green="0.54901960780000003" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="18Z-oh-YV7" kind="relationship" relationship="rootViewController" id="DnG-8v-ZgP"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zzv-XF-2PK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5892.753623188406" y="-244.41964285714283"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="XT2-fz-tpS">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="H3k-gi-h1Q" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="DuE-ft-rRT">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.90196078430000004" green="0.54901960780000003" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BM2-P7-Rih" kind="relationship" relationship="rootViewController" id="mo0-Il-7Vl"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OYp-ZX-CRj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7200.0000000000009" y="428.57142857142856"/>
+        </scene>
+        <!--অর্ডার-->
+        <scene sceneID="CJZ-if-KqV">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="VI8-qa-xwY" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="অর্ডার" id="WpC-QM-Ksv"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Wj2-WW-U8a">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.90196078430000004" green="0.54901960780000003" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="bH5-T7-DvX" kind="relationship" relationship="rootViewController" id="j5w-sC-1rN"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ky1-XU-3oo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="577" y="528"/>
+        </scene>
+        <!--অর্ডার-->
+        <scene sceneID="KHO-y6-IFx">
+            <objects>
+                <viewController id="lAa-mq-HnW" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zvf-fh-jpP">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="অর্ডারটি পাঠিয়ে দেয়া হয়েছে কিছুক্ষণ পর আপনি আপনার অর্ডার লিস্ট চেক করুন। " textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="LsF-iJ-JV2">
+                                <rect key="frame" x="20" y="349" width="374" height="106"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="23"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="eXq-u5-78y"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="অর্ডার" id="ndq-Ac-ptZ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="73d-j1-QfA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="8872.463768115942" y="-244.41964285714283"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="eRZ-xm-5E6">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="D1Z-dg-M5R" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="QBg-iL-3BZ">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.90196078430000004" green="0.54901960780000003" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="lAa-mq-HnW" kind="relationship" relationship="rootViewController" id="rbr-Sr-CqQ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hhz-2q-UbH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7960.8695652173919" y="-244.41964285714283"/>
+        </scene>
+        <!--সেটিং-->
+        <scene sceneID="Zwq-u6-Wy9">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dY7-vc-NQA" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="সেটিং" id="Abb-mA-Dcb"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="BH1-6y-Qyi">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Tfg-bZ-ij4" kind="relationship" relationship="rootViewController" id="BrH-Tx-Mx3"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AVU-Qo-0Kb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="577" y="-149"/>
         </scene>
     </scenes>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>
         <image name="addCart.png" width="25" height="25"/>
         <image name="menu.png" width="25" height="25"/>
+        <image name="pdf-icon-16x16-15.jpg" width="256" height="256"/>
     </resources>
 </document>
