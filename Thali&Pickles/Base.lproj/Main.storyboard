@@ -151,7 +151,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-861" y="959"/>
+            <point key="canvasLocation" x="336" y="938"/>
         </scene>
         <!--SettingVC-->
         <scene sceneID="yjM-FK-pj9">
@@ -163,7 +163,7 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ey8-mi-0Bl">
                                 <rect key="frame" x="20" y="176" width="374" height="60"/>
-                                <color key="backgroundColor" red="0.90196078430000004" green="0.54901960780000003" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="26"/>
                                 <state key="normal" title="Chat">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -174,7 +174,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BdO-zf-h47">
                                 <rect key="frame" x="20" y="244" width="374" height="60"/>
-                                <color key="backgroundColor" red="0.90196078430000004" green="0.54901960780000003" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="26"/>
                                 <state key="normal" title="Logout">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -185,7 +185,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZR3-He-Vsd">
                                 <rect key="frame" x="20" y="108" width="374" height="60"/>
-                                <color key="backgroundColor" red="0.90196078430000004" green="0.54901960780000003" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="0fJ-84-uGh"/>
                                 </constraints>
@@ -217,7 +217,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DUY-Uy-NYj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1299" y="-149"/>
+            <point key="canvasLocation" x="2208.695652173913" y="-149.33035714285714"/>
         </scene>
         <!--Chat View Controller-->
         <scene sceneID="IJ6-SC-5QR">
@@ -232,7 +232,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SPs-b1-4Qe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3863.7681159420295" y="399.77678571428572"/>
+            <point key="canvasLocation" x="4773.913043478261" y="399.77678571428572"/>
         </scene>
         <!--অর্ডার সমূহ-->
         <scene sceneID="Biz-ag-7yP">
@@ -304,7 +304,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tTk-Rh-d7o" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1299" y="545"/>
+            <point key="canvasLocation" x="2208.695652173913" y="544.41964285714278"/>
         </scene>
         <!--LoginVC-->
         <scene sceneID="CUi-vy-ikA">
@@ -315,7 +315,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="ইমেইল" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IrG-kC-Qu1">
-                                <rect key="frame" x="20" y="360" width="374" height="50"/>
+                                <rect key="frame" x="20" y="362" width="374" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="w9I-BC-Zmp"/>
@@ -327,7 +327,7 @@
                                 </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="পাসওয়ার্ড" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uaT-mr-f0I">
-                                <rect key="frame" x="20" y="419.5" width="374" height="50"/>
+                                <rect key="frame" x="20" y="421.5" width="374" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
@@ -336,7 +336,7 @@
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZAk-jW-Lh6">
-                                <rect key="frame" x="20" y="484" width="374" height="47"/>
+                                <rect key="frame" x="20" y="486" width="374" height="48"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="30"/>
                                 <state key="normal" title="লগইন করুন">
@@ -347,7 +347,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="edP-gy-3XN">
-                                <rect key="frame" x="20" y="222" width="374" height="47"/>
+                                <rect key="frame" x="20" y="222" width="374" height="48"/>
                                 <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="30"/>
                                 <state key="normal" title="গুগল">
@@ -359,7 +359,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C8L-Fr-O46">
-                                <rect key="frame" x="20" y="567" width="299" height="32"/>
+                                <rect key="frame" x="20" y="570" width="299" height="32"/>
                                 <fontDescription key="fontDescription" name="Rockwell-Bold" family="Rockwell" pointSize="20"/>
                                 <state key="normal" title="রেজিস্ট্রেশন করুন"/>
                                 <connections>
@@ -367,12 +367,12 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o9o-Xn-jly">
-                                <rect key="frame" x="304" y="567" width="90" height="32"/>
+                                <rect key="frame" x="304" y="570" width="90" height="32"/>
                                 <fontDescription key="fontDescription" name="Rockwell-Bold" family="Rockwell" pointSize="20"/>
                                 <state key="normal" title="পাসওয়ার্ড?"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3UD-7C-Aa5">
-                                <rect key="frame" x="20" y="277" width="374" height="47"/>
+                                <rect key="frame" x="20" y="278" width="374" height="48"/>
                                 <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="30"/>
                                 <state key="normal" title="ফেইসবুক">
@@ -384,19 +384,19 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="দেশের বৃহৎ বেচা-কেনার মাধ্যম" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fsh-6J-IsI">
-                                <rect key="frame" x="110.5" y="172" width="195" height="20"/>
+                                <rect key="frame" x="108" y="172" width="200.5" height="20"/>
                                 <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ক্রয়-বিক্রয়" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ByI-oR-KXt">
-                                <rect key="frame" x="98" y="102" width="220" height="62"/>
+                                <rect key="frame" x="93" y="102" width="230" height="62"/>
                                 <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="53"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.92091852429999999" green="0.64865344759999999" blue="0.29383498429999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="IrG-kC-Qu1" firstAttribute="top" secondItem="3UD-7C-Aa5" secondAttribute="bottom" constant="36" id="1hp-Az-xIV"/>
                             <constraint firstItem="ZAk-jW-Lh6" firstAttribute="top" secondItem="uaT-mr-f0I" secondAttribute="bottom" constant="14.5" id="3hl-Xo-g7r"/>
@@ -436,7 +436,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9g9-nZ-GfG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3097" y="214"/>
+            <point key="canvasLocation" x="-4154" y="214"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -447,7 +447,7 @@
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="barTintColor" red="0.90196078431372551" green="0.5490196078431373" blue="0.13725490196078433" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="selectedImageTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
@@ -459,7 +459,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1726.0869565217392" y="213.61607142857142"/>
+            <point key="canvasLocation" x="-768.11594202898561" y="213.61607142857142"/>
         </scene>
         <!--পণ্য-->
         <scene sceneID="KIJ-PJ-rSA">
@@ -471,7 +471,7 @@
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="barTintColor" red="0.90196078431372551" green="0.5490196078431373" blue="0.13725490196078433" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
@@ -495,7 +495,7 @@
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="barTintColor" red="0.90196078431372551" green="0.5490196078431373" blue="0.13725490196078433" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -504,7 +504,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YUp-3s-uS8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1649" y="959"/>
+            <point key="canvasLocation" x="-359" y="938"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="xnt-hu-eE9">
@@ -522,7 +522,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="15P-OZ-AXK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3884.057971014493" y="213.61607142857142"/>
+            <point key="canvasLocation" x="-4868" y="214"/>
         </scene>
         <!--RegisterVC-->
         <scene sceneID="ehc-nJ-uHn">
@@ -618,7 +618,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="ক্রয়-বিক্রয়" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OL0-KM-X30">
-                                <rect key="frame" x="97" y="124" width="220" height="63"/>
+                                <rect key="frame" x="92" y="124" width="230" height="63"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="63" id="tat-8J-g9C"/>
                                 </constraints>
@@ -627,7 +627,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.92091852429999999" green="0.64865344759999999" blue="0.29383498429999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Wyz-7m-gQy" firstAttribute="centerX" secondItem="4QG-uk-G9d" secondAttribute="centerX" id="2Un-9S-7QA"/>
                             <constraint firstItem="Zgq-MC-0uY" firstAttribute="leading" secondItem="bEm-BC-7Zw" secondAttribute="leading" id="6IG-Vz-wxR"/>
@@ -677,7 +677,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ANk-R0-myw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2372" y="702"/>
+            <point key="canvasLocation" x="-3420" y="214"/>
         </scene>
         <!--কিনুন-->
         <scene sceneID="azl-gW-552">
@@ -762,7 +762,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lO9-a7-COx">
                                 <rect key="frame" x="109" y="614" width="196" height="58"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.90196078430000004" green="0.54901960780000003" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="30"/>
                                 <state key="normal" title="এগিয়ে যান">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -777,7 +777,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fRt-Ii-Gwq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6802.898550724638" y="-244.41964285714283"/>
+            <point key="canvasLocation" x="7713.04347826087" y="-244.41964285714283"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Axr-Z3-3is">
@@ -792,7 +792,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O66-Rv-eNp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5892.753623188406" y="438.61607142857139"/>
+            <point key="canvasLocation" x="6802.898550724638" y="438.61607142857139"/>
         </scene>
         <!--বিকাশ পদ্ধতি-->
         <scene sceneID="mCl-6l-Fq9">
@@ -864,7 +864,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wLp-aI-cbz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8111.594202898551" y="429.24107142857139"/>
+            <point key="canvasLocation" x="9021.7391304347839" y="429.24107142857139"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="S5n-AJ-osH">
@@ -876,7 +876,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" red="0.90196078430000004" green="0.54901960780000003" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="barTintColor" red="0.90196078430000004" green="0.54901960780000003" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -885,7 +885,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zzv-XF-2PK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5892.753623188406" y="-244.41964285714283"/>
+            <point key="canvasLocation" x="6802.898550724638" y="-244.41964285714283"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="XT2-fz-tpS">
@@ -904,7 +904,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OYp-ZX-CRj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7200.0000000000009" y="428.57142857142856"/>
+            <point key="canvasLocation" x="8110.1449275362329" y="428.57142857142856"/>
         </scene>
         <!--অর্ডার-->
         <scene sceneID="CJZ-if-KqV">
@@ -915,7 +915,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Wj2-WW-U8a">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.90196078430000004" green="0.54901960780000003" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -924,7 +924,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ky1-XU-3oo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="577" y="528"/>
+            <point key="canvasLocation" x="1486.9565217391305" y="527.67857142857144"/>
         </scene>
         <!--অর্ডার-->
         <scene sceneID="KHO-y6-IFx">
@@ -950,7 +950,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="73d-j1-QfA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8872.463768115942" y="-244.41964285714283"/>
+            <point key="canvasLocation" x="9781.1594202898559" y="-244.41964285714283"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="eRZ-xm-5E6">
@@ -969,7 +969,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hhz-2q-UbH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7960.8695652173919" y="-244.41964285714283"/>
+            <point key="canvasLocation" x="8871.0144927536239" y="-244.41964285714283"/>
         </scene>
         <!--সেটিং-->
         <scene sceneID="Zwq-u6-Wy9">
@@ -989,7 +989,41 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AVU-Qo-0Kb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="577" y="-149"/>
+            <point key="canvasLocation" x="1486.9565217391305" y="-149.33035714285714"/>
+        </scene>
+        <!--Vendor ListVC-->
+        <scene sceneID="JJy-mN-AkD">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2K6-jL-dO6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewController storyboardIdentifier="vendorList" id="pki-nN-d2F" customClass="VendorListVC" customModule="ক্রয়_বিক্রয়" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="EAq-32-l2f">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="iCz-jG-RE9">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="pki-nN-d2F" id="ba3-wl-lzr"/>
+                                    <outlet property="delegate" destination="pki-nN-d2F" id="9Dp-SI-m0y"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="iCz-jG-RE9" firstAttribute="top" secondItem="tir-9U-wh7" secondAttribute="top" id="9L4-RD-Lqr"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="iCz-jG-RE9" secondAttribute="bottom" id="E9j-fa-p4b"/>
+                            <constraint firstItem="iCz-jG-RE9" firstAttribute="leading" secondItem="tir-9U-wh7" secondAttribute="leading" id="qJY-Mw-rxe"/>
+                            <constraint firstItem="iCz-jG-RE9" firstAttribute="centerX" secondItem="EAq-32-l2f" secondAttribute="centerX" id="qsG-yp-BJk"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="tir-9U-wh7"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="hT4-SC-n9h"/>
+                    <connections>
+                        <outlet property="vendorTable" destination="iCz-jG-RE9" id="ztq-AF-OmR"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="-1894.2028985507247" y="213.61607142857142"/>
         </scene>
     </scenes>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

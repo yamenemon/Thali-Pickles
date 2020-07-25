@@ -14,8 +14,8 @@
             filePath = "Thali&amp;Pickles/ViewControllers/LoginModule/LoginVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "125"
-            endingLineNumber = "125"
+            startingLineNumber = "119"
+            endingLineNumber = "119"
             landmarkName = "btnActionLoginWithFb(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -30,8 +30,8 @@
             filePath = "Thali&amp;Pickles/ViewControllers/LoginModule/LoginVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "151"
-            endingLineNumber = "151"
+            startingLineNumber = "145"
+            endingLineNumber = "145"
             landmarkName = "btnActionLoginWithFb(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -46,10 +46,90 @@
             filePath = "Thali&amp;Pickles/ViewControllers/LoginModule/LoginVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "150"
-            endingLineNumber = "150"
+            startingLineNumber = "144"
+            endingLineNumber = "144"
             landmarkName = "btnActionLoginWithFb(_:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "23A05E18-508C-4CF1-8FD8-6732E05CF64C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Thali&amp;Pickles/ViewControllers/LoginModule/LoginVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "87C60451-F300-441B-AAAD-88382C01CD06"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Thali&amp;Pickles/ViewControllers/LoginModule/LoginVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "157"
+            endingLineNumber = "157"
+            landmarkName = "showVendorList()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "24380F3F-EB40-43F7-B3E6-ADCF6F99180E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Thali&amp;Pickles/ViewControllers/VendorModule/VendorListVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "24380F3F-EB40-43F7-B3E6-ADCF6F99180E - 397805023ffefb4f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "&#x995;&#x9cd;&#x9b0;&#x9af;__&#x9ac;&#x9bf;&#x995;&#x9cd;&#x9b0;&#x9af;_.VendorListVC.viewDidLoad() -&gt; ()"
+                  moduleName = "&#x995;&#x9cd;&#x9b0;&#x9af;&#x9bc; &#x9ac;&#x9bf;&#x995;&#x9cd;&#x9b0;&#x9af;&#x9bc;"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/macmini/Desktop/Work/TriTechFirm/Product/Thali&amp;Pickles/Thali-Pickles/Thali&amp;Pickles/ViewControllers/VendorModule/VendorListVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "144">
+               </Location>
+               <Location
+                  uuid = "24380F3F-EB40-43F7-B3E6-ADCF6F99180E - e5cfad530cfdce79"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; __C.UISearchController in &#x995;&#x9cd;&#x9b0;&#x9af;__&#x9ac;&#x9bf;&#x995;&#x9cd;&#x9b0;&#x9af;_.VendorListVC.viewDidLoad() -&gt; ()"
+                  moduleName = "&#x995;&#x9cd;&#x9b0;&#x9af;&#x9bc; &#x9ac;&#x9bf;&#x995;&#x9cd;&#x9b0;&#x9af;&#x9bc;"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/macmini/Desktop/Work/TriTechFirm/Product/Thali&amp;Pickles/Thali-Pickles/Thali&amp;Pickles/ViewControllers/VendorModule/VendorListVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "27"
+                  endingLineNumber = "27"
+                  offsetFromSymbolStart = "56">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

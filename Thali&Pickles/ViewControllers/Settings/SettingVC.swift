@@ -25,34 +25,10 @@ class SettingVC: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-//        let ref = Database.database().reference()
-//        ref.child("users").child(Auth.auth().currentUser!.uid).observeSingleEvent(of: .value, with:  { (snapshot) in
-//            if snapshot.exists()
-//            {
-//                if let fruitPost = snapshot.value as? Dictionary<String,AnyObject>
-//                {
-//                    for(key, value) in fruitPost {
-//                        if(Auth.auth().currentUser!.uid != key){
-//                            let dict = NSMutableDictionary()
-//                            dict.setObject(value, forKey:"firebaseId" as NSCopying)
-//                            self.arrUserList.add(dict)
-//                        }
-//                    }
-//                }
-//                print(self.arrUserList)
-//                
-//            }
-//            else {
-//                print("not available")
-//            }
-//        })
+
     }
 
     @IBAction func chatWithVendor(_ sender: Any) {
-        /*
-        let chatVC = ChatVC()
-        self.navigationController?.pushViewController(chatVC, animated: true)
-         */
         let navViewController = self.tabBarController?.selectedViewController as? UINavigationController
         let vendorListVC = VendorChatListVC()
         navViewController?.pushViewController(vendorListVC, animated: true)

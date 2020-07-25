@@ -30,10 +30,7 @@ class LoginVC: BaseViewController,GIDSignInDelegate,UITextFieldDelegate {
         self.hideKeyboard()
         
         if Auth.auth().currentUser != nil {
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let tbc = storyboard.instantiateViewController(withIdentifier:"tabbarController") as! UITabBarController
-            tbc.selectedIndex = 0
-            self.navigationController?.pushViewController(tbc, animated: true)
+            showVendorList()
         }
         
         GIDSignIn.sharedInstance()?.presentingViewController = self
@@ -78,10 +75,7 @@ class LoginVC: BaseViewController,GIDSignInDelegate,UITextFieldDelegate {
                     }
                 }
                 self.ref.child("users").child(Auth.auth().currentUser!.uid).setValue(["username": firstName])
-                let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                let tbc = storyboard.instantiateViewController(withIdentifier:"tabbarController") as! UITabBarController
-                tbc.selectedIndex = 0
-                self.navigationController?.pushViewController(tbc, animated: true)
+                self.showVendorList()
             }
         }
     }
@@ -148,10 +142,7 @@ class LoginVC: BaseViewController,GIDSignInDelegate,UITextFieldDelegate {
                                             }
                                         }
                                         self.ref.child("users").child(Auth.auth().currentUser!.uid).setValue(["username": firstName])
-                                        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                                        let tbc = storyboard.instantiateViewController(withIdentifier:"tabbarController") as! UITabBarController
-                                        tbc.selectedIndex = 0
-                                        self.navigationController?.pushViewController(tbc, animated: true)
+                                        self.showVendorList()
                                     }
                                 }
                             })
@@ -160,6 +151,12 @@ class LoginVC: BaseViewController,GIDSignInDelegate,UITextFieldDelegate {
                 }
             }
         }
+    }
+    
+    func showVendorList() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let tbc = storyboard.instantiateViewController(withIdentifier:"vendorList")
+        self.navigationController?.pushViewController(tbc, animated: true)
     }
     
     @IBAction func loginBtnAction(_ sender: Any) {
@@ -199,7 +196,6 @@ class LoginVC: BaseViewController,GIDSignInDelegate,UITextFieldDelegate {
                                 SwiftSpinner.hide()
                                 return
                             }
-
                                 Auth.auth().signIn(withEmail: email, password: password) { (authResult, err) in
                                     if err != nil {
                                         apiError.error = "Login Error"
@@ -210,12 +206,8 @@ class LoginVC: BaseViewController,GIDSignInDelegate,UITextFieldDelegate {
                                     print(authResult!)
                                     SwiftSpinner.hide()
                                     self.showToastAtWindow(text: "Loggin successful")
-                                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                                    let tbc = storyboard.instantiateViewController(withIdentifier:"tabbarController") as! UITabBarController
-                                    tbc.selectedIndex = 0
-                                    self.navigationController?.pushViewController(tbc, animated: true)
+                                    self.showVendorList()
                                 }
-                            
                     }
                     case let .failure(error):
                         print(error)
