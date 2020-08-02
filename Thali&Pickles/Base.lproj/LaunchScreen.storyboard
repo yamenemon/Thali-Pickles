@@ -36,13 +36,30 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="characterWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bbl-gd-8aK">
+                                        <rect key="frame" x="8" y="851" width="398" height="16"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="© Copyright 2020 tritechfirm. All Rights Reserved">
+                                                <attributes>
+                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                    <font key="NSFont" size="15" name="Rockwell-Regular"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                        <color key="shadowColor" cocoaTouchSystemColor="lightTextColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.90372341869999995" green="0.55096954109999996" blue="0.13693761830000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstItem="bbl-gd-8aK" firstAttribute="leading" secondItem="1Kj-hU-0uG" secondAttribute="leading" constant="8" id="5ON-hX-Gnn"/>
                                     <constraint firstItem="NWz-at-wCh" firstAttribute="leading" secondItem="1Kj-hU-0uG" secondAttribute="leadingMargin" id="Ch0-Zz-FRK"/>
                                     <constraint firstItem="Eu6-OK-XHM" firstAttribute="centerY" secondItem="1Kj-hU-0uG" secondAttribute="centerY" constant="-39" id="K3V-hx-c9h"/>
                                     <constraint firstItem="NWz-at-wCh" firstAttribute="top" secondItem="Eu6-OK-XHM" secondAttribute="bottom" constant="8.5" id="SAs-8p-j7T"/>
                                     <constraint firstItem="Eu6-OK-XHM" firstAttribute="centerX" secondItem="1Kj-hU-0uG" secondAttribute="centerX" id="fut-HS-BHs"/>
+                                    <constraint firstAttribute="trailing" secondItem="bbl-gd-8aK" secondAttribute="trailing" constant="8" id="jv7-Gy-ilG"/>
+                                    <constraint firstAttribute="bottom" secondItem="bbl-gd-8aK" secondAttribute="bottom" constant="29" id="mtE-fX-9lD"/>
                                     <constraint firstItem="NWz-at-wCh" firstAttribute="centerX" secondItem="Eu6-OK-XHM" secondAttribute="centerX" id="xbG-iR-Hkg"/>
                                 </constraints>
                             </view>

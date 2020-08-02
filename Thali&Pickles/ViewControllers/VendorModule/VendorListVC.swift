@@ -12,9 +12,7 @@ import FirebaseAuth
 class VendorListVC : UIViewController, UITableViewDelegate,UITableViewDataSource, UISearchResultsUpdating {
     
     let tableData = ["Austria","Australia","Srilanka","Japan"]
-    
     var filteredTableData = [String]()
-    
     var resultSearchController = UISearchController()
     
     @IBOutlet weak var vendorTable: UITableView!
@@ -26,25 +24,15 @@ class VendorListVC : UIViewController, UITableViewDelegate,UITableViewDataSource
         vendorTable.register(UINib(nibName: "CategoryCell", bundle: nil), forCellReuseIdentifier: "Cell")
         
         self.resultSearchController = ({
-            
             let controller = UISearchController(searchResultsController: nil)
-            
             controller.searchResultsUpdater = self
-            
 //            controller.dimsBackgroundDuringPresentation = false
-            
             controller.searchBar.sizeToFit()
-            
             self.vendorTable.tableHeaderView = controller.searchBar
-            
             return controller
-            
         })()
-        
         // Reload the table
-        
         self.vendorTable.reloadData()
-        
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -81,9 +69,7 @@ class VendorListVC : UIViewController, UITableViewDelegate,UITableViewDataSource
             cell.categoryPrice.isHidden = true
             cell.cartBtn.isHidden = true
             cell.categoryName.text = tableData[indexPath.row]
-            
             return cell
-            
         }
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -98,13 +84,9 @@ class VendorListVC : UIViewController, UITableViewDelegate,UITableViewDataSource
     
     func updateSearchResults(for searchController: UISearchController) {
         filteredTableData.removeAll(keepingCapacity: false)
-        
         let searchPredicate = NSPredicate(format: "SELF CONTAINS[c] %@", searchController.searchBar.text!)
-        
         let array = (tableData as NSArray).filtered(using: searchPredicate)
-        
         filteredTableData = array as! [String]
-        
         self.vendorTable.reloadData()
     }
 }

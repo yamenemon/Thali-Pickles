@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1kn-tA-RWg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NIh-8j-EfC">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -50,21 +50,21 @@
                                         <rect key="frame" x="8" y="616" width="397" height="103"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="উপমূল্য" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="haX-yB-DhO">
-                                                <rect key="frame" x="8" y="12" width="52" height="20"/>
+                                                <rect key="frame" x="8" y="12" width="49.5" height="20"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ডিসকাউন্ট : (8%)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kXF-3I-NKH">
-                                                <rect key="frame" x="8" y="37" width="119.5" height="20"/>
+                                                <rect key="frame" x="8" y="37" width="118.5" height="20"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="সর্বমোট :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J39-7N-T6V">
-                                                <rect key="frame" x="8" y="63" width="60" height="20"/>
+                                                <rect key="frame" x="8" y="63" width="58.5" height="20"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -77,7 +77,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3VE-rX-p8v">
-                                                <rect key="frame" x="206.5" y="37" width="182.5" height="20"/>
+                                                <rect key="frame" x="205.5" y="37" width="183.5" height="20"/>
                                                 <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -100,6 +100,7 @@
                                             <constraint firstItem="zNu-Hi-BpK" firstAttribute="top" secondItem="J39-7N-T6V" secondAttribute="top" id="Xy2-je-Q9F"/>
                                             <constraint firstItem="haX-yB-DhO" firstAttribute="leading" secondItem="ASI-P7-Nwj" secondAttribute="leading" constant="8" id="bG1-Hf-DL4"/>
                                             <constraint firstItem="kXF-3I-NKH" firstAttribute="top" secondItem="haX-yB-DhO" secondAttribute="bottom" constant="5" id="gPR-p0-nEB"/>
+                                            <constraint firstAttribute="height" constant="103" id="lox-dr-QMg"/>
                                             <constraint firstItem="haX-yB-DhO" firstAttribute="top" secondItem="ASI-P7-Nwj" secondAttribute="top" constant="12" id="mqv-Oe-Fpz"/>
                                             <constraint firstItem="J39-7N-T6V" firstAttribute="top" secondItem="kXF-3I-NKH" secondAttribute="bottom" constant="6" id="oY4-NY-0or"/>
                                             <constraint firstAttribute="trailing" secondItem="3VE-rX-p8v" secondAttribute="trailing" constant="8" id="oZB-yL-coI"/>
@@ -119,7 +120,7 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="Hne-97-T2v" firstAttribute="height" secondItem="szC-6A-AuQ" secondAttribute="height" multiplier="0.73" constant="73.75" id="Fvv-iw-5N2"/>
+                                    <constraint firstItem="Hne-97-T2v" firstAttribute="height" secondItem="szC-6A-AuQ" secondAttribute="height" multiplier="0.73" priority="250" constant="73.75" id="Fvv-iw-5N2"/>
                                     <constraint firstAttribute="trailing" secondItem="ASI-P7-Nwj" secondAttribute="trailing" constant="9" id="H2p-cH-r3a"/>
                                     <constraint firstItem="Hne-97-T2v" firstAttribute="leading" secondItem="szC-6A-AuQ" secondAttribute="leading" constant="8" id="QNx-2h-qFw"/>
                                     <constraint firstItem="ASI-P7-Nwj" firstAttribute="top" secondItem="Hne-97-T2v" secondAttribute="bottom" constant="8" id="R2M-NT-sUe"/>
@@ -151,7 +152,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="336" y="938"/>
+            <point key="canvasLocation" x="1244.9275362318842" y="937.5"/>
         </scene>
         <!--SettingVC-->
         <scene sceneID="yjM-FK-pj9">
@@ -232,7 +233,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SPs-b1-4Qe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4773.913043478261" y="399.77678571428572"/>
+            <point key="canvasLocation" x="5684.057971014493" y="399.77678571428572"/>
         </scene>
         <!--অর্ডার সমূহ-->
         <scene sceneID="Biz-ag-7yP">
@@ -304,7 +305,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tTk-Rh-d7o" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2208.695652173913" y="544.41964285714278"/>
+            <point key="canvasLocation" x="3117.3913043478265" y="543.75"/>
         </scene>
         <!--LoginVC-->
         <scene sceneID="CUi-vy-ikA">
@@ -315,7 +316,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="ইমেইল" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IrG-kC-Qu1">
-                                <rect key="frame" x="20" y="362" width="374" height="50"/>
+                                <rect key="frame" x="20" y="360" width="374" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="w9I-BC-Zmp"/>
@@ -327,7 +328,7 @@
                                 </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="পাসওয়ার্ড" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uaT-mr-f0I">
-                                <rect key="frame" x="20" y="421.5" width="374" height="50"/>
+                                <rect key="frame" x="20" y="419.5" width="374" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
@@ -336,7 +337,7 @@
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZAk-jW-Lh6">
-                                <rect key="frame" x="20" y="486" width="374" height="48"/>
+                                <rect key="frame" x="20" y="484" width="374" height="47"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="30"/>
                                 <state key="normal" title="লগইন করুন">
@@ -347,7 +348,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="edP-gy-3XN">
-                                <rect key="frame" x="20" y="222" width="374" height="48"/>
+                                <rect key="frame" x="20" y="222" width="374" height="47"/>
                                 <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="30"/>
                                 <state key="normal" title="গুগল">
@@ -359,7 +360,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C8L-Fr-O46">
-                                <rect key="frame" x="20" y="570" width="299" height="32"/>
+                                <rect key="frame" x="20" y="567" width="299" height="32"/>
                                 <fontDescription key="fontDescription" name="Rockwell-Bold" family="Rockwell" pointSize="20"/>
                                 <state key="normal" title="রেজিস্ট্রেশন করুন"/>
                                 <connections>
@@ -367,12 +368,12 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o9o-Xn-jly">
-                                <rect key="frame" x="304" y="570" width="90" height="32"/>
+                                <rect key="frame" x="304" y="567" width="90" height="32"/>
                                 <fontDescription key="fontDescription" name="Rockwell-Bold" family="Rockwell" pointSize="20"/>
                                 <state key="normal" title="পাসওয়ার্ড?"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3UD-7C-Aa5">
-                                <rect key="frame" x="20" y="278" width="374" height="48"/>
+                                <rect key="frame" x="20" y="277" width="374" height="47"/>
                                 <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="30"/>
                                 <state key="normal" title="ফেইসবুক">
@@ -384,13 +385,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="দেশের বৃহৎ বেচা-কেনার মাধ্যম" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fsh-6J-IsI">
-                                <rect key="frame" x="108" y="172" width="200.5" height="20"/>
+                                <rect key="frame" x="110.5" y="172" width="195" height="20"/>
                                 <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ক্রয়-বিক্রয়" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ByI-oR-KXt">
-                                <rect key="frame" x="93" y="102" width="230" height="62"/>
+                                <rect key="frame" x="98" y="102" width="220" height="62"/>
                                 <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="53"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -504,7 +505,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YUp-3s-uS8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-359" y="938"/>
+            <point key="canvasLocation" x="550.72463768115949" y="937.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="xnt-hu-eE9">
@@ -618,7 +619,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="ক্রয়-বিক্রয়" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OL0-KM-X30">
-                                <rect key="frame" x="92" y="124" width="230" height="63"/>
+                                <rect key="frame" x="97" y="124" width="220" height="63"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="63" id="tat-8J-g9C"/>
                                 </constraints>
@@ -792,7 +793,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O66-Rv-eNp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6802.898550724638" y="438.61607142857139"/>
+            <point key="canvasLocation" x="7713.04347826087" y="438.61607142857139"/>
         </scene>
         <!--বিকাশ পদ্ধতি-->
         <scene sceneID="mCl-6l-Fq9">
@@ -864,7 +865,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wLp-aI-cbz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="9021.7391304347839" y="429.24107142857139"/>
+            <point key="canvasLocation" x="9931.8840579710159" y="429.24107142857139"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="S5n-AJ-osH">
@@ -904,7 +905,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OYp-ZX-CRj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8110.1449275362329" y="428.57142857142856"/>
+            <point key="canvasLocation" x="9020.289855072464" y="428.57142857142856"/>
         </scene>
         <!--অর্ডার-->
         <scene sceneID="CJZ-if-KqV">
@@ -924,7 +925,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ky1-XU-3oo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1486.9565217391305" y="527.67857142857144"/>
+            <point key="canvasLocation" x="2397.1014492753625" y="527.67857142857144"/>
         </scene>
         <!--অর্ডার-->
         <scene sceneID="KHO-y6-IFx">
@@ -994,7 +995,6 @@
         <!--Vendor ListVC-->
         <scene sceneID="JJy-mN-AkD">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2K6-jL-dO6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="vendorList" id="pki-nN-d2F" customClass="VendorListVC" customModule="ক্রয়_বিক্রয়" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EAq-32-l2f">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -1022,8 +1022,197 @@
                         <outlet property="vendorTable" destination="iCz-jG-RE9" id="ztq-AF-OmR"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2K6-jL-dO6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1894.2028985507247" y="213.61607142857142"/>
+        </scene>
+        <!--TncVC-->
+        <scene sceneID="AjA-Tt-5aN">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9IM-Ls-ZZj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewController storyboardIdentifier="tnc_storyboard" id="j9J-Th-Df9" customClass="tncVC" customModule="ক্রয়_বিক্রয়" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kMi-RG-yc7">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="9yA-VG-EVM">
+                                <rect key="frame" x="0.0" y="60" width="101" height="43"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="101" id="n71-lr-Pyp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="20"/>
+                                <state key="normal" title="CLOSE"/>
+                                <connections>
+                                    <action selector="closeBtnAction:" destination="j9J-Th-Df9" eventType="touchUpInside" id="6CG-YO-wj0"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hbh-0L-N7v">
+                                <rect key="frame" x="0.0" y="111" width="414" height="785"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="9yA-VG-EVM" firstAttribute="top" secondItem="u25-ql-R90" secondAttribute="top" constant="16" id="5VM-Cb-861"/>
+                            <constraint firstItem="Hbh-0L-N7v" firstAttribute="bottom" secondItem="u25-ql-R90" secondAttribute="bottom" constant="34" id="MEg-dr-QfK"/>
+                            <constraint firstItem="Hbh-0L-N7v" firstAttribute="leading" secondItem="u25-ql-R90" secondAttribute="leading" id="UaU-Gw-7kB"/>
+                            <constraint firstItem="Hbh-0L-N7v" firstAttribute="top" secondItem="9yA-VG-EVM" secondAttribute="bottom" constant="8" id="iUb-or-GYN"/>
+                            <constraint firstItem="u25-ql-R90" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="9yA-VG-EVM" secondAttribute="trailing" symbolic="YES" id="qca-4B-OdH"/>
+                            <constraint firstItem="Hbh-0L-N7v" firstAttribute="top" secondItem="u25-ql-R90" secondAttribute="top" constant="67" id="tTe-KC-Sub"/>
+                            <constraint firstItem="9yA-VG-EVM" firstAttribute="leading" secondItem="u25-ql-R90" secondAttribute="leading" id="wnt-ra-Axd"/>
+                            <constraint firstItem="u25-ql-R90" firstAttribute="trailing" secondItem="Hbh-0L-N7v" secondAttribute="trailing" id="yov-FH-bMr"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="u25-ql-R90"/>
+                    </view>
+                    <connections>
+                        <outlet property="pdfContainerView" destination="Hbh-0L-N7v" id="hM0-FN-CUb"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="-5549.275362318841" y="-450"/>
+        </scene>
+        <!--InitialVC-->
+        <scene sceneID="1w8-wN-h3S">
+            <objects>
+                <viewController id="iM7-Vv-Drp" customClass="InitialVC" customModule="ক্রয়_বিক্রয়" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tIH-Ut-3R3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="দেশের বৃহৎ বেচা-কেনার মাধ্যম" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mxb-XO-eg6">
+                                <rect key="frame" x="109.5" y="172" width="195" height="20"/>
+                                <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ক্রয়-বিক্রয়" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6xj-WK-iDi">
+                                <rect key="frame" x="97" y="102" width="220" height="62"/>
+                                <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="53"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z3G-fD-sVJ">
+                                <rect key="frame" x="57" y="337.5" width="302" height="63"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="63" id="7P0-ze-xez"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="35"/>
+                                <state key="normal" title="ক্রয়">
+                                    <color key="titleColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="kroyBtnAction:" destination="iM7-Vv-Drp" eventType="touchUpInside" id="DbW-U9-Pme"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CO8-uo-uKP">
+                                <rect key="frame" x="57" y="435.5" width="302" height="63"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="35"/>
+                                <state key="normal" title="বিক্রয়">
+                                    <color key="titleColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="bikroyBtnAction:" destination="iM7-Vv-Drp" eventType="touchUpInside" id="aMg-8A-XmX"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="এই অ্যাপ্লিকেশনে আসার কারণ" textAlignment="center" lineBreakMode="characterWrap" numberOfLines="2" minimumScaleFactor="1" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7GD-tP-51C">
+                                <rect key="frame" x="20" y="272" width="374" height="29.5"/>
+                                <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="25"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="alK-Dp-bBj">
+                                <rect key="frame" x="57" y="534" width="302" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="uY0-b1-LqG"/>
+                                </constraints>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="শর্তাবলী">
+                                            <attributes>
+                                                <color key="NSColor" red="0.58072251080000004" green="0.066734083" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <font key="NSFont" size="18" name="KohinoorBangla-Regular"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                            </attributes>
+                                        </fragment>
+                                        <fragment content=" এবং ">
+                                            <attributes>
+                                                <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <font key="NSFont" size="18" name="KohinoorBangla-Regular"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                            </attributes>
+                                        </fragment>
+                                        <fragment content="গোপনীয়তার">
+                                            <attributes>
+                                                <color key="NSColor" red="0.58072251080000004" green="0.066734083" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <font key="NSFont" size="18" name="KohinoorBangla-Regular"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                            </attributes>
+                                        </fragment>
+                                        <fragment content=" বিধি">
+                                            <attributes>
+                                                <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <font key="NSFont" size="18" name="KohinoorBangla-Regular"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
+                                <connections>
+                                    <action selector="termsAndPolicyBtnAction:" destination="iM7-Vv-Drp" eventType="touchUpInside" id="ill-9n-di9"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="alK-Dp-bBj" firstAttribute="top" secondItem="CO8-uo-uKP" secondAttribute="bottom" constant="35.5" id="1OX-hQ-JrK"/>
+                            <constraint firstItem="CO8-uo-uKP" firstAttribute="top" secondItem="Z3G-fD-sVJ" secondAttribute="bottom" constant="35" id="4Mg-vN-PwM"/>
+                            <constraint firstItem="6xj-WK-iDi" firstAttribute="centerX" secondItem="cwM-U0-Rug" secondAttribute="centerX" id="5lI-wp-LZR"/>
+                            <constraint firstItem="cwM-U0-Rug" firstAttribute="trailing" secondItem="7GD-tP-51C" secondAttribute="trailing" constant="20" id="9FQ-OX-ezK"/>
+                            <constraint firstItem="mxb-XO-eg6" firstAttribute="centerX" secondItem="cwM-U0-Rug" secondAttribute="centerX" id="EdL-dg-qcS"/>
+                            <constraint firstItem="7GD-tP-51C" firstAttribute="leading" secondItem="cwM-U0-Rug" secondAttribute="leading" constant="20" id="F5s-76-GbA"/>
+                            <constraint firstItem="CO8-uo-uKP" firstAttribute="trailing" secondItem="Z3G-fD-sVJ" secondAttribute="trailing" id="WUT-GE-wsG"/>
+                            <constraint firstItem="alK-Dp-bBj" firstAttribute="leading" secondItem="CO8-uo-uKP" secondAttribute="leading" id="Yd5-FI-Scu"/>
+                            <constraint firstItem="cwM-U0-Rug" firstAttribute="trailing" secondItem="Z3G-fD-sVJ" secondAttribute="trailing" constant="55" id="ail-8b-WXY"/>
+                            <constraint firstItem="CO8-uo-uKP" firstAttribute="leading" secondItem="Z3G-fD-sVJ" secondAttribute="leading" id="dNq-C9-0eF"/>
+                            <constraint firstItem="Z3G-fD-sVJ" firstAttribute="leading" secondItem="cwM-U0-Rug" secondAttribute="leading" constant="57" id="hUo-DH-U40"/>
+                            <constraint firstItem="mxb-XO-eg6" firstAttribute="top" secondItem="6xj-WK-iDi" secondAttribute="bottom" constant="8" id="hf8-h6-Yow"/>
+                            <constraint firstItem="CO8-uo-uKP" firstAttribute="height" secondItem="Z3G-fD-sVJ" secondAttribute="height" id="jLk-Ig-U8F"/>
+                            <constraint firstItem="alK-Dp-bBj" firstAttribute="trailing" secondItem="CO8-uo-uKP" secondAttribute="trailing" id="kyg-LL-VQ7"/>
+                            <constraint firstItem="6xj-WK-iDi" firstAttribute="top" secondItem="cwM-U0-Rug" secondAttribute="top" constant="58" id="llh-7m-OGv"/>
+                            <constraint firstItem="Z3G-fD-sVJ" firstAttribute="top" secondItem="7GD-tP-51C" secondAttribute="bottom" constant="36" id="n68-GH-cMm"/>
+                            <constraint firstItem="7GD-tP-51C" firstAttribute="top" secondItem="mxb-XO-eg6" secondAttribute="bottom" constant="80" id="taS-2R-hPQ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="cwM-U0-Rug"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Uv0-ws-1UX"/>
+                    <connections>
+                        <outlet property="bikroyBtn" destination="CO8-uo-uKP" id="KRs-nG-la2"/>
+                        <outlet property="kroyBtn" destination="Z3G-fD-sVJ" id="Uk1-a4-KeM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ca1-GP-Iji" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-5549.275362318841" y="213.61607142857142"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="7h6-dP-Jvf">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="NIh-8j-EfC" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Zlg-JX-Zx4">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="iM7-Vv-Drp" kind="relationship" relationship="rootViewController" id="Oge-o8-gcm"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="R9j-uZ-Mvg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-6264" y="214"/>
         </scene>
     </scenes>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
