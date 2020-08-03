@@ -26,6 +26,7 @@
 		9A409EA924C4CDB6008A5328 /* ChatSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A409EA724C4CDB6008A5328 /* ChatSB.storyboard */; };
 		9A409EAC24C4D636008A5328 /* Chat2TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A409EAA24C4D636008A5328 /* Chat2TableViewCell.swift */; };
 		9A409EAD24C4D636008A5328 /* ChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A409EAB24C4D636008A5328 /* ChatTableViewCell.swift */; };
+		9A77C75724D7DCED00C7E074 /* PhoneAuthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A77C75624D7DCED00C7E074 /* PhoneAuthController.swift */; };
 		9A7E5BE324D7330C00EE3E60 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7E5BE224D7330B00EE3E60 /* LoginVC.swift */; };
 		9A86726024CC523700A8F313 /* VendorChatListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A86725F24CC523700A8F313 /* VendorChatListVC.swift */; };
 		9A86726224CC6BF800A8F313 /* Vendor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A86726124CC6BF800A8F313 /* Vendor.swift */; };
@@ -90,6 +91,7 @@
 		9A409EA724C4CDB6008A5328 /* ChatSB.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ChatSB.storyboard; sourceTree = "<group>"; };
 		9A409EAA24C4D636008A5328 /* Chat2TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chat2TableViewCell.swift; sourceTree = "<group>"; };
 		9A409EAB24C4D636008A5328 /* ChatTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatTableViewCell.swift; sourceTree = "<group>"; };
+		9A77C75624D7DCED00C7E074 /* PhoneAuthController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneAuthController.swift; sourceTree = "<group>"; };
 		9A7E5BE224D7330B00EE3E60 /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		9A86725F24CC523700A8F313 /* VendorChatListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VendorChatListVC.swift; sourceTree = "<group>"; };
 		9A86726124CC6BF800A8F313 /* Vendor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vendor.swift; sourceTree = "<group>"; };
@@ -322,6 +324,7 @@
 				9AC6F31E24BDEA810098EACF /* RegisterVC.swift */,
 				9A97C92F24D6E8600028B9FC /* InitialVC.swift */,
 				9A97C93324D70FE00028B9FC /* tncVC.swift */,
+				9A77C75624D7DCED00C7E074 /* PhoneAuthController.swift */,
 			);
 			path = LoginModule;
 			sourceTree = "<group>";
@@ -544,6 +547,7 @@
 				9A9B779B238AE5B000440DF7 /* AppDelegate.swift in Sources */,
 				9A9B779D238AE5B000440DF7 /* SceneDelegate.swift in Sources */,
 				9AD3351D238C585F009F83E0 /* AppManager.swift in Sources */,
+				9A77C75724D7DCED00C7E074 /* PhoneAuthController.swift in Sources */,
 				9AC6F31F24BDEA810098EACF /* RegisterVC.swift in Sources */,
 				9AA075BE24C1E989009F54F7 /* SettingVC.swift in Sources */,
 				9A9C3C38238B106700982421 /* Constants.swift in Sources */,

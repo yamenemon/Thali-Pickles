@@ -19,38 +19,26 @@ class InitialVC: UIViewController {
         // Do any additional setup after loading the view.
     }
     override func viewWillLayoutSubviews() {
-        reshapedButton(btn: kroyBtn)
-        reshapedButton(btn: bikroyBtn)
-    }
-    
-    func reshapedButton(btn:UIButton) {
-        btn.layer.cornerRadius = 8.0
-        btn.layer.masksToBounds = false
-        btn.layer.borderWidth = 0.5
-        btn.layer.borderColor = UIColor.gray.cgColor
-        btn.layer.shadowColor = UIColor.darkGray.cgColor
-        btn.layer.shadowOpacity = 0.8
-        btn.layer.shadowRadius = 2
-        btn.layer.shadowOffset = CGSize(width: 5.0, height: 5.0)
-    }
-    
-    @objc func chekBtnClicked(sender:UIButton) {
-
+        kroyBtn.reshapedButton()
+        bikroyBtn.reshapedButton()
     }
     
     @IBAction func kroyBtnAction(_ sender: Any) {
-        
+        loadLoginVC()
     }
     @IBAction func bikroyBtnAction(_ sender: Any) {
-        
+        loadLoginVC()
+    }
+    func loadLoginVC(){
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let tbc = storyboard.instantiateViewController(withIdentifier:"loginController")
+        self.navigationController?.pushViewController(tbc, animated: true)
     }
     @IBAction func termsAndPolicyBtnAction(_ sender: Any) {
-        
-//        let tncController = tncVC()
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "tnc_storyboard")
+        vc.modalTransitionStyle = .flipHorizontal
         self.present(vc, animated: true)
-        
     }
 }
 

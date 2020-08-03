@@ -40,7 +40,7 @@ class SettingVC: UIViewController {
             try firebaseAuth.signOut()
             DispatchQueue.main.async {
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                let tbc = storyboard.instantiateViewController(withIdentifier:"loginController") as! UINavigationController
+                let tbc = storyboard.instantiateViewController(withIdentifier:"initialController")
                 let keyWindow = UIApplication.shared.windows.filter {$0.isKeyWindow}.first
                 keyWindow?.rootViewController = tbc
                 keyWindow?.makeKeyAndVisible()
@@ -48,7 +48,6 @@ class SettingVC: UIViewController {
             
         } catch let signOutError as NSError {
             print ("Error signing out: %@", signOutError)
-//            self.showToastAtWindow(text: "\(signOutError)")
         }
         
     }

@@ -62,3 +62,16 @@ public class Reachability {
 
     }
 }
+extension UIButton {
+    
+    func reshapedButton() {
+        self.layer.cornerRadius = 8.0
+        self.layer.masksToBounds = false
+        self.layer.borderWidth = 0.5
+        self.layer.borderColor = UIColor.gray.cgColor
+        self.layer.shadowColor = UIColor.darkGray.cgColor
+        self.layer.shadowOpacity = 0.8
+        self.layer.shadowRadius = 2
+        self.layer.shadowOffset = CGSize(width: 5.0, height: 5.0)
+    }
+}

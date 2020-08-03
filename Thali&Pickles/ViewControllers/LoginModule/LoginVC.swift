@@ -17,13 +17,20 @@ import FacebookCore
 import FacebookLogin
 import FBSDKLoginKit
 
+
+struct userPersonalInfo {
+    let userName : String
+    let userEmail : String
+    let userPhone : String
+}
+
 class LoginVC: BaseViewController,GIDSignInDelegate,UITextFieldDelegate {
     
     @IBOutlet weak var emailTF: UITextField!
     @IBOutlet weak var passwordTF: UITextField!
     
     var ref: DatabaseReference!
-
+    private var userPersonalInformation : [String : Any]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -142,7 +149,7 @@ class LoginVC: BaseViewController,GIDSignInDelegate,UITextFieldDelegate {
     }
     
     @IBAction func btnActionLoginWithFb(_ sender: Any) {
-        
+        /*
         let fbLoginManager : LoginManager = LoginManager()
         fbLoginManager.logIn(permissions: ["email"], from: self) { (result, error) in
             if (error == nil){
@@ -194,6 +201,36 @@ class LoginVC: BaseViewController,GIDSignInDelegate,UITextFieldDelegate {
                 }
             }
         }
+        */
+        
+        let fbLoginManager : LoginManager = LoginManager()
+        fbLoginManager.logIn(permissions: ["email"], from: self) { (result, error) in
+            if (error == nil){
+                let fbloginresult : LoginManagerLoginResult = result!
+                if(fbloginresult.grantedPermissions.contains("email")) {
+                    if((AccessToken.current) != nil){
+                        GraphRequest(graphPath: "me", parameters: ["fields": "id, name, first_name, last_name, picture.type(large), email"]).start(completionHandler: { (connection, result, error) -> Void in
+                            if (error == nil){
+                                let dict = result as! NSDictionary
+                                let userName = (dict.object(forKey: "first_name") as! String) + (dict.object(forKey: "last_name") as! String)
+                                let userEmail = (dict.object(forKey: "email") as! String)
+                                print(userName,userEmail)
+                                self.showPhoneAuthPOPUp()
+                            }
+                        })
+                    }
+                }
+            }
+        }
+    }
+    
+    func showPhoneAuthPOPUp(){
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let tbc = storyboard.instantiateViewController(withIdentifier:"PhoneAuthController")
+        self.present(tbc, animated: true, completion: nil)
+    }
+    func loginWithFirebase(){
+        
     }
     
     func showVendorList() {
